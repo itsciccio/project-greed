@@ -364,7 +364,7 @@ function App() {
                         {hasScrappyRequirements ? (
                           <div className="category-card" style={{ borderColor: 'rgba(168, 85, 247, 0.6)' }}>
                             <div className="category-header">
-                              <span className="category-icon">⭐</span>
+                              <span className="category-icon">🐔</span>
                               <span className="category-label">Required for Scrappy Levels</span>
                             </div>
                             <div className="station-requirements">
@@ -380,7 +380,7 @@ function App() {
                         ) : (
                           <div className="category-card" style={{ borderColor: 'rgba(107, 114, 128, 0.6)' }}>
                             <div className="category-header">
-                              <span className="category-icon">⭐</span>
+                              <span className="category-icon">🐔</span>
                               <span className="category-label">Scrappy Level Requirements</span>
                             </div>
                             <div className="no-station-requirements">
@@ -477,7 +477,7 @@ function App() {
                 {results.scrappyLevelRequirements && results.scrappyLevelRequirements.length > 0 && (
                   <div className="category-card" style={{ borderColor: 'rgba(168, 85, 247, 0.6)', marginTop: '16px' }}>
                     <div className="category-header">
-                      <span className="category-icon">⭐</span>
+                      <span className="category-icon">🐔</span>
                       <span className="category-label">Required for Scrappy Levels</span>
                     </div>
                     <div className="station-requirements">
@@ -494,7 +494,7 @@ function App() {
                 {results.scrappyLevelRequirements && results.scrappyLevelRequirements.length === 0 && (
                   <div className="category-card" style={{ borderColor: 'rgba(107, 114, 128, 0.6)', marginTop: '16px' }}>
                     <div className="category-header">
-                      <span className="category-icon">⭐</span>
+                      <span className="category-icon">🐔</span>
                       <span className="category-label">Scrappy Level Requirements</span>
                     </div>
                     <div className="no-station-requirements">
