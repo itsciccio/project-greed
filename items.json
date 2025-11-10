@@ -1,0 +1,714 @@
+{
+  "Accordion": {
+    "safe_to_recycle": true
+  },
+  "Adrenaline Shot": {},
+  "Adv. Electrical Components": {
+    "keep_for_projects": {
+      "amount": 5
+    }
+  },
+  "Advanced ARC Powercell": {},
+  "Advanced Electrical Components": {},
+  "Advanced Electrical Components Blueprint": {},
+  "Advanced Mechanical Components": {},
+  "Advanced Mechanical Components Blueprint": {},
+  "Agave": {},
+  "Agave Juice": {},
+  "Air Freshener": {},
+  "Alarm Clock": {
+    "safe_to_recycle": true
+  },
+  "Angled Grip I": {},
+  "Angled Grip II": {},
+  "Angled Grip II Blueprint": {},
+  "Angled Grip III": {},
+  "Angled Grip III Blueprint": {},
+  "Antiseptic": {
+    "keep_for_quests": {
+      "amount": 2
+    }
+  },
+  "Anvil Blueprint": {},
+  "Anvil I": {},
+  "Anvil II": {},
+  "Anvil III": {},
+  "Anvil IV": {},
+  "Anvil Splitter": {},
+  "Anvil Splitter Blueprint": {},
+  "Apricot": {},
+  "ARC Alloy": {
+    "keep_for_projects": {
+      "amount": 80
+    }
+  },
+  "ARC Circuitry": {},
+  "ARC Circuitry Blueprint": {},
+  "ARC Coolant": {
+    "safe_to_recycle": true
+  },
+  "ARC Flex Rubber": {
+    "safe_to_recycle": true
+  },
+  "ARC Motion Core": {},
+  "ARC Performance Steel": {
+    "safe_to_recycle": true
+  },
+  "ARC Powercell": {},
+  "ARC Synthetic Resin": {
+    "safe_to_recycle": true
+  },
+  "ARC Thermo Lining": {
+    "safe_to_recycle": true
+  },
+  "Arpeggio I": {},
+  "Arpeggio II": {},
+  "Arpeggio III": {},
+  "Arpeggio IV": {},
+  "Assorted Seeds": {},
+  "Aviator (Outfit)": {},
+  "Bag (Radio Renegade Variant)": {},
+  "Banana (Backpack Charm)": {},
+  "Bandage": {},
+  "Barricade Kit": {},
+  "Barricade Kit Blueprint": {},
+  "Bastion Cell": {},
+  "Battery": {
+    "keep_for_projects": {
+      "amount": 30
+    }
+  },
+  "Bettina Blueprint": {},
+  "Bettina I": {},
+  "Bettina II": {},
+  "Bettina III": {},
+  "Bettina IV": {},
+  "Bicycle Pump": {
+    "safe_to_recycle": true
+  },
+  "Binoculars": {},
+  "Bison Driver": {},
+  "Black (Hiker Colour)": {},
+  "Black & White (Origin Color)": {},
+  "Black Eye (Face Style)": {},
+  "Blaze Grenade": {},
+  "Blaze Grenade Blueprint": {},
+  "Blaze Grenade Trap": {},
+  "Bloated Tuna Can": {},
+  "Blue (Radio Renegade Color)": {},
+  "Blue Gate Cellar Key": {},
+  "Blue Gate Communication Tower Key": {},
+  "Blue Gate Confiscation Room Key": {},
+  "Blue Light Stick": {},
+  "Blue Light Stick Blueprint": {},
+  "Blue Yellow (Aviator Color)": {},
+  "Bobcat Blueprint": {},
+  "Bobcat I": {},
+  "Bobcat II": {},
+  "Bobcat III": {},
+  "Bobcat IV": {},
+  "Bombardier Cell": {},
+  "Bow and Arrow (Emote)": {},
+  "Breathtaking Snow Globe": {},
+  "Briefcase (Backpack Attachment)": {},
+  "Broken Flashlight": {
+    "safe_to_recycle": true
+  },
+  "Broken Guidance System": {
+    "safe_to_recycle": true
+  },
+  "Broken Handcuffs": {
+    "safe_to_recycle": true
+  },
+  "Broken Handheld Radio": {
+    "safe_to_recycle": true
+  },
+  "Broken Riot Shield": {},
+  "Broken Taser": {
+    "safe_to_recycle": true
+  },
+  "Burgerboy (Backpack Charm)": {},
+  "Buried City Hospital Key": {},
+  "Buried City JKV Employee Access Card": {},
+  "Buried City Residential Master Key": {},
+  "Buried City Town Hall Key": {},
+  "Burletta Blueprint": {},
+  "Burletta I": {},
+  "Burletta II": {},
+  "Burletta III": {},
+  "Burletta IV": {},
+  "Burned ARC Circuitry": {
+    "safe_to_recycle": true
+  },
+  "Camera Lens": {
+    "safe_to_recycle": true
+  },
+  "Candle Holder": {
+    "safe_to_recycle": true
+  },
+  "Canister": {},
+  "Cans (Backpack Attachment)": {},
+  "Cat Bed": {},
+  "Cheer (Emote)": {},
+  "Chemicals": {},
+  "Coffee Pot": {},
+  "Combat Mk. 1": {},
+  "Combat Mk. 2": {},
+  "Combat Mk. 3 (Aggressive)": {},
+  "Combat Mk. 3 (Flanking)": {},
+  "Combat Mk.3 (Aggressive) Blueprint": {},
+  "Combat Mk.3 (Flanking) ": {},
+  "Compensator I": {},
+  "Compensator II": {},
+  "Compensator II Blueprint": {},
+  "Compensator III": {},
+  "Compensator III Blueprint": {},
+  "Complex Gun Parts": {},
+  "Complex Gun Parts Blueprint": {},
+  "Coolant": {
+    "safe_to_recycle": true
+  },
+  "Cooling Coil": {
+    "safe_to_recycle": true
+  },
+  "Cooling Fan": {
+    "keep_for_projects": {
+      "amount": 5
+    }
+  },
+  "Cracked Bioscanner": {},
+  "Crimson Racer (Aviator Colour)": {},
+  "Crude Explosives": {},
+  "Crumpled Plastic Bottle": {
+    "safe_to_recycle": true
+  },
+  "Dam Control Center Tower Key": {},
+  "Dam Staff Room Key": {},
+  "Dam Surveillance Key": {},
+  "Dam Testing Annex Key": {},
+  "Dam Utility Key": {},
+  "Damaged ARC Motion Core": {
+    "safe_to_recycle": true
+  },
+  "Damaged ARC Powercell": {
+    "safe_to_recycle": true
+  },
+  "Damaged Fireball Burner": {},
+  "Damaged Heat Sink": {},
+  "Damaged Hornet Driver": {},
+  "Damaged Rocketeer Driver": {},
+  "Damaged Tick Pod": {},
+  "Damaged Wasp Driver": {},
+  "Dart Board": {},
+  "Defibrillator": {},
+  "Defibrillator Blueprint": {},
+  "Deflated Football": {
+    "safe_to_recycle": true
+  },
+  "Degraded ARC Rubber": {},
+  "Diving Goggles": {
+    "safe_to_recycle": true
+  },
+  "Diving Googles": {},
+  "Dog Collar": {},
+  "Door Blocker": {},
+  "Door Blocker Blueprint": {},
+  "Dried-Out ARC Resin": {
+    "safe_to_recycle": true
+  },
+  "Duct Tape": {},
+  "Durable Cloth": {
+    "keep_for_projects": {
+      "amount": 35
+    }
+  },
+  "Electrical Components": {
+    "keep_for_projects": {
+      "amount": 30
+    }
+  },
+  "Empty Wine Bottle": {},
+  "Energy Ammo Blueprint": {},
+  "Energy Clip": {},
+  "Equalizer": {},
+  "Equalizer Blueprint": {},
+  "ESR Analyzer": {},
+  "Exodus Modules": {
+    "keep_for_projects": {
+      "amount": 1
+    }
+  },
+  "Expired Pasta": {},
+  "Expired Respirator": {
+    "safe_to_recycle": true
+  },
+  "Explosive Compound": {},
+  "Explosive Mine": {},
+  "Explosive Mine Blueprint": {},
+  "Extended Barrel": {},
+  "Extended Barrel Blueprint": {},
+  "Extended Light Mag I": {},
+  "Extended Light Mag II": {},
+  "Extended Light Mag II Blueprint": {},
+  "Extended Light Mag III": {},
+  "Extended Light Mag III Blueprint": {},
+  "Extended Medium Mag I": {},
+  "Extended Medium Mag II": {},
+  "Extended Medium Mag II Blueprint": {},
+  "Extended Medium Mag III": {},
+  "Extended Medium Mag III Blueprint": {},
+  "Extended Shotgun Mag I": {},
+  "Extended Shotgun Mag II": {},
+  "Extended Shotgun Mag II Blueprint": {},
+  "Extended Shotgun Mag III": {},
+  "Extended Shotgun Mag III Blueprint": {},
+  "Fabric": {},
+  "Faded Photograph": {},
+  "Ferro I": {},
+  "Ferro II": {},
+  "Ferro III": {},
+  "Ferro IV": {},
+  "Fertilizer": {},
+  "Film Reel": {},
+  "Fine Wristwatch": {},
+  "Fireball Burner": {},
+  "Flame Spray": {},
+  "Flute": {
+    "safe_to_recycle": true
+  },
+  "Free Loadout Augment": {},
+  "Fried Motherboard": {},
+  "Fruit Mix": {},
+  "Frying Pan": {
+    "safe_to_recycle": true
+  },
+  "Garlic Press": {
+    "safe_to_recycle": true
+  },
+  "Gas Grenade": {},
+  "Gas Grenade Trap": {},
+  "Goggles (Radio Renegade Variant)": {},
+  "Great Mullein": {},
+  "Green Light Stick": {},
+  "Green Light Stick Blueprint": {},
+  "Hairpin I": {},
+  "Hairpin II": {},
+  "Hairpin III": {},
+  "Hairpin IV": {},
+  "Happy Jig (Emote)": {},
+  "Headphones": {
+    "safe_to_recycle": true
+  },
+  "Heavy Ammo": {},
+  "Heavy Fuse Grenade Blueprint": {},
+  "Heavy Fuze Grenade": {},
+  "Heavy Gun Parts": {},
+  "Heavy Gun Parts Blueprint": {},
+  "Heavy Shield": {},
+  "Helmet (Radio Renegade Variant)": {},
+  "Herbal Bandage": {},
+  "Horizontal Grip": {},
+  "Horizontal Grip Blueprint": {},
+  "Hornet Driver": {
+    "keep_for_quests": {
+      "amount": 2
+    }
+  },
+  "Household Cleaner": {
+    "safe_to_recycle": true
+  },
+  "Hullcracker Blueprint": {},
+  "Hullcracker I": {},
+  "Hullcracker II": {},
+  "Hullcracker III": {},
+  "Hullcracker IV ": {},
+  "Humidifier": {
+    "keep_for_projects": {
+      "amount": 5
+    }
+  },
+  "Ice Cream Scooper": {
+    "safe_to_recycle": true
+  },
+  "Il Toro Blueprint": {},
+  "Il Toro I": {},
+  "Il Toro II": {},
+  "Il Toro III": {},
+  "Il Toro IV": {},
+  "Impure ARC Coolant": {
+    "safe_to_recycle": true
+  },
+  "Industrial Battery": {},
+  "Industrial Charger": {
+    "safe_to_recycle": true
+  },
+  "Industrial Magnet": {
+    "safe_to_recycle": true
+  },
+  "Jolt Mine": {},
+  "Jolt Mine Blueprint": {},
+  "Junior (Outfit)": {},
+  "Jupiter": {},
+  "Jupiter Blueprint": {},
+  "Kettle I": {},
+  "Kettle II": {},
+  "Kettle III": {},
+  "Kettle IV": {},
+  "Key Card": {},
+  "Kinetic Converter": {},
+  "Kinetic Converter Blueprint": {},
+  "Laboratory Reagents": {},
+  "Lance's Mixtape (5th Edition)": {},
+  "Laser Trap: Fire Blueprint": {},
+  "Laser Trap: Gas Blueprint": {},
+  "Laser Trap: Lure": {},
+  "Laser Trap: Smoke": {},
+  "Launcher Ammo": {},
+  "Launcher Ammo BLueprint": {},
+  "Leaper Pulse Unit": {
+    "keep_for_quests": {
+      "amount": 1
+    },
+    "keep_for_projects": {
+      "amount": 3
+    }
+  },
+  "Lemon": {},
+  "Li'l Smoke Grenade": {},
+  "Lidar Scanner": {},
+  "Light Ammo": {},
+  "Light Bulb": {
+    "keep_for_projects": {
+      "amount": 5
+    }
+  },
+  "Light Gun Parts": {},
+  "Light Gun Parts Blueprint": {},
+  "Light Impact Grenade": {},
+  "Light Shield": {},
+  "Lightweight Stock": {},
+  "Lightweight Stock Blueprint": {},
+  "Looting Mk. 1": {},
+  "Looting Mk. 2": {},
+  "Looting MK. 3 (Cautious)": {},
+  "Looting MK. 3 (Survivor)": {},
+  "Looting MK. 3 (Survivor) Blueprint": {},
+  "Lure Grenade": {},
+  "Lure Grenade Blueprint": {},
+  "Magnet": {},
+  "Magnetic Accelerator": {
+    "keep_for_projects": {
+      "amount": 3
+    }
+  },
+  "Mastery Medal (Backpack Charm)": {},
+  "Mechanical Components": {},
+  "Medium Ammo": {},
+  "Medium Gun Parts": {},
+  "Medium Gun Parts Blueprint": {},
+  "Medium Shield": {},
+  "Metal Brackets": {
+    "safe_to_recycle": true
+  },
+  "Metal Parts": {
+    "keep_for_projects": {
+      "amount": 200
+    }
+  },
+  "Mod Components": {},
+  "Mod Components Blueprint": {},
+  "Moss": {},
+  "Motor": {},
+  "Mushroom": {},
+  "Music Album": {},
+  "Music Box": {},
+  "Muzzle Brake I": {},
+  "Muzzle Brake II": {},
+  "Muzzle Brake II Blueprint": {},
+  "Muzzle Brake III": {},
+  "Muzzle Brake III Blueprint": {},
+  "Noisemaker": {},
+  "Number Plate": {
+    "safe_to_recycle": true
+  },
+  "Oil": {},
+  "Olives": {},
+  "Orange Camo (Origin Outfit)": {},
+  "Osprey Blueprint": {},
+  "Osprey I": {},
+  "Osprey II": {},
+  "Osprey III": {},
+  "Osprey IV": {},
+  "Padded Stock": {},
+  "Padded Stock Blueprint": {},
+  "Painted Box": {},
+  "Patrol (Outfit)": {},
+  "Patrol Car Key": {},
+  "Photoelectric Cloak": {},
+  "Plastic Parts": {},
+  "Playing Cards": {},
+  "Polluted Air Filter": {
+    "safe_to_recycle": true
+  },
+  "Pop Trigger": {},
+  "Portable TV": {
+    "safe_to_recycle": true
+  },
+  "Poster of Natural Wonder": {},
+  "Pottery": {},
+  "Power Bank": {
+    "safe_to_recycle": true
+  },
+  "Power Cable": {},
+  "Power Rod": {
+    "keep_for_quests": {
+      "amount": 1
+    }
+  },
+  "Power Rod Blueprint": {},
+  "Prickly Pear": {},
+  "Processor": {},
+  "Projector": {
+    "safe_to_recycle": true
+  },
+  "Queen Reactor": {},
+  "Radio": {
+    "safe_to_recycle": true
+  },
+  "Radio Renegade (Outfit)": {},
+  "Raider Hatch Key": {},
+  "Rattler I": {},
+  "Rattler II": {},
+  "Rattler III": {},
+  "Rattler IV": {},
+  "Recorder": {},
+  "Red Coral Jewelry": {},
+  "Red Light Stick": {},
+  "Red Light Stick Blueprint": {},
+  "Refinement 1": {},
+  "Remote Control": {
+    "safe_to_recycle": true
+  },
+  "Remote Raider Flare": {},
+  "Remote Raider Flare Blueprint": {},
+  "Renegade Blueprint": {},
+  "Renegade I": {},
+  "Renegade II": {},
+  "Renegade III": {},
+  "Renegade IV": {},
+  "Resin": {},
+  "Ripped Safety Vest": {
+    "safe_to_recycle": true
+  },
+  "Rocket Thruster": {},
+  "Rocketeer Driver": {
+    "keep_for_quests": {
+      "amount": 1
+    }
+  },
+  "Rollbot Part": {},
+  "Roots": {},
+  "Rope": {},
+  "Rosary": {},
+  "Rubber Duck": {},
+  "Rubber Pad": {
+    "safe_to_recycle": true
+  },
+  "Rubber Parts": {
+    "keep_for_projects": {
+      "amount": 150
+    }
+  },
+  "Ruined Accordion": {
+    "safe_to_recycle": true
+  },
+  "Ruined Baton": {
+    "safe_to_recycle": true
+  },
+  "Ruined Handcuffs": {
+    "safe_to_recycle": true
+  },
+  "Ruined Parachute": {
+    "safe_to_recycle": true
+  },
+  "Ruined Riot Shield": {
+    "safe_to_recycle": true
+  },
+  "Ruined Tactical Vest": {
+    "safe_to_recycle": true
+  },
+  "Rusted Bolts": {
+    "safe_to_recycle": true
+  },
+  "Rusted Gear": {},
+  "Rusted Shut Medical Kit": {},
+  "Rusted Tools": {},
+  "Rusty ARC Steel": {
+    "safe_to_recycle": true
+  },
+  "Sensors": {
+    "keep_for_projects": {
+      "amount": 20
+    }
+  },
+  "Sentinel Firing Core": {},
+  "Shield Recharger": {},
+  "Shotgun ammo": {},
+  "Shotgun Choke I": {},
+  "Shotgun Choke II": {},
+  "Shotgun Choke II Blueprint": {},
+  "Shotgun Choke III": {},
+  "Shotgun Choke III Blueprint": {},
+  "Shotgun Parts": {},
+  "Shotgun Parts Blueprint": {},
+  "Shotgun Silencer": {},
+  "Shotgun Silencer Blueprint": {},
+  "Showstopper": {},
+  "Showstopper Blueprint": {},
+  "Shrapnel Grenade": {},
+  "Silencer I": {},
+  "Silencer I Blueprint": {},
+  "Silencer II": {},
+  "Silencer II Blueprint": {},
+  "Silencer III": {},
+  "Silencer III Blueprint": {},
+  "Silver Teaspoon Set": {},
+  "Simple Gun Parts": {},
+  "Smoke Grenade": {},
+  "Smoke Grenade Blueprint": {},
+  "Snap Blast Grenade": {},
+  "Snap Hook": {},
+  "Snap Hook Blueprint": {},
+  "Snitch Scanner": {
+    "keep_for_quests": {
+      "amount": 2
+    }
+  },
+  "Spaceport Container Storage Key": {},
+  "Spaceport Control Tower Key": {},
+  "Spaceport Outskirts Bunker Key": {},
+  "Spaceport Trench Tower Key": {},
+  "Spaceport Warehouse Key": {},
+  "Speaker Component": {},
+  "Spotter Relay": {
+    "safe_to_recycle": true
+  },
+  "Spring Cushion": {
+    "safe_to_recycle": true
+  },
+  "Stable Stock I": {},
+  "Stable Stock II": {},
+  "Stable Stock II Blueprint": {},
+  "Stable Stock III": {},
+  "Stable Stock III Blueprint": {},
+  "Statuette": {},
+  "Steel Spring": {
+    "keep_for_projects": {
+      "amount": 15
+    }
+  },
+  "Sterilized Bandage": {},
+  "Sterilized Bandage Blueprint": {},
+  "Stitcher I": {},
+  "Stitcher II": {},
+  "Stitcher III": {},
+  "Stitcher IV": {},
+  "Succulent (Backpack Charm)": {},
+  "Surge Shield Recharger": {},
+  "Surveyor Vault": {
+    "keep_for_quests": {
+      "amount": 1
+    }
+  },
+  "Synthesized Fuel": {},
+  "Syringe": {
+    "keep_for_quests": {
+      "amount": 1
+    }
+  },
+  "Tactical Mk. 1": {},
+  "Tactical Mk. 2": {},
+  "Tactical Mk. 3 (Healing)": {},
+  "Tactical Mk.3 (Defensive)": {},
+  "Tactical MK.3 (Defensive) Blueprint": {},
+  "Tactical MK.3 (Healing) Blueprint": {},
+  "Tagging Grenade": {},
+  "Tagging Grenade Blueprint": {},
+  "Tattered ARC Lining": {
+    "safe_to_recycle": true
+  },
+  "Tattered Clothes": {
+    "safe_to_recycle": true
+  },
+  "Tempest I": {},
+  "Tempest I Blueprint": {},
+  "Tempest II": {},
+  "Tempest III": {},
+  "Tempest IV": {},
+  "Thermostat": {
+    "safe_to_recycle": true
+  },
+  "Tick Pod": {},
+  "Toaster": {},
+  "Torch Ginger": {},
+  "Torn Blanket": {
+    "safe_to_recycle": true
+  },
+  "Torn Book": {},
+  "Torrente Blueprint": {},
+  "Torrente I": {},
+  "Torrente II": {},
+  "Torrente III": {},
+  "Torrente IV": {},
+  "Trigger Nade": {},
+  "Trigger Nade Blueprint": {},
+  "Turbo Pump": {
+    "safe_to_recycle": true
+  },
+  "Unusable Weapon": {},
+  "Vase": {},
+  "Venator Blueprint": {},
+  "Venator I": {},
+  "Venator II": {},
+  "Venator III": {},
+  "Venator IV": {},
+  "Vertical Grip I": {},
+  "Vertical Grip II": {},
+  "Vertical Grip II Blueprint": {},
+  "Vertical Grip III": {},
+  "Vertical Grip III Blueprint": {},
+  "Very Comfortable Pillow": {},
+  "Vita Shot": {},
+  "Vita Shot Blueprint": {},
+  "Vita Spray": {},
+  "Vita Spray Blueprint": {},
+  "Volcanic Rock": {},
+  "Voltage Converter": {},
+  "Vulcano Blueprint": {},
+  "Vulcano I": {},
+  "Vulcano II": {},
+  "Vulcano III": {},
+  "Vulcano IV": {},
+  "Wasp Driver": {
+    "keep_for_quests": {
+      "amount": 2
+    }
+  },
+  "Water Filter": {
+    "safe_to_recycle": true
+  },
+  "Water Pump": {
+    "keep_for_quests": {
+      "amount": 1
+    }
+  },
+  "Wires": {
+    "keep_for_projects": {
+      "amount": 30
+    }
+  },
+  "WolfPack": {},
+  "Wolfpack Blueprint": {},
+  "Yellow Light Stick": {},
+  "Zipline": {}
+}
