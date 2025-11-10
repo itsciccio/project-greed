@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import itemsData from '../items.json'
 import stationsData from '../stations.json'
 import scrappyLevelsData from '../scrappy.json'
+import blueprintsData from '../blueprints.json'
 import './App.css'
 
 function App() {
@@ -86,6 +87,34 @@ function App() {
     return requirements
   }
 
+  // Find blueprints that use an item in their recipe
+  const findBlueprintRecipes = (itemName) => {
+    const blueprints = []
+    
+    blueprintsData.blueprints.forEach(blueprint => {
+      const itemInRecipe = blueprint.craftingRecipe.find(ingredient =>
+        ingredient.name.toLowerCase() === itemName.toLowerCase()
+      )
+      
+      if (itemInRecipe) {
+        // Get all other ingredients (excluding the searched item)
+        const otherIngredients = blueprint.craftingRecipe.filter(ingredient =>
+          ingredient.name.toLowerCase() !== itemName.toLowerCase()
+        )
+        
+        blueprints.push({
+          name: blueprint.name,
+          workshop: blueprint.workshop,
+          level: blueprint.level,
+          amount: itemInRecipe.amount,
+          otherIngredients: otherIngredients
+        })
+      }
+    })
+    
+    return blueprints
+  }
+
   // Perform the actual search
   const performSearch = (term) => {
     const trimmedTerm = term.trim()
@@ -105,20 +134,25 @@ function App() {
     
     // Find scrappy level requirements
     const scrappyLevelRequirements = findScrappyLevelRequirements(trimmedTerm)
+    
+    // Find blueprint recipes
+    const blueprintRecipes = findBlueprintRecipes(trimmedTerm)
 
     if (itemName) {
       setResults({
         name: itemName,
         data: itemsData[itemName],
         stationRequirements: stationRequirements,
-        scrappyLevelRequirements: scrappyLevelRequirements
+        scrappyLevelRequirements: scrappyLevelRequirements,
+        blueprintRecipes: blueprintRecipes
       })
     } else {
       setResults({ 
         name: trimmedTerm, 
         data: null,
         stationRequirements: stationRequirements,
-        scrappyLevelRequirements: scrappyLevelRequirements
+        scrappyLevelRequirements: scrappyLevelRequirements,
+        blueprintRecipes: blueprintRecipes
       })
     }
   }
@@ -258,7 +292,8 @@ function App() {
                   const hasItemProperties = results.data && Object.keys(results.data).length > 0
                   const hasStationRequirements = results.stationRequirements && results.stationRequirements.length > 0
                   const hasScrappyRequirements = results.scrappyLevelRequirements && results.scrappyLevelRequirements.length > 0
-                  const hasAnyInfo = hasItemProperties || hasStationRequirements || hasScrappyRequirements
+                  const hasBlueprintRecipes = results.blueprintRecipes && results.blueprintRecipes.length > 0
+                  const hasAnyInfo = hasItemProperties || hasStationRequirements || hasScrappyRequirements || hasBlueprintRecipes
                   
                   if (hasAnyInfo) {
                     return (
@@ -353,6 +388,47 @@ function App() {
                             </div>
                           </div>
                         )}
+                        
+                        {/* Blueprint Recipes */}
+                        {hasBlueprintRecipes ? (
+                          <div className="category-card" style={{ borderColor: 'rgba(34, 197, 94, 0.6)' }}>
+                            <div className="category-header">
+                              <span className="category-icon">📜</span>
+                              <span className="category-label">Used in Blueprint Recipes</span>
+                            </div>
+                            <div className="station-requirements">
+                              {results.blueprintRecipes.map((blueprint, index) => (
+                                <div key={index} className="station-requirement-item">
+                                  <div className="station-name">{blueprint.name}</div>
+                                  <div className="station-level">{blueprint.workshop} - Level {blueprint.level}</div>
+                                  <div className="station-amount">Amount needed: <strong>{blueprint.amount}</strong></div>
+                                  {blueprint.otherIngredients.length > 0 && (
+                                    <div className="blueprint-ingredients">
+                                      <div className="ingredients-label">Other ingredients:</div>
+                                      <div className="ingredients-list">
+                                        {blueprint.otherIngredients.map((ingredient, ingIndex) => (
+                                          <span key={ingIndex} className="ingredient-item">
+                                            {ingredient.name} ({ingredient.amount})
+                                          </span>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="category-card" style={{ borderColor: 'rgba(107, 114, 128, 0.6)' }}>
+                            <div className="category-header">
+                              <span className="category-icon">📜</span>
+                              <span className="category-label">Blueprint Recipes</span>
+                            </div>
+                            <div className="no-station-requirements">
+                              Not used in any blueprint recipes.
+                            </div>
+                          </div>
+                        )}
                       </div>
                     )
                   } else {
@@ -423,6 +499,47 @@ function App() {
                     </div>
                     <div className="no-station-requirements">
                       Not required for any scrappy level upgrades.
+                    </div>
+                  </div>
+                )}
+                {/* Show blueprint recipes even if item not in items.json */}
+                {results.blueprintRecipes && results.blueprintRecipes.length > 0 && (
+                  <div className="category-card" style={{ borderColor: 'rgba(34, 197, 94, 0.6)', marginTop: '16px' }}>
+                    <div className="category-header">
+                      <span className="category-icon">📜</span>
+                      <span className="category-label">Used in Blueprint Recipes</span>
+                    </div>
+                    <div className="station-requirements">
+                      {results.blueprintRecipes.map((blueprint, index) => (
+                        <div key={index} className="station-requirement-item">
+                          <div className="station-name">{blueprint.name}</div>
+                          <div className="station-level">{blueprint.workshop} - Level {blueprint.level}</div>
+                          <div className="station-amount">Amount needed: <strong>{blueprint.amount}</strong></div>
+                          {blueprint.otherIngredients.length > 0 && (
+                            <div className="blueprint-ingredients">
+                              <div className="ingredients-label">Other ingredients:</div>
+                              <div className="ingredients-list">
+                                {blueprint.otherIngredients.map((ingredient, ingIndex) => (
+                                  <span key={ingIndex} className="ingredient-item">
+                                    {ingredient.name} ({ingredient.amount})
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {results.blueprintRecipes && results.blueprintRecipes.length === 0 && (
+                  <div className="category-card" style={{ borderColor: 'rgba(107, 114, 128, 0.6)', marginTop: '16px' }}>
+                    <div className="category-header">
+                      <span className="category-icon">📜</span>
+                      <span className="category-label">Blueprint Recipes</span>
+                    </div>
+                    <div className="no-station-requirements">
+                      Not used in any blueprint recipes.
                     </div>
                   </div>
                 )}

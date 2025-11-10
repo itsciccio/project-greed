@@ -1,0 +1,503 @@
+{
+  "blueprints": [
+    {
+      "name": "Anvil",
+      "workshop": "Gunsmith",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Mechanical Components", "amount": 5 },
+        { "name": "Simple Gun Parts", "amount": 5 }
+      ]
+    },
+    {
+      "name": "Angled Grip II",
+      "workshop": "Gunsmith",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Mechanical Components", "amount": 2 },
+        { "name": "Duct Tape", "amount": 3 }
+      ]
+    },
+    {
+      "name": "Angled Grip III",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Mod Components", "amount": 2 },
+        { "name": "Duct Tape", "amount": 5 }
+      ]
+    },
+    {
+      "name": "Barricade Kit",
+      "workshop": "Utility Station",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Mechanical Components", "amount": 1 }
+      ]
+    },
+    {
+      "name": "Bettina",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Advanced Mechanical Components", "amount": 3 },
+        { "name": "Heavy Gun Parts", "amount": 3 },
+        { "name": "Canister", "amount": 3 }
+      ]
+    },
+    {
+      "name": "Blaze Grenade",
+      "workshop": "Explosives Station",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Explosive Compound", "amount": 1 },
+        { "name": "Oil", "amount": 2 }
+      ]
+    },
+    {
+      "name": "Burletta",
+      "workshop": "Gunsmith",
+      "level": 1,
+      "craftingRecipe": [
+        { "name": "Mechanical Components", "amount": 3 },
+        { "name": "Simple Gun Parts", "amount": 3 }
+      ]
+    },
+    {
+      "name": "Combat Mk. 3 (Aggressive)",
+      "workshop": "Gear Bench",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Advanced Electrical Components", "amount": 2 },
+        { "name": "Processor", "amount": 3 }
+      ]
+    },
+    {
+      "name": "Combat Mk. 3 (Flanking)",
+      "workshop": "Gear Bench",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Advanced Electrical Components", "amount": 2 },
+        { "name": "Processor", "amount": 3 }
+      ]
+    },
+    {
+      "name": "Compensator II",
+      "workshop": "Gunsmith",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Mechanical Components", "amount": 2 },
+        { "name": "Wires", "amount": 4 }
+      ]
+    },
+    {
+      "name": "Compensator III",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Mod Components", "amount": 2 },
+        { "name": "Wires", "amount": 8 }
+      ]
+    },
+    {
+      "name": "Complex Gun Parts",
+      "workshop": "Refiner",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Light Gun Parts", "amount": 2 },
+        { "name": "Medium Gun Parts", "amount": 2 },
+        { "name": "Heavy Gun Parts", "amount": 2 }
+      ]
+    },
+    {
+      "name": "Defibrillator",
+      "workshop": "Medical Lab",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Plastic Parts", "amount": 9 },
+        { "name": "Moss", "amount": 1 }
+      ]
+    },
+    {
+      "name": "Explosive Mine",
+      "workshop": "Explosives Station",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Explosive Compound", "amount": 1 },
+        { "name": "Sensors", "amount": 1 }
+      ]
+    },
+    {
+      "name": "Extended Barrel",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Mod Components", "amount": 2 },
+        { "name": "Wires", "amount": 8 }
+      ]
+    },
+    {
+      "name": "Extended Light Magazine II",
+      "workshop": "Gunsmith",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Mechanical Components", "amount": 2 },
+        { "name": "Steel Spring", "amount": 3 }
+      ]
+    },
+    {
+      "name": "Extended Light Magazine III",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Mod Components", "amount": 2 },
+        { "name": "Steel Spring", "amount": 5 }
+      ]
+    },
+    {
+      "name": "Extended Medium Magazine II",
+      "workshop": "Gunsmith",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Mechanical Components", "amount": 2 },
+        { "name": "Steel Spring", "amount": 3 }
+      ]
+    },
+    {
+      "name": "Extended Medium Magazine III",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Mod Components", "amount": 2 },
+        { "name": "Steel Spring", "amount": 5 }
+      ]
+    },
+    {
+      "name": "Extended Shotgun Magazine II",
+      "workshop": "Gunsmith",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Mechanical Components", "amount": 2 },
+        { "name": "Steel Spring", "amount": 3 }
+      ]
+    },
+    {
+      "name": "Extended Shotgun Magazine III",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Mod Components", "amount": 2 },
+        { "name": "Steel Spring", "amount": 5 }
+      ]
+    },
+    {
+      "name": "Equalizer",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Magnetic Accelerator", "amount": 3 },
+        { "name": "Complex Gun Parts", "amount": 3 },
+        { "name": "Queen Reactor", "amount": 1 }
+      ]
+    },
+    {
+      "name": "Heavy Gun Parts",
+      "workshop": "Refiner",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Simple Gun Parts", "amount": 4 }
+      ]
+    },
+    {
+      "name": "Horizontal Grip",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Mod Components", "amount": 2 },
+        { "name": "Duct Tape", "amount": 5 }
+      ]
+    },
+    {
+      "name": "Hullcracker",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Magnetic Accelerator", "amount": 1 },
+        { "name": "Heavy Gun Parts", "amount": 3 },
+        { "name": "Exodus Modules", "amount": 1 }
+      ]
+    },
+    {
+      "name": "Il Toro",
+      "workshop": "Gunsmith",
+      "level": 1,
+      "craftingRecipe": [
+        { "name": "Mechanical Components", "amount": 5 },
+        { "name": "Simple Gun Parts", "amount": 6 }
+      ]
+    },
+    {
+      "name": "Jolt Mine",
+      "workshop": "Explosives Station",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Electrical Components", "amount": 1 },
+        { "name": "Battery", "amount": 1 }
+      ]
+    },
+    {
+      "name": "Jupiter",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Magnetic Accelerator", "amount": 3 },
+        { "name": "Complex Gun Parts", "amount": 3 },
+        { "name": "Queen Reactor", "amount": 1 }
+      ]
+    },
+    {
+      "name": "Light Gun Parts",
+      "workshop": "Refiner",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Simple Gun Parts", "amount": 4 }
+      ]
+    },
+    {
+      "name": "Light Stick",
+      "workshop": "Utility Station",
+      "level": 1,
+      "craftingRecipe": [
+        { "name": "Chemicals", "amount": 3 }
+      ]
+    },
+    {
+      "name": "Lightweight Stock",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Mod Components", "amount": 2 },
+        { "name": "Duct Tape", "amount": 5 }
+      ]
+    },
+    {
+      "name": "Looting Mk. 3 (Survivor)",
+      "workshop": "Gear Bench",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Advanced Electrical Components", "amount": 2 },
+        { "name": "Processor", "amount": 3 }
+      ]
+    },
+    {
+      "name": "Lure Grenade",
+      "workshop": "Utility Station",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Speaker Component", "amount": 1 },
+        { "name": "Electrical Components", "amount": 1 }
+      ]
+    },
+    {
+      "name": "Medium Gun Parts",
+      "workshop": "Refiner",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Simple Gun Parts", "amount": 4 }
+      ]
+    },
+    {
+      "name": "Muzzle Brake II",
+      "workshop": "Gunsmith",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Mechanical Components", "amount": 2 },
+        { "name": "Wires", "amount": 4 }
+      ]
+    },
+    {
+      "name": "Muzzle Brake III",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Mod Components", "amount": 2 },
+        { "name": "Wires", "amount": 8 }
+      ]
+    },
+    {
+      "name": "Osprey",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Advanced Mechanical Components", "amount": 2 },
+        { "name": "Medium Gun Parts", "amount": 3 },
+        { "name": "Wires", "amount": 7 }
+      ]
+    },
+    {
+      "name": "Padded Stock",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Mod Components", "amount": 2 },
+        { "name": "Duct Tape", "amount": 5 }
+      ]
+    },
+    {
+      "name": "Remote Raider Flare",
+      "workshop": "Utility Station",
+      "level": 1,
+      "craftingRecipe": [
+        { "name": "Chemicals", "amount": 2 },
+        { "name": "Rubber Parts", "amount": 4 }
+      ]
+    },
+    {
+      "name": "Shotgun Choke II",
+      "workshop": "Gunsmith",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Mechanical Components", "amount": 2 },
+        { "name": "Wires", "amount": 4 }
+      ]
+    },
+    {
+      "name": "Shotgun Choke III",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Mod Components", "amount": 2 },
+        { "name": "Wires", "amount": 8 }
+      ]
+    },
+    {
+      "name": "Shotgun Silencer",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Mod Components", "amount": 2 },
+        { "name": "Wires", "amount": 8 }
+      ]
+    },
+    {
+      "name": "Showstopper",
+      "workshop": "Explosives Station",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Advanced Electrical Components", "amount": 1 },
+        { "name": "Voltage Converter", "amount": 1 }
+      ]
+    },
+    {
+      "name": "Silencer I",
+      "workshop": "Gunsmith",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Mechanical Components", "amount": 2 },
+        { "name": "Wires", "amount": 4 }
+      ]
+    },
+    {
+      "name": "Silencer II",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Mod Components", "amount": 2 },
+        { "name": "Wires", "amount": 8 }
+      ]
+    },
+    {
+      "name": "Snap Hook",
+      "workshop": "Utility Station",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Power Rod", "amount": 2 },
+        { "name": "Rope", "amount": 3 },
+        { "name": "Exodus Modules", "amount": 1 }
+      ]
+    },
+    {
+      "name": "Stable Stock II",
+      "workshop": "Gunsmith",
+      "level": 2,
+      "craftingRecipe": [
+        { "name": "Mechanical Components", "amount": 2 },
+        { "name": "Duct Tape", "amount": 3 }
+      ]
+    },
+    {
+      "name": "Stable Stock III",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Mod Components", "amount": 2 },
+        { "name": "Duct Tape", "amount": 5 }
+      ]
+    },
+    {
+      "name": "Tactical Mk. 3 (Defensive)",
+      "workshop": "Gear Bench",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Advanced Electrical Components", "amount": 2 },
+        { "name": "Processor", "amount": 3 }
+      ]
+    },
+    {
+      "name": "Tactical Mk. 3 (Healing)",
+      "workshop": "Gear Bench",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Advanced Electrical Components", "amount": 2 },
+        { "name": "Processor", "amount": 3 }
+      ]
+    },
+    {
+      "name": "Tagging Grenade",
+      "workshop": "Utility Station",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Electrical Components", "amount": 1 },
+        { "name": "Sensors", "amount": 1 }
+      ]
+    },
+    {
+      "name": "Vita Shot",
+      "workshop": "Medical Lab",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Antiseptic", "amount": 2 },
+        { "name": "Syringe", "amount": 1 }
+      ]
+    },
+    {
+      "name": "Vita Spray",
+      "workshop": "Medical Lab",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Antiseptic", "amount": 3 },
+        { "name": "Canister", "amount": 1 }
+      ]
+    },
+    {
+      "name": "Vulcano",
+      "workshop": "Gunsmith",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Magnetic Accelerator", "amount": 1 },
+        { "name": "Heavy Gun Parts", "amount": 3 },
+        { "name": "Exodus Modules", "amount": 1 }
+      ]
+    },
+    {
+      "name": "Wolfpack",
+      "workshop": "Explosives Station",
+      "level": 3,
+      "craftingRecipe": [
+        { "name": "Explosive Compound", "amount": 2 },
+        { "name": "Sensors", "amount": 2 }
+      ]
+    }
+  ]
+}
+
