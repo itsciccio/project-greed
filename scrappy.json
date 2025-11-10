@@ -1,0 +1,38 @@
+{
+  "scrappyLevelRequirementsRates": [
+    {
+      "level": 2,
+      "title": "Forager",
+      "requirements": [
+        { "name": "Dog Collar", "amount": 1 }
+      ]
+    },
+    {
+      "level": 3,
+      "title": "Scavenger",
+      "requirements": [
+        { "name": "Lemon", "amount": 3 },
+        { "name": "Apricot", "amount": 3 }
+      ]
+    },
+    {
+      "level": 4,
+      "title": "Treasure Hunter",
+      "requirements": [
+        { "name": "Prickly Pear", "amount": 6 },
+        { "name": "Olives", "amount": 6 },
+        { "name": "Cat Bed", "amount": 1 }
+      ]
+    },
+    {
+      "level": 5,
+      "title": "Master Hoarder",
+      "requirements": [
+        { "name": "Mushroom", "amount": 12 },
+        { "name": "Apricot", "amount": 12 },
+        { "name": "Very Comfortable Pillow", "amount": 3 }
+      ]
+    }
+  ]
+}
+

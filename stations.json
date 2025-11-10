@@ -1,0 +1,173 @@
+{
+    "stations": [
+      {
+        "name": "Gunsmith",
+        "levels": [
+          {
+            "level": 1,
+            "requirements": [
+              { "name": "Metal Parts", "amount": 20 },
+              { "name": "Rubber Parts", "amount": 30 }
+            ]
+          },
+          {
+            "level": 2,
+            "requirements": [
+              { "name": "Rusted Tools", "amount": 3 },
+              { "name": "Mechanical Components", "amount": 5 },
+              { "name": "Wasp Driver", "amount": 8 }
+            ]
+          },
+          {
+            "level": 3,
+            "requirements": [
+              { "name": "Rusted Gear", "amount": 3 },
+              { "name": "Advanced Mechanical Components", "amount": 5 },
+              { "name": "Sentinel Firing Core", "amount": 4 }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Gear Bench",
+        "levels": [
+          {
+            "level": 1,
+            "requirements": [
+              { "name": "Plastic Parts", "amount": 25 },
+              { "name": "Fabric", "amount": 30 }
+            ]
+          },
+          {
+            "level": 2,
+            "requirements": [
+              { "name": "Power Cable", "amount": 3 },
+              { "name": "Electrical Components", "amount": 5 },
+              { "name": "Hornet Driver", "amount": 5 }
+            ]
+          },
+          {
+            "level": 3,
+            "requirements": [
+              { "name": "Industrial Battery", "amount": 3 },
+              { "name": "Advanced Electrical Components", "amount": 5 },
+              { "name": "Bastion Cell", "amount": 6 }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Medical Lab",
+        "levels": [
+          {
+            "level": 1,
+            "requirements": [
+              { "name": "Fabric", "amount": 50 },
+              { "name": "ARC Alloy", "amount": 6 }
+            ]
+          },
+          {
+            "level": 2,
+            "requirements": [
+              { "name": "Cracked Bioscanner", "amount": 2 },
+              { "name": "Durable Cloth", "amount": 5 },
+              { "name": "Tick Pod", "amount": 8 }
+            ]
+          },
+          {
+            "level": 3,
+            "requirements": [
+              { "name": "Rusted Shut Medical Kit", "amount": 3 },
+              { "name": "Antiseptic", "amount": 8 },
+              { "name": "Surveyor Vault", "amount": 5 }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Explosives Station",
+        "levels": [
+          {
+            "level": 1,
+            "requirements": [
+              { "name": "Chemicals", "amount": 50 },
+              { "name": "ARC Alloy", "amount": 6 }
+            ]
+          },
+          {
+            "level": 2,
+            "requirements": [
+              { "name": "Synthesized Fuel", "amount": 3 },
+              { "name": "Crude Explosives", "amount": 5 },
+              { "name": "Pop Trigger", "amount": 5 }
+            ]
+          },
+          {
+            "level": 3,
+            "requirements": [
+              { "name": "Laboratory Reagents", "amount": 3 },
+              { "name": "Explosive Compound", "amount": 5 },
+              { "name": "Rocketeer Driver", "amount": 3 }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Utility Station",
+        "levels": [
+          {
+            "level": 1,
+            "requirements": [
+              { "name": "Plastic Parts", "amount": 50 },
+              { "name": "ARC Alloy", "amount": 6 }
+            ]
+          },
+          {
+            "level": 2,
+            "requirements": [
+              { "name": "Damaged Heat Sink", "amount": 2 },
+              { "name": "Electrical Components", "amount": 5 },
+              { "name": "Snitch Scanner", "amount": 6 }
+            ]
+          },
+          {
+            "level": 3,
+            "requirements": [
+              { "name": "Fried Motherboard", "amount": 3 },
+              { "name": "Advanced Electrical Components", "amount": 5 },
+              { "name": "Leaper Pulse Unit", "amount": 4 }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Refiner",
+        "levels": [
+          {
+            "level": 1,
+            "requirements": [
+              { "name": "Metal Parts", "amount": 60 },
+              { "name": "ARC Powercell", "amount": 5 }
+            ]
+          },
+          {
+            "level": 2,
+            "requirements": [
+              { "name": "Toaster", "amount": 3 },
+              { "name": "ARC Motion Core", "amount": 5 },
+              { "name": "Fireball Burner", "amount": 8 }
+            ]
+          },
+          {
+            "level": 3,
+            "requirements": [
+              { "name": "Motor", "amount": 3 },
+              { "name": "ARC Circuitry", "amount": 10 },
+              { "name": "Bombardier Cell", "amount": 6 }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

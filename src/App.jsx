@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import itemsData from '../items.json'
+import stationsData from '../stations.json'
+import scrappyLevelsData from '../scrappy.json'
 import './App.css'
 
 function App() {
@@ -42,6 +44,48 @@ function App() {
     performSearch(itemName)
   }
 
+  // Find where an item is required in stations
+  const findStationRequirements = (itemName) => {
+    const requirements = []
+    
+    stationsData.stations.forEach(station => {
+      station.levels.forEach(level => {
+        level.requirements.forEach(req => {
+          // Case-insensitive comparison
+          if (req.name.toLowerCase() === itemName.toLowerCase()) {
+            requirements.push({
+              station: station.name,
+              level: level.level,
+              amount: req.amount
+            })
+          }
+        })
+      })
+    })
+    
+    return requirements
+  }
+
+  // Find where an item is required for scrappy levels
+  const findScrappyLevelRequirements = (itemName) => {
+    const requirements = []
+    
+    scrappyLevelsData.scrappyLevelRequirementsRates.forEach(levelData => {
+      levelData.requirements.forEach(req => {
+        // Case-insensitive comparison
+        if (req.name.toLowerCase() === itemName.toLowerCase()) {
+          requirements.push({
+            title: levelData.title,
+            level: levelData.level,
+            amount: req.amount
+          })
+        }
+      })
+    })
+    
+    return requirements
+  }
+
   // Perform the actual search
   const performSearch = (term) => {
     const trimmedTerm = term.trim()
@@ -56,13 +100,26 @@ function App() {
       name => name.toLowerCase() === trimmedTerm.toLowerCase()
     )
 
+    // Find station requirements
+    const stationRequirements = findStationRequirements(trimmedTerm)
+    
+    // Find scrappy level requirements
+    const scrappyLevelRequirements = findScrappyLevelRequirements(trimmedTerm)
+
     if (itemName) {
       setResults({
         name: itemName,
-        data: itemsData[itemName]
+        data: itemsData[itemName],
+        stationRequirements: stationRequirements,
+        scrappyLevelRequirements: scrappyLevelRequirements
       })
     } else {
-      setResults({ name: trimmedTerm, data: null })
+      setResults({ 
+        name: trimmedTerm, 
+        data: null,
+        stationRequirements: stationRequirements,
+        scrappyLevelRequirements: scrappyLevelRequirements
+      })
     }
   }
 
@@ -197,51 +254,178 @@ function App() {
             {results.data !== null ? (
               <>
                 <h2 className="item-name">{results.name}</h2>
-                {results.data && Object.keys(results.data).length > 0 ? (
-                  <div className="categories">
-                    {results.data.safe_to_recycle && (
-                      <div className="category-card" style={{ borderColor: 'rgba(255, 140, 66, 0.5)' }}>
-                        <div className="category-header">
-                          <span className="category-icon">♻️</span>
-                          <span className="category-label">Safe to Recycle</span>
-                        </div>
+                {(() => {
+                  const hasItemProperties = results.data && Object.keys(results.data).length > 0
+                  const hasStationRequirements = results.stationRequirements && results.stationRequirements.length > 0
+                  const hasScrappyRequirements = results.scrappyLevelRequirements && results.scrappyLevelRequirements.length > 0
+                  const hasAnyInfo = hasItemProperties || hasStationRequirements || hasScrappyRequirements
+                  
+                  if (hasAnyInfo) {
+                    return (
+                      <div className="categories">
+                        {results.data?.safe_to_recycle && (
+                          <div className="category-card" style={{ borderColor: 'rgba(255, 140, 66, 0.5)' }}>
+                            <div className="category-header">
+                              <span className="category-icon">♻️</span>
+                              <span className="category-label">Safe to Recycle</span>
+                            </div>
+                          </div>
+                        )}
+                        
+                        {results.data?.keep_for_quests && (
+                          <div className="category-card" style={{ borderColor: 'rgba(255, 69, 0, 0.6)' }}>
+                            <div className="category-header">
+                              <span className="category-icon">📋</span>
+                              <span className="category-label">Keep for Quests</span>
+                            </div>
+                            <div className="category-amount">
+                              Amount needed: <strong>{results.data.keep_for_quests.amount}</strong>
+                            </div>
+                          </div>
+                        )}
+                        
+                        {results.data?.keep_for_projects && (
+                          <div className="category-card" style={{ borderColor: 'rgba(255, 107, 53, 0.6)' }}>
+                            <div className="category-header">
+                              <span className="category-icon">🔧</span>
+                              <span className="category-label">Keep for Projects</span>
+                            </div>
+                            <div className="category-amount">
+                              Amount needed: <strong>{results.data.keep_for_projects.amount}</strong>
+                            </div>
+                          </div>
+                        )}
+                        
+                        {/* Station Requirements */}
+                        {hasStationRequirements ? (
+                          <div className="category-card" style={{ borderColor: 'rgba(59, 130, 246, 0.6)' }}>
+                            <div className="category-header">
+                              <span className="category-icon">🏭</span>
+                              <span className="category-label">Required for Station Upgrades</span>
+                            </div>
+                            <div className="station-requirements">
+                              {results.stationRequirements.map((req, index) => (
+                                <div key={index} className="station-requirement-item">
+                                  <div className="station-name">{req.station}</div>
+                                  <div className="station-level">Level {req.level}</div>
+                                  <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="category-card" style={{ borderColor: 'rgba(107, 114, 128, 0.6)' }}>
+                            <div className="category-header">
+                              <span className="category-icon">🏭</span>
+                              <span className="category-label">Station Requirements</span>
+                            </div>
+                            <div className="no-station-requirements">
+                              Not required for any station upgrades.
+                            </div>
+                          </div>
+                        )}
+                        
+                        {/* Scrappy Level Requirements */}
+                        {hasScrappyRequirements ? (
+                          <div className="category-card" style={{ borderColor: 'rgba(168, 85, 247, 0.6)' }}>
+                            <div className="category-header">
+                              <span className="category-icon">⭐</span>
+                              <span className="category-label">Required for Scrappy Levels</span>
+                            </div>
+                            <div className="station-requirements">
+                              {results.scrappyLevelRequirements.map((req, index) => (
+                                <div key={index} className="station-requirement-item">
+                                  <div className="station-name">{req.title}</div>
+                                  <div className="station-level">Level {req.level}</div>
+                                  <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="category-card" style={{ borderColor: 'rgba(107, 114, 128, 0.6)' }}>
+                            <div className="category-header">
+                              <span className="category-icon">⭐</span>
+                              <span className="category-label">Scrappy Level Requirements</span>
+                            </div>
+                            <div className="no-station-requirements">
+                              Not required for any scrappy level upgrades.
+                            </div>
+                          </div>
+                        )}
                       </div>
-                    )}
-                    
-                    {results.data.keep_for_quests && (
-                      <div className="category-card" style={{ borderColor: 'rgba(255, 69, 0, 0.6)' }}>
-                        <div className="category-header">
-                          <span className="category-icon">📋</span>
-                          <span className="category-label">Keep for Quests</span>
-                        </div>
-                        <div className="category-amount">
-                          Amount needed: <strong>{results.data.keep_for_quests.amount}</strong>
-                        </div>
+                    )
+                  } else {
+                    return (
+                      <div className="no-category-info">
+                        <p>✅ Item "<strong>{results.name}</strong>" found in database.</p>
+                        <p className="info-text">No category information available for this item.</p>
                       </div>
-                    )}
-                    
-                    {results.data.keep_for_projects && (
-                      <div className="category-card" style={{ borderColor: 'rgba(255, 107, 53, 0.6)' }}>
-                        <div className="category-header">
-                          <span className="category-icon">🔧</span>
-                          <span className="category-label">Keep for Projects</span>
-                        </div>
-                        <div className="category-amount">
-                          Amount needed: <strong>{results.data.keep_for_projects.amount}</strong>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <div className="no-category-info">
-                    <p>✅ Item "<strong>{results.name}</strong>" found in database.</p>
-                    <p className="info-text">No category information available for this item.</p>
-                  </div>
-                )}
+                    )
+                  }
+                })()}
               </>
             ) : (
               <div className="no-results">
                 <p>❌ Item "<strong>{results.name}</strong>" not found in database.</p>
+                {/* Show station requirements even if item not in items.json */}
+                {results.stationRequirements && results.stationRequirements.length > 0 && (
+                  <div className="category-card" style={{ borderColor: 'rgba(59, 130, 246, 0.6)', marginTop: '16px' }}>
+                    <div className="category-header">
+                      <span className="category-icon">🏭</span>
+                      <span className="category-label">Required for Station Upgrades</span>
+                    </div>
+                    <div className="station-requirements">
+                      {results.stationRequirements.map((req, index) => (
+                        <div key={index} className="station-requirement-item">
+                          <div className="station-name">{req.station}</div>
+                          <div className="station-level">Level {req.level}</div>
+                          <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {results.stationRequirements && results.stationRequirements.length === 0 && (
+                  <div className="category-card" style={{ borderColor: 'rgba(107, 114, 128, 0.6)', marginTop: '16px' }}>
+                    <div className="category-header">
+                      <span className="category-icon">🏭</span>
+                      <span className="category-label">Station Requirements</span>
+                    </div>
+                    <div className="no-station-requirements">
+                      Not required for any station upgrades.
+                    </div>
+                  </div>
+                )}
+                {/* Show scrappy level requirements even if item not in items.json */}
+                {results.scrappyLevelRequirements && results.scrappyLevelRequirements.length > 0 && (
+                  <div className="category-card" style={{ borderColor: 'rgba(168, 85, 247, 0.6)', marginTop: '16px' }}>
+                    <div className="category-header">
+                      <span className="category-icon">⭐</span>
+                      <span className="category-label">Required for Scrappy Levels</span>
+                    </div>
+                    <div className="station-requirements">
+                      {results.scrappyLevelRequirements.map((req, index) => (
+                        <div key={index} className="station-requirement-item">
+                          <div className="station-name">{req.title}</div>
+                          <div className="station-level">Level {req.level}</div>
+                          <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {results.scrappyLevelRequirements && results.scrappyLevelRequirements.length === 0 && (
+                  <div className="category-card" style={{ borderColor: 'rgba(107, 114, 128, 0.6)', marginTop: '16px' }}>
+                    <div className="category-header">
+                      <span className="category-icon">⭐</span>
+                      <span className="category-label">Scrappy Level Requirements</span>
+                    </div>
+                    <div className="no-station-requirements">
+                      Not required for any scrappy level upgrades.
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </div>

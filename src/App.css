@@ -284,6 +284,60 @@
   color: #b0b0b0;
 }
 
+.station-requirements {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.station-requirement-item {
+  padding: 12px;
+  background: rgba(26, 26, 26, 0.4);
+  border-radius: 4px;
+  border-left: 3px solid rgba(59, 130, 246, 0.6);
+  transition: all 0.2s;
+}
+
+.station-requirement-item:hover {
+  background: rgba(30, 30, 30, 0.6);
+  border-left-color: rgba(59, 130, 246, 0.9);
+}
+
+.station-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.station-level {
+  font-size: 0.9rem;
+  color: #3b82f6;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.station-amount {
+  font-size: 0.95rem;
+  color: #b0b0b0;
+}
+
+.station-amount strong {
+  color: #3b82f6;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.no-station-requirements {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(107, 114, 128, 0.2);
+  font-size: 1rem;
+  color: #b0b0b0;
+  font-style: italic;
+}
+
 .footer {
   margin-top: 40px;
   padding: 20px;

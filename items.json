@@ -3,13 +3,12 @@
     "safe_to_recycle": true
   },
   "Adrenaline Shot": {},
-  "Adv. Electrical Components": {
+  "Advanced ARC Powercell": {},
+  "Advanced Electrical Components": {
     "keep_for_projects": {
       "amount": 5
     }
   },
-  "Advanced ARC Powercell": {},
-  "Advanced Electrical Components": {},
   "Advanced Electrical Components Blueprint": {},
   "Advanced Mechanical Components": {},
   "Advanced Mechanical Components Blueprint": {},
