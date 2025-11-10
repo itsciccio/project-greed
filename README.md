@@ -76,3 +76,39 @@ This script will:
 
 Items found in the API but without category information will show as "found in database" with a message indicating no category info is available.
 
+## Deployment to GitHub Pages
+
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions.
+
+### Automatic Deployment (Recommended)
+
+1. **Enable GitHub Pages in your repository:**
+   - Go to your repository on GitHub
+   - Navigate to **Settings** → **Pages**
+   - Under **Source**, select **GitHub Actions**
+
+2. **Push to main/master branch:**
+   - The GitHub Actions workflow will automatically build and deploy your app
+   - The workflow runs on every push to `main` or `master` branch
+   - Your app will be available at: `https://[your-username].github.io/[repository-name]/`
+
+### Manual Deployment (Alternative)
+
+If you prefer to deploy manually:
+
+```bash
+npm install -g gh-pages
+npm run deploy
+```
+
+### Local Testing
+
+To test the GitHub Pages build locally:
+
+```bash
+npm run build
+npm run preview
+```
+
+The app will be available at `http://localhost:4173` (or the next available port).
+

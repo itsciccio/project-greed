@@ -247,6 +247,9 @@ function App() {
           </div>
         )}
       </div>
+      <footer className="footer">
+        <p>© 2025 ItsCiccio. All rights reserved.</p>
+      </footer>
     </div>
   )
 }
