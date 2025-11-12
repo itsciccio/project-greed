@@ -76,3 +76,7 @@ This script will:
 
 Items found in the API but without category information will show as "found in database" with a message indicating no category info is available.
 
+## Credits
+
+- **Favicon/Icon Design**: Based on ARC Raiders Key Art & Graphic Design by [Robert Sammelin](https://www.pinterest.com/pin/arc-raiders-key-art-graphic-design--465911523961206075/)
+
