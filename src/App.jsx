@@ -549,7 +549,21 @@ function App() {
         )}
       </div>
       <footer className="footer">
-        <p>© 2025 ItsCiccio. All rights reserved.</p>
+        <div className="footer-content">
+          <p>© 2025 ItsCiccio. All rights reserved.</p>
+          <div className="support-section">
+            <p className="support-text">If this tool helped you, consider supporting it!</p>
+            <a 
+              href="https://buymeacoffee.com/itsciccio" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bmc-button"
+            >
+              <span className="bmc-icon">☕</span>
+              <span className="bmc-text">Buy me a coffee</span>
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   )

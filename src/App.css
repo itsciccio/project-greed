@@ -378,8 +378,66 @@
   font-size: 0.875rem;
 }
 
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
 .footer p {
   margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.support-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 69, 0, 0.1);
+}
+
+.support-text {
+  color: #a0a0a0;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.bmc-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #FF4500 0%, #ff6b35 100%);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(255, 69, 0, 0.3);
+  border: 1px solid rgba(255, 69, 0, 0.5);
+}
+
+.bmc-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 69, 0, 0.5);
+  background: linear-gradient(135deg, #ff5500 0%, #ff7b45 100%);
+  border-color: rgba(255, 69, 0, 0.7);
+}
+
+.bmc-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 69, 0, 0.3);
+}
+
+.bmc-icon {
+  font-size: 1.2rem;
+}
+
+.bmc-text {
   letter-spacing: 0.02em;
 }
 
@@ -402,6 +460,23 @@
 
   .search-button {
     width: 100%;
+  }
+
+  .footer-content {
+    gap: 16px;
+  }
+
+  .support-section {
+    padding-top: 12px;
+  }
+
+  .support-text {
+    font-size: 0.85rem;
+  }
+
+  .bmc-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }
 
