@@ -13,7 +13,8 @@ A React-based search interface for finding item information from your game data.
   - **Scrappy Levels** - Items required for Scrappy level upgrades (with level and amount)
   - **Blueprint Recipes** - Items used in blueprint crafting recipes (with workshop, level, and other ingredients)
 - **Total Amount Summary** (Toggleable) - Shows a highlighted summary card with the total amount required across Projects, Station Upgrades, and Scrappy Levels (Blueprints excluded)
-- **Settings Menu** - Accessible via the settings icon next to the search box, allows you to toggle extra features
+- **Recyclable Items Browser** - Quick access modal to view all recyclable items at a glance, with search functionality and click-to-search integration
+- **Settings Menu** - Accessible via the settings icon next to the search box, allows you to toggle extra features and access additional tools
 - Items can appear in multiple categories simultaneously
 - Modern, responsive UI with Material Design icons
 
@@ -53,9 +54,16 @@ npm run build
    - **Blueprint Recipes** - Shows all blueprints that use this item, including other required ingredients
 3. **Enable Total Amount Summary** (Optional):
    - Click the settings icon (⚙️) next to the search box
-   - Toggle "Show Total Amount Summary" to see a highlighted card with the total amount required
+   - Toggle "Total Amount Summary" to see a highlighted card with the total amount required
    - The total includes: Projects + Station Upgrades + Scrappy Levels (Blueprints are excluded)
    - Your preference is saved in your browser's localStorage
+4. **View Recyclable Items** (Optional):
+   - Click the settings icon (⚙️) next to the search box
+   - Select "♻️ View Recyclable Items" from the settings menu
+   - A modal will open showing all recyclable items in a searchable grid
+   - Use the search box in the modal to filter items
+   - Click any item to search for it and automatically close the modal
+   - Click outside the modal or use the close button (X) to dismiss
 
 ## Examples
 

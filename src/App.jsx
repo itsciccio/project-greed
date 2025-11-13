@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { MdSettings } from 'react-icons/md'
+import { MdSettings, MdClose } from 'react-icons/md'
 import itemsData from '../items.json'
 import stationsData from '../stations.json'
 import scrappyLevelsData from '../scrappy.json'
@@ -18,12 +18,26 @@ function App() {
     const saved = localStorage.getItem('showTotalSummary')
     return saved ? JSON.parse(saved) : false
   })
+  const [showRecyclableModal, setShowRecyclableModal] = useState(false)
+  const [recyclableSearchTerm, setRecyclableSearchTerm] = useState('')
   const searchInputRef = useRef(null)
   const dropdownRef = useRef(null)
   const settingsRef = useRef(null)
 
   // Get all item names
   const allItems = Object.keys(itemsData)
+
+  // Get all recyclable items
+  const recyclableItems = Object.keys(itemsData).filter(itemName => 
+    itemsData[itemName]?.safe_to_recycle === true
+  ).sort()
+
+  // Filter recyclable items based on search term
+  const filteredRecyclableItems = recyclableSearchTerm.trim()
+    ? recyclableItems.filter(item =>
+        item.toLowerCase().includes(recyclableSearchTerm.toLowerCase())
+      )
+    : recyclableItems
 
   // Filter items based on search term
   const filteredItems = searchTerm.trim()
@@ -354,8 +368,20 @@ function App() {
                         onChange={toggleShowTotalSummary}
                         className="settings-checkbox"
                       />
-                      <span>Show Total Amount Summary</span>
+                      <span>Total Amount Summary</span>
                     </label>
+                  </div>
+                  <div className="settings-divider"></div>
+                  <div className="settings-item">
+                    <button
+                      className="settings-menu-button"
+                      onClick={() => {
+                        setShowRecyclableModal(true)
+                        setShowSettingsDropdown(false)
+                      }}
+                    >
+                      <span>♻️ View Recyclable Items</span>
+                    </button>
                   </div>
                 </div>
               )}
@@ -670,6 +696,62 @@ function App() {
                 )}
               </div>
             )}
+          </div>
+        )}
+
+        {/* Recyclable Items Modal */}
+        {showRecyclableModal && (
+          <div className="modal-overlay" onClick={() => setShowRecyclableModal(false)}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <div className="modal-header">
+                <h2 className="modal-title">
+                  <span className="modal-icon">♻️</span>
+                  Recyclable Items
+                  <span className="modal-count">({filteredRecyclableItems.length})</span>
+                </h2>
+                <button
+                  className="modal-close-button"
+                  onClick={() => setShowRecyclableModal(false)}
+                  aria-label="Close"
+                >
+                  <MdClose />
+                </button>
+              </div>
+              <div className="modal-search-wrapper">
+                <input
+                  type="text"
+                  value={recyclableSearchTerm}
+                  onChange={(e) => setRecyclableSearchTerm(e.target.value)}
+                  placeholder="Search recyclable items..."
+                  className="modal-search-input"
+                  autoFocus
+                />
+              </div>
+              <div className="modal-body">
+                {filteredRecyclableItems.length > 0 ? (
+                  <div className="recyclable-items-list">
+                    {filteredRecyclableItems.map((itemName) => (
+                      <div
+                        key={itemName}
+                        className="recyclable-item"
+                        onClick={() => {
+                          setSearchTerm(itemName)
+                          setShowRecyclableModal(false)
+                          setIsSearching(true)
+                          performSearch(itemName)
+                        }}
+                      >
+                        {itemName}
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="modal-empty-state">
+                    <p>No recyclable items found matching "{recyclableSearchTerm}"</p>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         )}
       </div>
