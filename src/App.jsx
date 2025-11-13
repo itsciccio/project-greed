@@ -4,7 +4,59 @@ import itemsData from '../items.json'
 import stationsData from '../stations.json'
 import scrappyLevelsData from '../scrappy.json'
 import blueprintsData from '../blueprints.json'
+import expeditionData from '../expedition.json'
 import './App.css'
+
+// Expedition Stages Component
+function ExpeditionStages({ onItemClick }) {
+  return (
+    <div className="expedition-stages">
+      {expeditionData.stages.map((stage) => (
+        <div key={stage.stage} className="expedition-stage-card">
+          <div className="expedition-stage-header">
+            <div className="expedition-stage-title">
+              <span className="expedition-stage-number">{stage.title} ({stage.stage}/6)</span>
+            </div>
+          </div>
+          <div className="expedition-stage-description">
+            {stage.description}
+          </div>
+          {stage.requirements && stage.requirements.length > 0 && (
+            <div className="expedition-requirements">
+              {stage.requirements.map((req, index) => (
+                <div
+                  key={index}
+                  className="expedition-requirement-item"
+                  onClick={() => onItemClick(req.name)}
+                >
+                  <span className="expedition-requirement-amount">{req.amount}x</span>
+                  <span className="expedition-requirement-name">{req.name}</span>
+                </div>
+              ))}
+            </div>
+          )}
+          {stage.categoryRequirements && stage.categoryRequirements.length > 0 && (
+            <div className="expedition-category-requirements">
+              {stage.categoryRequirements.map((req, index) => (
+                <div
+                  key={index}
+                  className="expedition-category-requirement-item"
+                >
+                  <span className="expedition-category-cred-value">
+                    {req.credValue.toLocaleString()} Cred
+                  </span>
+                  <span className="expedition-category-name">
+                    worth of {req.category}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -20,6 +72,7 @@ function App() {
   })
   const [showRecyclableModal, setShowRecyclableModal] = useState(false)
   const [recyclableSearchTerm, setRecyclableSearchTerm] = useState('')
+  const [showExpeditionModal, setShowExpeditionModal] = useState(false)
   const searchInputRef = useRef(null)
   const dropdownRef = useRef(null)
   const settingsRef = useRef(null)
@@ -381,6 +434,18 @@ function App() {
                       }}
                     >
                       <span>♻️ View Recyclable Items</span>
+                    </button>
+                  </div>
+                  <div className="settings-divider"></div>
+                  <div className="settings-item">
+                    <button
+                      className="settings-menu-button"
+                      onClick={() => {
+                        setShowExpeditionModal(true)
+                        setShowSettingsDropdown(false)
+                      }}
+                    >
+                      <span>🚀 Expedition-1 Requirements</span>
                     </button>
                   </div>
                 </div>
@@ -750,6 +815,37 @@ function App() {
                     <p>No recyclable items found matching "{recyclableSearchTerm}"</p>
                   </div>
                 )}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Expedition-1 Requirements Modal */}
+        {showExpeditionModal && (
+          <div className="modal-overlay" onClick={() => setShowExpeditionModal(false)}>
+            <div className="modal-content expedition-modal-content" onClick={(e) => e.stopPropagation()}>
+              <div className="modal-header">
+                <h2 className="modal-title">
+                  <span className="modal-icon">🚀</span>
+                  Expedition-1 Project Requirements
+                </h2>
+                <button
+                  className="modal-close-button"
+                  onClick={() => setShowExpeditionModal(false)}
+                  aria-label="Close"
+                >
+                  <MdClose />
+                </button>
+              </div>
+              <div className="modal-body expedition-modal-body">
+                <ExpeditionStages 
+                  onItemClick={(itemName) => {
+                    setSearchTerm(itemName)
+                    setShowExpeditionModal(false)
+                    setIsSearching(true)
+                    performSearch(itemName)
+                  }}
+                />
               </div>
             </div>
           </div>

@@ -14,6 +14,7 @@ A React-based search interface for finding item information from your game data.
   - **Blueprint Recipes** - Items used in blueprint crafting recipes (with workshop, level, and other ingredients)
 - **Total Amount Summary** (Toggleable) - Shows a highlighted summary card with the total amount required across Projects, Station Upgrades, and Scrappy Levels (Blueprints excluded)
 - **Recyclable Items Browser** - Quick access modal to view all recyclable items at a glance, with search functionality and click-to-search integration
+- **Expedition-1 Requirements** - View all stages and requirements for the Expedition-1 Project, including item requirements and category-based credit requirements
 - **Settings Menu** - Accessible via the settings icon next to the search box, allows you to toggle extra features and access additional tools
 - Items can appear in multiple categories simultaneously
 - Modern, responsive UI with Material Design icons
@@ -64,6 +65,14 @@ npm run build
    - Use the search box in the modal to filter items
    - Click any item to search for it and automatically close the modal
    - Click outside the modal or use the close button (X) to dismiss
+5. **View Expedition-1 Requirements** (Optional):
+   - Click the settings icon (⚙️) next to the search box
+   - Select "🚀 Expedition-1 Requirements" from the settings menu
+   - A modal will open showing all 6 stages of the Expedition-1 Project
+   - Each stage displays its description and required items with amounts
+   - Stage 5 (Load Stage) shows category-based credit requirements instead of specific items
+   - Click any item requirement to search for it and automatically close the modal
+   - Click outside the modal or use the close button (X) to dismiss
 
 ## Examples
 
@@ -86,6 +95,7 @@ The app uses multiple JSON data files:
 - **`stations.json`** - Station upgrade requirements
 - **`scrappy.json`** - Scrappy level requirements
 - **`blueprints.json`** - Blueprint crafting recipes
+- **`expedition.json`** - Expedition-1 Project stages and requirements
 
 Items are indexed by name, and each item can have multiple category flags with associated amounts where applicable. The app also searches across station upgrades, scrappy levels, and blueprint recipes to provide comprehensive item information.
 

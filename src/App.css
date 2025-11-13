@@ -892,3 +892,167 @@
   }
 }
 
+/* Expedition Modal Styles */
+.expedition-modal-content {
+  max-width: 800px;
+}
+
+.expedition-modal-body {
+  padding: 24px;
+}
+
+.expedition-stages {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.expedition-stage-card {
+  padding: 20px;
+  background: rgba(26, 26, 26, 0.6);
+  border: 1px solid rgba(255, 69, 0, 0.3);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.expedition-stage-card:hover {
+  background: rgba(30, 30, 30, 0.8);
+  border-color: rgba(255, 69, 0, 0.5);
+  box-shadow: 0 4px 16px rgba(255, 69, 0, 0.2);
+}
+
+.expedition-stage-header {
+  margin-bottom: 12px;
+}
+
+.expedition-stage-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.expedition-stage-number {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ff4500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.expedition-stage-description {
+  font-size: 0.95rem;
+  color: #b0b0b0;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.expedition-requirements {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.expedition-requirement-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(255, 69, 0, 0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.expedition-requirement-item:hover {
+  background: rgba(255, 69, 0, 0.15);
+  border-color: rgba(255, 69, 0, 0.5);
+  transform: translateX(4px);
+}
+
+.expedition-requirement-amount {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ff4500;
+  min-width: 50px;
+}
+
+.expedition-requirement-name {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  flex: 1;
+}
+
+.expedition-requirement-item:hover .expedition-requirement-name {
+  color: #ff4500;
+  font-weight: 600;
+}
+
+.expedition-category-requirements {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.expedition-category-requirement-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(255, 140, 66, 0.3);
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.expedition-category-requirement-item:hover {
+  background: rgba(255, 140, 66, 0.1);
+  border-color: rgba(255, 140, 66, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 140, 66, 0.2);
+}
+
+.expedition-category-cred-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ff8c42;
+}
+
+.expedition-category-name {
+  font-size: 0.9rem;
+  color: #b0b0b0;
+  font-style: italic;
+}
+
+.expedition-category-requirement-item:hover .expedition-category-name {
+  color: #ff8c42;
+}
+
+@media (max-width: 640px) {
+  .expedition-modal-content {
+    max-width: 100%;
+  }
+
+  .expedition-modal-body {
+    padding: 16px;
+  }
+
+  .expedition-requirements {
+    grid-template-columns: 1fr;
+  }
+
+  .expedition-stage-number {
+    font-size: 1.1rem;
+  }
+
+  .expedition-stage-description {
+    font-size: 0.9rem;
+  }
+
+  .expedition-category-requirements {
+    grid-template-columns: 1fr;
+  }
+}
+
