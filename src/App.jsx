@@ -29,6 +29,14 @@ function ExpeditionStages({ onItemClick }) {
                   className="expedition-requirement-item"
                   onClick={() => onItemClick(req.name)}
                 >
+                  <img 
+                    src={itemsData[req.name]?.image || '/images/item-placeholder.svg'} 
+                    alt={req.name}
+                    className="expedition-requirement-image"
+                    onError={(e) => {
+                      e.target.src = '/images/item-placeholder.svg';
+                    }}
+                  />
                   <span className="expedition-requirement-amount">{req.amount}x</span>
                   <span className="expedition-requirement-name">{req.name}</span>
                 </div>
@@ -396,7 +404,15 @@ function App() {
                       onClick={() => selectItem(item)}
                       onMouseEnter={() => setHighlightedIndex(index)}
                     >
-                      {item}
+                      <img 
+                        src={itemsData[item]?.image || '/images/item-placeholder.svg'} 
+                        alt={item}
+                        className="dropdown-item-image"
+                        onError={(e) => {
+                          e.target.src = '/images/item-placeholder.svg';
+                        }}
+                      />
+                      <span>{item}</span>
                     </div>
                   ))}
                 </div>
@@ -463,7 +479,17 @@ function App() {
           <div className="results">
             {results.data !== null ? (
               <>
-                <h2 className="item-name">{results.name}</h2>
+                <div className="item-header">
+                  <img 
+                    src={results.data?.image || '/images/item-placeholder.svg'} 
+                    alt={results.name}
+                    className="item-image"
+                    onError={(e) => {
+                      e.target.src = '/images/item-placeholder.svg';
+                    }}
+                  />
+                  <h2 className="item-name">{results.name}</h2>
+                </div>
                 {showTotalSummary && (() => {
                   const totalAmount = calculateTotalAmount(results)
                   if (totalAmount > 0) {
@@ -806,7 +832,15 @@ function App() {
                           performSearch(itemName)
                         }}
                       >
-                        {itemName}
+                        <img 
+                          src={itemsData[itemName]?.image || '/images/item-placeholder.svg'} 
+                          alt={itemName}
+                          className="recyclable-item-image"
+                          onError={(e) => {
+                            e.target.src = '/images/item-placeholder.svg';
+                          }}
+                        />
+                        <span>{itemName}</span>
                       </div>
                     ))}
                   </div>

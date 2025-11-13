@@ -139,6 +139,17 @@
   color: #e0e0e0;
   font-size: 0.95rem;
   font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dropdown-item-image {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  image-rendering: crisp-edges;
+  flex-shrink: 0;
 }
 
 .dropdown-item:last-child {
@@ -152,6 +163,11 @@
   font-weight: 600;
   border-left: 2px solid #ff4500;
   padding-left: 16px;
+}
+
+.dropdown-item:hover .dropdown-item-image,
+.dropdown-item.highlighted .dropdown-item-image {
+  filter: brightness(1.2);
 }
 
 .search-button {
@@ -197,11 +213,28 @@
   }
 }
 
+.item-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.item-image {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
 .item-name {
   font-size: 1.75rem;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 24px;
+  margin: 0;
   text-align: center;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -840,6 +873,17 @@
   cursor: pointer;
   transition: all 0.2s;
   text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.recyclable-item-image {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  image-rendering: crisp-edges;
+  flex-shrink: 0;
 }
 
 .recyclable-item:hover {
@@ -848,6 +892,10 @@
   color: #ff4500;
   transform: translateY(-1px);
   box-shadow: 0 2px 8px rgba(255, 69, 0, 0.2);
+}
+
+.recyclable-item:hover .recyclable-item-image {
+  filter: brightness(1.2);
 }
 
 .recyclable-item:active {
@@ -965,6 +1013,14 @@
   transition: all 0.2s;
 }
 
+.expedition-requirement-image {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  image-rendering: crisp-edges;
+  flex-shrink: 0;
+}
+
 .expedition-requirement-item:hover {
   background: rgba(255, 69, 0, 0.15);
   border-color: rgba(255, 69, 0, 0.5);
@@ -987,6 +1043,10 @@
 .expedition-requirement-item:hover .expedition-requirement-name {
   color: #ff4500;
   font-weight: 600;
+}
+
+.expedition-requirement-item:hover .expedition-requirement-image {
+  filter: brightness(1.2);
 }
 
 .expedition-category-requirements {

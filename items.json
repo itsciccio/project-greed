@@ -1,713 +1,1625 @@
 {
-  "Accordion": {
-    "safe_to_recycle": true
+  "Adrenaline Shot": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/adrenaline-shot.webp"
   },
-  "Adrenaline Shot": {},
-  "Advanced ARC Powercell": {},
+  "Advanced ARC Powercell": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/advanced-arc-powercell.webp"
+  },
   "Advanced Electrical Components": {
     "keep_for_projects": {
       "amount": 5
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/advanced-electrical-components.webp"
   },
-  "Advanced Electrical Components Blueprint": {},
-  "Advanced Mechanical Components": {},
-  "Advanced Mechanical Components Blueprint": {},
-  "Agave": {},
-  "Agave Juice": {},
-  "Air Freshener": {},
+  "Advanced Electrical Components Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/advanced-electrical-components-recipe.webp"
+  },
+  "Advanced Mechanical Components": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/advanced-mechanical-components.webp"
+  },
+  "Advanced Mechanical Components Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/advanced-mechanical-components-recipe.webp"
+  },
+  "Agave": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/agave.webp"
+  },
+  "Agave Juice": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/agave-juice.webp"
+  },
+  "Air Freshener": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/air-freshener.webp"
+  },
   "Alarm Clock": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/alarm-clock.webp"
   },
-  "Angled Grip I": {},
-  "Angled Grip II": {},
-  "Angled Grip II Blueprint": {},
-  "Angled Grip III": {},
-  "Angled Grip III Blueprint": {},
+  "Angled Grip I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/angled-grip-i.webp"
+  },
+  "Angled Grip II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/angled-grip-ii.webp"
+  },
+  "Angled Grip II Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/angled-grip-ii-recipe.webp"
+  },
+  "Angled Grip III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/angled-grip-iii.webp"
+  },
+  "Angled Grip III Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/angled-grip-iii-recipe.webp"
+  },
   "Antiseptic": {
     "keep_for_quests": {
       "amount": 2
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/antiseptic.webp"
   },
-  "Anvil Blueprint": {},
-  "Anvil I": {},
-  "Anvil II": {},
-  "Anvil III": {},
-  "Anvil IV": {},
-  "Anvil Splitter": {},
-  "Anvil Splitter Blueprint": {},
-  "Apricot": {},
+  "Anvil Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/anvil-recipe.webp"
+  },
+  "Anvil I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/anvil-i.webp"
+  },
+  "Anvil II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/anvil-ii.webp"
+  },
+  "Anvil III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/anvil-iii.webp"
+  },
+  "Anvil IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/anvil-iv.webp"
+  },
+  "Anvil Splitter": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/anvil-splitter.webp"
+  },
+  "Anvil Splitter Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/anvil-splitter-recipe.webp"
+  },
+  "Aphelion Rifle": {},
+  "Aphelion Rifle Blueprint": {},
+  "Apricot": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/apricot.webp"
+  },
   "ARC Alloy": {
     "keep_for_projects": {
       "amount": 80
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/arc-alloy.webp"
   },
-  "ARC Circuitry": {},
-  "ARC Circuitry Blueprint": {},
+  "ARC Circuitry": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/arc-circuitry.webp"
+  },
+  "ARC Circuitry Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/arc-circuitry-recipe.webp"
+  },
   "ARC Coolant": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/arc-coolant.webp"
   },
   "ARC Flex Rubber": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/arc-flex-rubber.webp"
   },
-  "ARC Motion Core": {},
+  "ARC Motion Core": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/arc-motion-core.webp"
+  },
   "ARC Performance Steel": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/arc-performance-steel.webp"
   },
-  "ARC Powercell": {},
+  "ARC Powercell": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/arc-powercell.webp"
+  },
   "ARC Synthetic Resin": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/arc-synthetic-resin.webp"
   },
   "ARC Thermo Lining": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/arc-thermo-lining.webp"
   },
-  "Arpeggio I": {},
-  "Arpeggio II": {},
-  "Arpeggio III": {},
-  "Arpeggio IV": {},
-  "Assorted Seeds": {},
-  "Aviator (Outfit)": {},
-  "Bag (Radio Renegade Variant)": {},
-  "Banana (Backpack Charm)": {},
-  "Bandage": {},
-  "Barricade Kit": {},
-  "Barricade Kit Blueprint": {},
-  "Bastion Cell": {},
+  "Arpeggio I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/arpeggio-i.webp"
+  },
+  "Arpeggio II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/arpeggio-ii.webp"
+  },
+  "Arpeggio III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/arpeggio-ii.webp"
+  },
+  "Arpeggio IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/arpeggio-ii.webp"
+  },
+  "Assorted Seeds": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/assorted-seeds.webp"
+  },
+  "Aviator (Outfit)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/aviator-outfit.webp"
+  },
+  "Bag (Radio Renegade Variant)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bag-radio-renegade-variant.webp"
+  },
+  "Banana (Backpack Charm)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/banana-backpack-charm.webp"
+  },
+  "Bandage": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bandage.webp"
+  },
+  "Barricade Kit": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/barricade-kit.webp"
+  },
+  "Barricade Kit Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/barricade-kit-recipe.webp"
+  },
+  "Bastion Cell": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bastion-part.webp"
+  },
   "Battery": {
     "keep_for_projects": {
       "amount": 30
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/battery.webp"
   },
-  "Bettina Blueprint": {},
-  "Bettina I": {},
-  "Bettina II": {},
-  "Bettina III": {},
-  "Bettina IV": {},
+  "Bettina Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bettina-blueprint.webp"
+  },
+  "Bettina I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bettina-i.webp"
+  },
+  "Bettina II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bettina-ii.webp"
+  },
+  "Bettina III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bettina-iii.webp"
+  },
+  "Bettina IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bettina-iv.webp"
+  },
   "Bicycle Pump": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bicycle-pump.webp"
   },
-  "Binoculars": {},
-  "Bison Driver": {},
-  "Black (Hiker Colour)": {},
-  "Black & White (Origin Color)": {},
-  "Black Eye (Face Style)": {},
-  "Blaze Grenade": {},
-  "Blaze Grenade Blueprint": {},
-  "Blaze Grenade Trap": {},
-  "Bloated Tuna Can": {},
-  "Blue (Radio Renegade Color)": {},
-  "Blue Gate Cellar Key": {},
-  "Blue Gate Communication Tower Key": {},
-  "Blue Gate Confiscation Room Key": {},
-  "Blue Light Stick": {},
-  "Blue Light Stick Blueprint": {},
-  "Blue Yellow (Aviator Color)": {},
-  "Bobcat Blueprint": {},
-  "Bobcat I": {},
-  "Bobcat II": {},
-  "Bobcat III": {},
-  "Bobcat IV": {},
-  "Bombardier Cell": {},
-  "Bow and Arrow (Emote)": {},
-  "Breathtaking Snow Globe": {},
-  "Briefcase (Backpack Attachment)": {},
+  "Binoculars": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/binoculars.webp"
+  },
+  "Bison Driver": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bison-driver.webp"
+  },
+  "Black (Hiker Colour)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/black-hiker-colour.webp"
+  },
+  "Black & White (Origin Color)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/black-and-white-origin-color.webp"
+  },
+  "Black Eye (Face Style)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/black-eye-face-style.webp"
+  },
+  "Blaze Grenade": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/blaze-grenade.webp"
+  },
+  "Blaze Grenade Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/blaze-grenade-blueprint.webp"
+  },
+  "Blaze Grenade Trap": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/blaze-grenade-trap.webp"
+  },
+  "Bloated Tuna Can": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bloated-tuna-can.webp"
+  },
+  "Blue (Radio Renegade Color)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/blue-radio-renegade-color.webp"
+  },
+  "Blue Gate Cellar Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/blue-gate-cellar-key.webp"
+  },
+  "Blue Gate Communication Tower Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/blue-gate-communication-tower-key.webp"
+  },
+  "Blue Gate Confiscation Room Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/blue-gate-confiscation-room-key.webp"
+  },
+  "Blue Light Stick": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/blue-light-stick.webp"
+  },
+  "Blue Light Stick Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/blue-light-stick-blueprint.webp"
+  },
+  "Blue Yellow (Aviator Color)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/blue-yellow-aviator-color.webp"
+  },
+  "Bobcat Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bobcat-i-recipe.webp"
+  },
+  "Bobcat I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bobcat-ii.webp"
+  },
+  "Bobcat II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bobcat-ii.webp"
+  },
+  "Bobcat III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bobcat-iii.webp"
+  },
+  "Bobcat IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bobcat-iv.webp"
+  },
+  "Bombardier Cell": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bombardier-cell.webp"
+  },
+  "Bow and Arrow (Emote)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/bow-and-arrow-emote.webp"
+  },
+  "Breathtaking Snow Globe": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/breathtaking-snow-globe.webp"
+  },
+  "Briefcase (Backpack Attachment)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/briefcase-backpack-attachment.webp"
+  },
   "Broken Flashlight": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/broken-flashlight.webp"
   },
   "Broken Guidance System": {
-    "safe_to_recycle": true
-  },
-  "Broken Handcuffs": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/broken-guidance-system.webp"
   },
   "Broken Handheld Radio": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/broken-handheld-radio.webp"
   },
-  "Broken Riot Shield": {},
+  "Broken Riot Shield": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/broken-riot-shield.webp"
+  },
   "Broken Taser": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/broken-taser.webp"
   },
-  "Burgerboy (Backpack Charm)": {},
-  "Buried City Hospital Key": {},
-  "Buried City JKV Employee Access Card": {},
-  "Buried City Residential Master Key": {},
-  "Buried City Town Hall Key": {},
-  "Burletta Blueprint": {},
-  "Burletta I": {},
-  "Burletta II": {},
-  "Burletta III": {},
-  "Burletta IV": {},
+  "Burgerboy (Backpack Charm)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/burgerboy-backpack-charm.webp"
+  },
+  "Buried City Hospital Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/buried-city-hospital-key.webp"
+  },
+  "Buried City JKV Employee Access Card": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/buried-city-jkv-employee-access-card.webp"
+  },
+  "Buried City Residential Master Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/buried-city-residential-master-key.webp"
+  },
+  "Buried City Town Hall Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/buried-city-town-hall-key.webp"
+  },
+  "Burletta Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/burltetta-recipe.webp"
+  },
+  "Burletta I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/burletta-i.webp"
+  },
+  "Burletta II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/burletta-ii.webp"
+  },
+  "Burletta III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/burletta-iiii.webp"
+  },
+  "Burletta IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/burletta-iv.webp"
+  },
   "Burned ARC Circuitry": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/burned-arc-circuitry.webp"
   },
   "Camera Lens": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/camera-lens.webp"
   },
   "Candle Holder": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/candle-holder.webp"
   },
-  "Canister": {},
-  "Cans (Backpack Attachment)": {},
-  "Cat Bed": {},
-  "Cheer (Emote)": {},
-  "Chemicals": {},
-  "Coffee Pot": {},
-  "Combat Mk. 1": {},
-  "Combat Mk. 2": {},
-  "Combat Mk. 3 (Aggressive)": {},
-  "Combat Mk. 3 (Flanking)": {},
-  "Combat Mk.3 (Aggressive) Blueprint": {},
-  "Combat Mk.3 (Flanking) ": {},
-  "Compensator I": {},
-  "Compensator II": {},
-  "Compensator II Blueprint": {},
-  "Compensator III": {},
-  "Compensator III Blueprint": {},
-  "Complex Gun Parts": {},
-  "Complex Gun Parts Blueprint": {},
+  "Canister": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/canister.webp"
+  },
+  "Cans (Backpack Attachment)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/cans-backpack-attachment.webp"
+  },
+  "Cat Bed": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/cat-bed.webp"
+  },
+  "Cheer (Emote)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/cheer-emote.webp"
+  },
+  "Chemicals": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/chemicals.webp"
+  },
+  "Coffee Pot": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/coffee-pot.webp"
+  },
+  "Combat Mk. 1": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/combat-mk-1.webp"
+  },
+  "Combat Mk. 2": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/combat-mk-2.webp"
+  },
+  "Combat Mk. 3 (Aggressive)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/combat-mk-3-aggressive.webp"
+  },
+  "Combat Mk. 3 (Flanking)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/combat-mk3-flanking.webp"
+  },
+  "Combat Mk. 3 (Flanking) Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/combat-mk-3-flanking.webp"
+  },
+  "Combat Mk.3 (Aggressive) Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/combat-mk3-aggressive-blueprint.webp"
+  },
+  "Combat Mk.3 (Flanking) ": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/combat-mk3-flanking.webp"
+  },
+  "Compensator I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/compensator-i.webp"
+  },
+  "Compensator II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/compensator-ii.webp"
+  },
+  "Compensator II Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/compensator-ii-recipe.webp"
+  },
+  "Compensator III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/compensator-iii.webp"
+  },
+  "Compensator III Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/compensator-iii-recipe.webp"
+  },
+  "Complex Gun Parts": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/complex-gun-parts.webp"
+  },
+  "Complex Gun Parts Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/complex-gun-parts-blueprint.webp"
+  },
   "Coolant": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/coolant.webp"
   },
   "Cooling Coil": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/cooling-coil.webp"
   },
   "Cooling Fan": {
     "keep_for_projects": {
       "amount": 5
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/cooling-fan.webp"
   },
-  "Cracked Bioscanner": {},
-  "Crimson Racer (Aviator Colour)": {},
-  "Crude Explosives": {},
+  "Cracked Bioscanner": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/cracked-bioscanner.webp"
+  },
+  "Crimson Racer (Aviator Colour)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/crimson-racer-aviator-colour.webp"
+  },
+  "Crude Explosives": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/crude-explosives.webp"
+  },
   "Crumpled Plastic Bottle": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/crumpled-plastic-bottle.webp"
   },
-  "Dam Control Center Tower Key": {},
-  "Dam Staff Room Key": {},
-  "Dam Surveillance Key": {},
-  "Dam Testing Annex Key": {},
-  "Dam Utility Key": {},
+  "Dam Control Center Tower Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/dam-control-center-tower-key.webp"
+  },
+  "Dam Staff Room Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/dam-staff-room-key.webp"
+  },
+  "Dam Surveillance Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/dam-surveillance-key.webp"
+  },
+  "Dam Testing Annex Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/dam-testing-annex-key.webp"
+  },
+  "Dam Utility Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/dam-utility-key.webp"
+  },
   "Damaged ARC Motion Core": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/damaged-arc-motion-core.webp"
   },
   "Damaged ARC Powercell": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/damaged-arc-powercell.webp"
   },
-  "Damaged Fireball Burner": {},
-  "Damaged Heat Sink": {},
-  "Damaged Hornet Driver": {},
-  "Damaged Rocketeer Driver": {},
-  "Damaged Tick Pod": {},
-  "Damaged Wasp Driver": {},
-  "Dart Board": {},
-  "Defibrillator": {},
-  "Defibrillator Blueprint": {},
+  "Damaged Fireball Burner": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/damaged-fireball-burner.webp"
+  },
+  "Damaged Heat Sink": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/damaged-heat-sink.webp"
+  },
+  "Damaged Hornet Driver": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/danaged.webp"
+  },
+  "Damaged Rocketeer Driver": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/damaged-rocketeer-part.webp"
+  },
+  "Damaged Tick Pod": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/damaged-tick-pod.webp"
+  },
+  "Damaged Wasp Driver": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/damaged-wasp-driver.webp"
+  },
+  "Dart Board": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/dart-board.webp"
+  },
+  "Deadline": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/deadline.webp"
+  },
+  "Deadline Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/deadline-blueprint.webp"
+  },
+  "Defibrillator": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/defibrillator.webp"
+  },
+  "Defibrillator Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/defibrillator-recipe.webp"
+  },
   "Deflated Football": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/deflated-football.webp"
   },
-  "Degraded ARC Rubber": {},
+  "Degraded ARC Rubber": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/degraded-arc-rubber.webp"
+  },
   "Diving Goggles": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/diving-googles.webp"
   },
-  "Diving Googles": {},
-  "Dog Collar": {},
-  "Door Blocker": {},
-  "Door Blocker Blueprint": {},
+  "Diving Googles": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/diving-googles.webp"
+  },
+  "Dog Collar": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/dog-collar.webp"
+  },
+  "Door Blocker": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/door-blocker.webp"
+  },
+  "Door Blocker Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/door-blocker-recipe.webp"
+  },
   "Dried-Out ARC Resin": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/dried-out-arc-resin.webp"
   },
-  "Duct Tape": {},
+  "Duct Tape": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/duct-tape-recipe.webp"
+  },
   "Durable Cloth": {
     "keep_for_projects": {
       "amount": 35
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/durable-cloth.webp"
   },
   "Electrical Components": {
     "keep_for_projects": {
       "amount": 30
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/electrical-components.webp"
   },
-  "Empty Wine Bottle": {},
-  "Energy Ammo Blueprint": {},
-  "Energy Clip": {},
-  "Equalizer": {},
-  "Equalizer Blueprint": {},
-  "ESR Analyzer": {},
+  "Empty Wine Bottle": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/empty-wine-bottle.webp"
+  },
+  "Energy Ammo Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/energy-ammo-recipe.webp"
+  },
+  "Energy Clip": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/energy-ammo.webp"
+  },
+  "Equalizer": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/equalizer-i.webp"
+  },
+  "Equalizer Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/equalizer-recipe.webp"
+  },
+  "ESR Analyzer": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/esr-analyzer.webp"
+  },
   "Exodus Modules": {
     "keep_for_projects": {
       "amount": 1
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/exodus-modules.webp"
   },
-  "Expired Pasta": {},
+  "Expired Pasta": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/expired-pasta.webp"
+  },
   "Expired Respirator": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/expired-respirator.webp"
   },
-  "Explosive Compound": {},
-  "Explosive Mine": {},
-  "Explosive Mine Blueprint": {},
-  "Extended Barrel": {},
-  "Extended Barrel Blueprint": {},
-  "Extended Light Mag I": {},
-  "Extended Light Mag II": {},
-  "Extended Light Mag II Blueprint": {},
-  "Extended Light Mag III": {},
-  "Extended Light Mag III Blueprint": {},
-  "Extended Medium Mag I": {},
-  "Extended Medium Mag II": {},
-  "Extended Medium Mag II Blueprint": {},
-  "Extended Medium Mag III": {},
-  "Extended Medium Mag III Blueprint": {},
-  "Extended Shotgun Mag I": {},
-  "Extended Shotgun Mag II": {},
-  "Extended Shotgun Mag II Blueprint": {},
-  "Extended Shotgun Mag III": {},
-  "Extended Shotgun Mag III Blueprint": {},
-  "Fabric": {},
-  "Faded Photograph": {},
-  "Ferro I": {},
-  "Ferro II": {},
-  "Ferro III": {},
-  "Ferro IV": {},
-  "Fertilizer": {},
-  "Film Reel": {},
-  "Fine Wristwatch": {},
-  "Fireball Burner": {},
-  "Flame Spray": {},
+  "Explosive Compound": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/explosive-compound.webp"
+  },
+  "Explosive Mine": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/jump-mine.webp"
+  },
+  "Explosive Mine Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/explosive-mine-blueprint.webp"
+  },
+  "Extended Barrel": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-barrel.webp"
+  },
+  "Extended Barrel Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-barrel-recipe.webp"
+  },
+  "Extended Light Mag I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-light-mag-i.webp"
+  },
+  "Extended Light Mag II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-light-mag-ii.webp"
+  },
+  "Extended Light Mag II Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-light-mag-ii-recipe.webp"
+  },
+  "Extended Light Mag III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-light-mag-iii.webp"
+  },
+  "Extended Light Mag III Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-light-mag-iii-recipe.webp"
+  },
+  "Extended Medium Mag I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-medium-mag-i.webp"
+  },
+  "Extended Medium Mag II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-medium-mag-ii.webp"
+  },
+  "Extended Medium Mag II Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-medium-mag-ii-recipe.webp"
+  },
+  "Extended Medium Mag III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-medium-mag-iii.webp"
+  },
+  "Extended Medium Mag III Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-medium-mag-iii-blueprint.webp"
+  },
+  "Extended Shotgun Mag I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-shotgun-mag-i.webp"
+  },
+  "Extended Shotgun Mag II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-shotgun-mag-ii.webp"
+  },
+  "Extended Shotgun Mag II Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-shotgun-mag-ii-recipe.webp"
+  },
+  "Extended Shotgun Mag III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-shotgun-mag-iii.webp"
+  },
+  "Extended Shotgun Mag III Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/extended-shotgun-mag-iii-recipe.webp"
+  },
+  "Fabric": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/fabric.webp"
+  },
+  "Faded Photograph": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/faded-photograph.webp"
+  },
+  "Ferro I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/ferro-i.webp"
+  },
+  "Ferro II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/ferro-ii.webp"
+  },
+  "Ferro III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/ferro-iii.webp"
+  },
+  "Ferro IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/ferro-iv.webp"
+  },
+  "Fertilizer": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/fertilizer.webp"
+  },
+  "Film Reel": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/film-reel.webp"
+  },
+  "Fine Wristwatch": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/fine-wristwatch.webp"
+  },
+  "Fireball Burner": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/fireball-burner.webp"
+  },
+  "Flame Spray": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/flame-spray.webp"
+  },
   "Flute": {
     "safe_to_recycle": true
   },
-  "Free Loadout Augment": {},
-  "Fried Motherboard": {},
-  "Fruit Mix": {},
+  "Free Loadout Augment": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/free-loadout-augment.webp"
+  },
+  "Fried Motherboard": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/fried-motherboard.webp"
+  },
+  "Fruit Mix": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/fruit-mix.webp"
+  },
   "Frying Pan": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/frying-pan.webp"
   },
   "Garlic Press": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/garlic-press.webp"
   },
-  "Gas Grenade": {},
-  "Gas Grenade Trap": {},
-  "Goggles (Radio Renegade Variant)": {},
-  "Great Mullein": {},
-  "Green Light Stick": {},
-  "Green Light Stick Blueprint": {},
-  "Hairpin I": {},
-  "Hairpin II": {},
-  "Hairpin III": {},
-  "Hairpin IV": {},
-  "Happy Jig (Emote)": {},
+  "Gas Grenade": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/gas-grenade.webp"
+  },
+  "Gas Grenade Trap": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/gas-grenade-trap.webp"
+  },
+  "Gas Mine": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/gas-mine.webp"
+  },
+  "Gas Mine Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/gas-mine-blueprint.webp"
+  },
+  "Goggles (Radio Renegade Variant)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/goggles-radio-renegade-variant.webp"
+  },
+  "Great Mullein": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/great-muullein.webp"
+  },
+  "Green Light Stick": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/green-light-stick.webp"
+  },
+  "Green Light Stick Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/green-light-stick-blueprint.webp"
+  },
+  "Hairpin I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/hairpin-i.webp"
+  },
+  "Hairpin II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/hairpin-ii.webp"
+  },
+  "Hairpin III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/hairpin-iii.webp"
+  },
+  "Hairpin IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/hairpin-iv.webp"
+  },
+  "Happy Jig (Emote)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/happy-jig-emote.webp"
+  },
   "Headphones": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/headphones.webp"
   },
-  "Heavy Ammo": {},
-  "Heavy Fuse Grenade Blueprint": {},
-  "Heavy Fuze Grenade": {},
-  "Heavy Gun Parts": {},
-  "Heavy Gun Parts Blueprint": {},
-  "Heavy Shield": {},
-  "Helmet (Radio Renegade Variant)": {},
-  "Herbal Bandage": {},
-  "Horizontal Grip": {},
-  "Horizontal Grip Blueprint": {},
+  "Heavy Ammo": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/heavy-ammo.webp"
+  },
+  "Heavy Fuse Grenade Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/heavy-fuse-grenade-recipe.webp"
+  },
+  "Heavy Fuze Grenade": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/heavy-fuze-grenade.webp"
+  },
+  "Heavy Gun Parts": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/heavy-gun-parts.webp"
+  },
+  "Heavy Gun Parts Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/heavy-gun-parts-recipe.webp"
+  },
+  "Heavy Shield": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/heavy-shield.webp"
+  },
+  "Helmet (Radio Renegade Variant)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/helmet-radio-renegade-variant.webp"
+  },
+  "Herbal Bandage": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/herbal-bandage.webp"
+  },
+  "Horizontal Grip": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/horizontal-grip.webp"
+  },
+  "Horizontal Grip Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/horizontal-grip-blueprint.webp"
+  },
   "Hornet Driver": {
     "keep_for_quests": {
       "amount": 2
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/hornet-driver.webp"
   },
   "Household Cleaner": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/household-cleaner.webp"
   },
-  "Hullcracker Blueprint": {},
-  "Hullcracker I": {},
-  "Hullcracker II": {},
-  "Hullcracker III": {},
-  "Hullcracker IV ": {},
+  "Hullcracker Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/hullcracker-blueprint.webp"
+  },
+  "Hullcracker I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/hullcracker.webp"
+  },
+  "Hullcracker II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/hullcracker-ii.webp"
+  },
+  "Hullcracker III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/hullcracker-iii.webp"
+  },
+  "Hullcracker IV ": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/hullcracker-iv.webp"
+  },
   "Humidifier": {
     "keep_for_projects": {
       "amount": 5
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/humidifier.webp"
   },
   "Ice Cream Scooper": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/ice-cream-scooper.webp"
   },
-  "Il Toro Blueprint": {},
-  "Il Toro I": {},
-  "Il Toro II": {},
-  "Il Toro III": {},
-  "Il Toro IV": {},
+  "Il Toro Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/il-toro-recipe.webp"
+  },
+  "Il Toro I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/il%20Toro-i.webp"
+  },
+  "Il Toro II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/il-toro-ii.webp"
+  },
+  "Il Toro III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/il-toro-iiii.webp"
+  },
+  "Il Toro IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/il-toro-iv.webp"
+  },
   "Impure ARC Coolant": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/impure-arc-coolant.webp"
   },
-  "Industrial Battery": {},
+  "Industrial Battery": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/industrial-battery.webp"
+  },
   "Industrial Charger": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/industrial-charger.webp"
   },
   "Industrial Magnet": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/industrial-magnet.webp"
   },
-  "Jolt Mine": {},
-  "Jolt Mine Blueprint": {},
-  "Junior (Outfit)": {},
-  "Jupiter": {},
-  "Jupiter Blueprint": {},
-  "Kettle I": {},
-  "Kettle II": {},
-  "Kettle III": {},
-  "Kettle IV": {},
-  "Key Card": {},
-  "Kinetic Converter": {},
-  "Kinetic Converter Blueprint": {},
-  "Laboratory Reagents": {},
-  "Lance's Mixtape (5th Edition)": {},
-  "Laser Trap: Fire Blueprint": {},
-  "Laser Trap: Gas Blueprint": {},
-  "Laser Trap: Lure": {},
-  "Laser Trap: Smoke": {},
-  "Launcher Ammo": {},
-  "Launcher Ammo BLueprint": {},
+  "Jolt Mine": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/jolt-mine.webp"
+  },
+  "Jolt Mine Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/jolt-mine-recipe.webp"
+  },
+  "Junior (Outfit)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/junior-outfit.webp"
+  },
+  "Jupiter": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/jupiter-i.webp"
+  },
+  "Jupiter Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/jupiter-i-recipe.webp"
+  },
+  "Kettle I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/kettle-i.webp"
+  },
+  "Kettle II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/kettle-ii.webp"
+  },
+  "Kettle III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/kettle-iii.webp"
+  },
+  "Kettle IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/kettle-iv.webp"
+  },
+  "Key Card": {
+    "image": "key-card"
+  },
+  "Kinetic Converter": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/kinetic-converter.webp"
+  },
+  "Kinetic Converter Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/kinetic-converter-recipe.webp"
+  },
+  "Laboratory Reagents": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/laboratory-reagents.webp"
+  },
+  "Lance's Mixtape (5th Edition)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/lances-mixtape-5th-edition.webp"
+  },
+  "Laser Trap: Fire Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/laser-trap-fire-recipe.webp"
+  },
+  "Laser Trap: Gas Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/laser-trap-gas-recipe.webp"
+  },
+  "Laser Trap: Lure": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/laser-trap-lure.webp"
+  },
+  "Laser Trap: Smoke": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/laser-trap-smoke-recipe.webp"
+  },
+  "Launcher Ammo": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/launcher-ammo.webp"
+  },
+  "Launcher Ammo BLueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/launcher-ammo-blueprint.webp"
+  },
   "Leaper Pulse Unit": {
     "keep_for_quests": {
       "amount": 1
     },
     "keep_for_projects": {
       "amount": 3
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/leaper-pulse-unit.webp"
   },
-  "Lemon": {},
-  "Li'l Smoke Grenade": {},
+  "Lemon": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/lemon.webp"
+  },
+  "Li'l Smoke Grenade": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/lil-smoke-grenade.webp"
+  },
   "Lidar Scanner": {},
-  "Light Ammo": {},
+  "Light Ammo": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/light-ammo.webp"
+  },
   "Light Bulb": {
     "keep_for_projects": {
       "amount": 5
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/light-bulb.webp"
   },
-  "Light Gun Parts": {},
-  "Light Gun Parts Blueprint": {},
-  "Light Impact Grenade": {},
-  "Light Shield": {},
-  "Lightweight Stock": {},
-  "Lightweight Stock Blueprint": {},
-  "Looting Mk. 1": {},
-  "Looting Mk. 2": {},
-  "Looting MK. 3 (Cautious)": {},
-  "Looting MK. 3 (Survivor)": {},
-  "Looting MK. 3 (Survivor) Blueprint": {},
-  "Lure Grenade": {},
-  "Lure Grenade Blueprint": {},
-  "Magnet": {},
+  "Light Gun Parts": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/light-gun-parts.webp"
+  },
+  "Light Gun Parts Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/light-gun-parts-recipe.webp"
+  },
+  "Light Impact Grenade": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/light-impact-grenade.webp"
+  },
+  "Light Shield": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/light-shield.webp"
+  },
+  "Lightweight Stock": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/lightweight-stock.webp"
+  },
+  "Lightweight Stock Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/lightweight-stock-recipe.webp"
+  },
+  "Looting Mk. 1": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/looting-mk-1.webp"
+  },
+  "Looting Mk. 2": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/looting-mk-2.webp"
+  },
+  "Looting MK. 3 (Cautious)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/looting-mk-3-cautious.webp"
+  },
+  "Looting MK. 3 (Survivor)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/looting-mk-3-survivor.webp"
+  },
+  "Looting MK. 3 (Survivor) Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/looting-mk-3-survivor-blueprint.webp"
+  },
+  "Lure Grenade": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/lure-grenade.webp"
+  },
+  "Lure Grenade Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/lure-grenade-recipe.webp"
+  },
+  "Magnet": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/magnet.webp"
+  },
   "Magnetic Accelerator": {
     "keep_for_projects": {
       "amount": 3
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/magnetic-accelerator.webp"
   },
-  "Mastery Medal (Backpack Charm)": {},
-  "Mechanical Components": {},
-  "Medium Ammo": {},
-  "Medium Gun Parts": {},
-  "Medium Gun Parts Blueprint": {},
-  "Medium Shield": {},
+  "Mastery Medal (Backpack Charm)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/mastery-medal-backpack-charm.webp"
+  },
+  "Mechanical Components": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/mechanical-components.webp"
+  },
+  "Medium Ammo": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/medium-ammo.webp"
+  },
+  "Medium Gun Parts": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/medium-gun-parts.webp"
+  },
+  "Medium Gun Parts Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/medium-gun-parts-recipe.webp"
+  },
+  "Medium Shield": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/medium-shield.webp"
+  },
   "Metal Brackets": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/metal-brackets.webp"
   },
   "Metal Parts": {
     "keep_for_projects": {
       "amount": 150
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/metal-parts.webp"
   },
-  "Mod Components": {},
-  "Mod Components Blueprint": {},
-  "Moss": {},
-  "Motor": {},
-  "Mushroom": {},
-  "Music Album": {},
-  "Music Box": {},
-  "Muzzle Brake I": {},
-  "Muzzle Brake II": {},
-  "Muzzle Brake II Blueprint": {},
-  "Muzzle Brake III": {},
-  "Muzzle Brake III Blueprint": {},
-  "Noisemaker": {},
+  "Mod Components": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/mod-components.webp"
+  },
+  "Mod Components Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/mod-components-recipe.webp"
+  },
+  "Moss": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/moss.webp"
+  },
+  "Motor": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/motor.webp"
+  },
+  "Mushroom": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/mushroom.webp"
+  },
+  "Music Album": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/music-album.webp"
+  },
+  "Music Box": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/music-box.webp"
+  },
+  "Muzzle Brake I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/muzzle-brake-i.webp"
+  },
+  "Muzzle Brake II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/muzzle-brake-ii.webp"
+  },
+  "Muzzle Brake II Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/muzzle-brake-ii-recipe.webp"
+  },
+  "Muzzle Brake III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/muzzle-brake-iii.webp"
+  },
+  "Muzzle Brake III Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/muzzle-brake-iii-recipe.webp"
+  },
+  "Noisemaker": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/noisemaker.webp"
+  },
   "Number Plate": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/number-plate.webp"
   },
-  "Oil": {},
-  "Olives": {},
-  "Orange Camo (Origin Outfit)": {},
-  "Osprey Blueprint": {},
-  "Osprey I": {},
-  "Osprey II": {},
-  "Osprey III": {},
-  "Osprey IV": {},
-  "Padded Stock": {},
-  "Padded Stock Blueprint": {},
-  "Painted Box": {},
-  "Patrol (Outfit)": {},
-  "Patrol Car Key": {},
-  "Photoelectric Cloak": {},
-  "Plastic Parts": {},
-  "Playing Cards": {},
+  "Oil": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/oil.webp"
+  },
+  "Olives": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/olives.webp"
+  },
+  "Orange Camo (Origin Outfit)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/orange-camo-origin-outfit.webp"
+  },
+  "Osprey Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/osprey-recipe.webp"
+  },
+  "Osprey I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/osprey-i.webp"
+  },
+  "Osprey II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/osprey-ii.webp"
+  },
+  "Osprey III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/osprey-iii.webp"
+  },
+  "Osprey IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/osprey-iv.webp"
+  },
+  "Padded Stock": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/padded-stock.webp"
+  },
+  "Padded Stock Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/padded-stock-recipe.webp"
+  },
+  "Painted Box": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/painted-box.webp"
+  },
+  "Patrol (Outfit)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/patrol-outfit.webp"
+  },
+  "Patrol Car Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/patrol-car-key.webp"
+  },
+  "Photoelectric Cloak": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/photoelectric-cloak.webp"
+  },
+  "Plastic Parts": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/plastic-parts.webp"
+  },
+  "Playing Cards": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/playing-cards.webp"
+  },
   "Polluted Air Filter": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/polluted-air-filter.webp"
   },
-  "Pop Trigger": {},
+  "Pop Trigger": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/pop-trigger.webp"
+  },
   "Portable TV": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/portable-television.webp"
   },
-  "Poster of Natural Wonder": {},
-  "Pottery": {},
+  "Poster of Natural Wonder": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/poster-natural-wonder.webp"
+  },
+  "Pottery": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/pottery.webp"
+  },
   "Power Bank": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/power-bank.webp"
   },
-  "Power Cable": {},
+  "Power Cable": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/power-cable.webp"
+  },
   "Power Rod": {
     "keep_for_quests": {
       "amount": 1
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/power-rod.webp"
   },
-  "Power Rod Blueprint": {},
-  "Prickly Pear": {},
-  "Processor": {},
+  "Power Rod Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/power-rod-recipe.webp"
+  },
+  "Prickly Pear": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/prickly-pear.webp"
+  },
+  "Processor": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/processor.webp"
+  },
   "Projector": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/projector.webp"
   },
-  "Queen Reactor": {},
+  "Pulse Mine": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/pulse-mine.webp"
+  },
+  "Pulse Mine Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/pulse-mine-blueprint.webp"
+  },
+  "Queen Reactor": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/queen-reactor.webp"
+  },
   "Radio": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/radio.webp"
   },
-  "Radio Renegade (Outfit)": {},
-  "Raider Hatch Key": {},
-  "Rattler I": {},
-  "Rattler II": {},
-  "Rattler III": {},
-  "Rattler IV": {},
-  "Recorder": {},
-  "Red Coral Jewelry": {},
-  "Red Light Stick": {},
-  "Red Light Stick Blueprint": {},
+  "Radio Renegade (Outfit)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/radio-renegade-outfit.webp"
+  },
+  "Raider Hatch Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/raider-hatch-key.webp"
+  },
+  "Rattler I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rattler-i.webp"
+  },
+  "Rattler II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rattler-ii.webp"
+  },
+  "Rattler III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rattler-iii.webp"
+  },
+  "Rattler IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rattler-iv.webp"
+  },
+  "Recorder": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/recorded.webp"
+  },
+  "Red Coral Jewelry": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/red-coral-jewelry.webp"
+  },
+  "Red Light Stick": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/red-light-stick.webp"
+  },
+  "Red Light Stick Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/red-light-stick-blueprint.webp"
+  },
   "Refinement 1": {},
   "Remote Control": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/remote-control.webp"
   },
-  "Remote Raider Flare": {},
-  "Remote Raider Flare Blueprint": {},
-  "Renegade Blueprint": {},
-  "Renegade I": {},
-  "Renegade II": {},
-  "Renegade III": {},
-  "Renegade IV": {},
-  "Resin": {},
+  "Remote Raider Flare": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/remote-raider-flare.webp"
+  },
+  "Remote Raider Flare Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/remote-raider-flare-blueprint.webp"
+  },
+  "Renegade Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/renegade-recipe.webp"
+  },
+  "Renegade I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/renegade-i.webp"
+  },
+  "Renegade II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/renegade-ii.webp"
+  },
+  "Renegade III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/renegade-iii.webp"
+  },
+  "Renegade IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/renegade-iv.webp"
+  },
+  "Resin": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/resin.webp"
+  },
   "Ripped Safety Vest": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/ripped-safety-vest.webp"
   },
-  "Rocket Thruster": {},
+  "Rocket Thruster": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rocket-thruster.webp"
+  },
   "Rocketeer Driver": {
     "keep_for_quests": {
       "amount": 1
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rocketeer-part.webp"
   },
-  "Rollbot Part": {},
-  "Roots": {},
-  "Rope": {},
-  "Rosary": {},
-  "Rubber Duck": {},
+  "Rollbot Part": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rollbot-part.webp"
+  },
+  "Roots": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/roots.webp"
+  },
+  "Rope": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rope.webp"
+  },
+  "Rosary": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rosary.webp"
+  },
+  "Rubber Duck": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rubber-duck.webp"
+  },
   "Rubber Pad": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rubber-pad.webp"
   },
   "Rubber Parts": {
     "keep_for_projects": {
       "amount": 200
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rubber-parts-recipe.webp"
   },
   "Ruined Accordion": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/ruined-accordion.webp"
   },
   "Ruined Baton": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/ruined-baton.webp"
   },
   "Ruined Handcuffs": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/broken-handcuffs.webp"
   },
   "Ruined Parachute": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/ruined-parachute.webp"
   },
   "Ruined Riot Shield": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/ruined-riot-shield.webp"
   },
   "Ruined Tactical Vest": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/ruined-tactical-vest.webp"
   },
   "Rusted Bolts": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rusted-bolts.webp"
   },
-  "Rusted Gear": {},
-  "Rusted Shut Medical Kit": {},
-  "Rusted Tools": {},
+  "Rusted Gear": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rusted-gear.webp"
+  },
+  "Rusted Shut Medical Kit": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rusted-shut-medical-kit.webp"
+  },
+  "Rusted Tools": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rusted-tools.webp"
+  },
   "Rusty ARC Steel": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rusty-arc-steel.webp"
+  },
+  "Seeker Grenade": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/seeker-grenade.webp"
+  },
+  "Seeker Grenade Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/seeker-grenade-blueprint.webp"
   },
   "Sensors": {
     "keep_for_projects": {
       "amount": 20
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/sensors-recipe.webp"
   },
-  "Sentinel Firing Core": {},
-  "Shield Recharger": {},
-  "Shotgun ammo": {},
-  "Shotgun Choke I": {},
-  "Shotgun Choke II": {},
-  "Shotgun Choke II Blueprint": {},
-  "Shotgun Choke III": {},
-  "Shotgun Choke III Blueprint": {},
-  "Shotgun Parts": {},
-  "Shotgun Parts Blueprint": {},
-  "Shotgun Silencer": {},
-  "Shotgun Silencer Blueprint": {},
-  "Showstopper": {},
-  "Showstopper Blueprint": {},
-  "Shrapnel Grenade": {},
-  "Silencer I": {},
-  "Silencer I Blueprint": {},
-  "Silencer II": {},
-  "Silencer II Blueprint": {},
-  "Silencer III": {},
-  "Silencer III Blueprint": {},
-  "Silver Teaspoon Set": {},
-  "Simple Gun Parts": {},
-  "Smoke Grenade": {},
-  "Smoke Grenade Blueprint": {},
-  "Snap Blast Grenade": {},
-  "Snap Hook": {},
-  "Snap Hook Blueprint": {},
+  "Sentinel Firing Core": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/sentinel-part.webp"
+  },
+  "Shield Recharger": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/shield-recharger.webp"
+  },
+  "Shotgun ammo": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/shotgun-ammo.webp"
+  },
+  "Shotgun Choke I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/shotgun-choke-i.webp"
+  },
+  "Shotgun Choke II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/shotgun-choke-ii.webp"
+  },
+  "Shotgun Choke II Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/shotgun-choke-ii-recipe.webp"
+  },
+  "Shotgun Choke III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/shotgun-choke-iii.webp"
+  },
+  "Shotgun Choke III Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/shotgun-choke-iii-recipe.webp"
+  },
+  "Shotgun Parts": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/shotgun-gun-parts.webp"
+  },
+  "Shotgun Parts Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/shotgun-parts-recipe.webp"
+  },
+  "Shotgun Silencer": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/shotgun-silencer.webp"
+  },
+  "Shotgun Silencer Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/shotgun-silencer-blueprint.webp"
+  },
+  "Showstopper": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/showstopper.webp"
+  },
+  "Showstopper Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/showstopper-blueprint.webp"
+  },
+  "Shrapnel Grenade": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/shrapnel-grenade.webp"
+  },
+  "Silencer I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/silencer-i.webp"
+  },
+  "Silencer I Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/silencer-i-recipe.webp"
+  },
+  "Silencer II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/silencer-ii.webp"
+  },
+  "Silencer II Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/silencer-ii-recipe.webp"
+  },
+  "Silencer III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/silencer-iii.webp"
+  },
+  "Silencer III Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/silencer-iii-recipe.webp"
+  },
+  "Silver Teaspoon Set": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/silver-teaspoon-set.webp"
+  },
+  "Simple Gun Parts": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/simple-gun-parts.webp"
+  },
+  "Smoke Grenade": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/smoke-grenade.webp"
+  },
+  "Smoke Grenade Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/smoke-grenade-blueprint.webp"
+  },
+  "Snap Blast Grenade": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/snap-blast-grenade.webp"
+  },
+  "Snap Hook": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/snap-hook.webp"
+  },
+  "Snap Hook Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/snap-hook-recipe.webp"
+  },
   "Snitch Scanner": {
     "keep_for_quests": {
       "amount": 2
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/snitch-scanner.webp"
   },
-  "Spaceport Container Storage Key": {},
-  "Spaceport Control Tower Key": {},
-  "Spaceport Outskirts Bunker Key": {},
-  "Spaceport Trench Tower Key": {},
-  "Spaceport Warehouse Key": {},
-  "Speaker Component": {},
+  "Spaceport Container Storage Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/spaceport-container-storage-key.webp"
+  },
+  "Spaceport Control Tower Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/spaceport-ground-control-key.webp"
+  },
+  "Spaceport Outskirts Bunker Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/spaceport-outskirts-bunker-key.webp"
+  },
+  "Spaceport Trench Tower Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/spaceport-trench-tower-key.webp"
+  },
+  "Spaceport Warehouse Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/spaceport-warehouse-key.webp"
+  },
+  "Speaker Component": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/speaker-component.webp"
+  },
   "Spotter Relay": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/spotter-relay.webp"
   },
   "Spring Cushion": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/spring-cushion.webp"
   },
-  "Stable Stock I": {},
-  "Stable Stock II": {},
-  "Stable Stock II Blueprint": {},
-  "Stable Stock III": {},
-  "Stable Stock III Blueprint": {},
-  "Statuette": {},
+  "Stable Stock I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/stable-stock-i.webp"
+  },
+  "Stable Stock II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/stable-stock-ii.webp"
+  },
+  "Stable Stock II Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/stable-stock-ii-recipe.webp"
+  },
+  "Stable Stock III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/stable-stock-iii.webp"
+  },
+  "Stable Stock III Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/stable-stock-iii-recipe.webp"
+  },
+  "Statuette": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/statuette.webp"
+  },
   "Steel Spring": {
     "keep_for_projects": {
       "amount": 15
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/spring.webp"
   },
-  "Sterilized Bandage": {},
-  "Sterilized Bandage Blueprint": {},
-  "Stitcher I": {},
-  "Stitcher II": {},
-  "Stitcher III": {},
-  "Stitcher IV": {},
-  "Succulent (Backpack Charm)": {},
-  "Surge Shield Recharger": {},
+  "Sterilized Bandage": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/sterilized-bandage.webp"
+  },
+  "Sterilized Bandage Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/sterilized-bandage-recipe.webp"
+  },
+  "Stitcher I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/stitcher-ii.webp"
+  },
+  "Stitcher II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/stitcher-ii.webp"
+  },
+  "Stitcher III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/stitcher-iii.webp"
+  },
+  "Stitcher IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/stitcher-iv.webp"
+  },
+  "Succulent (Backpack Charm)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/succulent-backpack-charm.webp"
+  },
+  "Surge Shield Recharger": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/surge-shield-recharger.webp"
+  },
   "Surveyor Vault": {
     "keep_for_quests": {
       "amount": 1
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/surveyor-vault.webp"
   },
-  "Synthesized Fuel": {},
+  "Synthesized Fuel": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/synthesized-fuel.webp"
+  },
   "Syringe": {
     "keep_for_quests": {
       "amount": 1
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/syringe.webp"
   },
-  "Tactical Mk. 1": {},
-  "Tactical Mk. 2": {},
-  "Tactical Mk. 3 (Healing)": {},
-  "Tactical Mk.3 (Defensive)": {},
-  "Tactical MK.3 (Defensive) Blueprint": {},
-  "Tactical MK.3 (Healing) Blueprint": {},
-  "Tagging Grenade": {},
-  "Tagging Grenade Blueprint": {},
+  "Tactical Mk. 1": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tactical-mk-1.webp"
+  },
+  "Tactical Mk. 2": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tactical-mk-2.webp"
+  },
+  "Tactical Mk. 3 (Healing)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tactical-mk-3-healing.webp"
+  },
+  "Tactical Mk.3 (Defensive)": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tactical-mk3-defensive.webp"
+  },
+  "Tactical MK.3 (Defensive) Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tactical-mk3-defensive-blueprint.webp"
+  },
+  "Tactical MK.3 (Healing) Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tacical-mk3-healing-blueprint.webp"
+  },
+  "Tagging Grenade": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tagging-grenade.webp"
+  },
+  "Tagging Grenade Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tagging-grenade-recipe.webp"
+  },
   "Tattered ARC Lining": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tattered-arc-lining.webp"
   },
   "Tattered Clothes": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tattered-clothes.webp"
   },
-  "Tempest I": {},
-  "Tempest I Blueprint": {},
-  "Tempest II": {},
-  "Tempest III": {},
-  "Tempest IV": {},
+  "Tempest I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tempest-i.webp"
+  },
+  "Tempest I Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tempest-i-recipe.webp"
+  },
+  "Tempest II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tempest-ii.webp"
+  },
+  "Tempest III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tempest-iii.webp"
+  },
+  "Tempest IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tempest-iv.webp"
+  },
   "Thermostat": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/thermostat.webp"
   },
-  "Tick Pod": {},
-  "Toaster": {},
-  "Torch Ginger": {},
+  "Tick Pod": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/tick-pod.webp"
+  },
+  "Toaster": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/toaster.webp"
+  },
+  "Torch Ginger": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/torch-ginger.webp"
+  },
   "Torn Blanket": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/torn-blanket.webp"
   },
-  "Torn Book": {},
-  "Torrente Blueprint": {},
-  "Torrente I": {},
-  "Torrente II": {},
-  "Torrente III": {},
-  "Torrente IV": {},
-  "Trigger Nade": {},
-  "Trigger Nade Blueprint": {},
+  "Torn Book": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/torn-book.webp"
+  },
+  "Torrente Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/torrent-i-recipe.webp"
+  },
+  "Torrente I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/torrente-i.webp"
+  },
+  "Torrente II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/torrente-ii.webp"
+  },
+  "Torrente III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/torrente-iii.webp"
+  },
+  "Torrente IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/torrente-iv.webp"
+  },
+  "Trailblazer Grenade": {},
+  "Trailblazer Grenade Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/trailblazer-grenade-blueprint.webp"
+  },
+  "Trigger Nade": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/trigger-nade.webp"
+  },
+  "Trigger Nade Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/trigger-nade-recipe.webp"
+  },
   "Turbo Pump": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/turbo-pump.webp"
   },
-  "Unusable Weapon": {},
-  "Vase": {},
-  "Venator Blueprint": {},
-  "Venator I": {},
-  "Venator II": {},
-  "Venator III": {},
-  "Venator IV": {},
-  "Vertical Grip I": {},
-  "Vertical Grip II": {},
-  "Vertical Grip II Blueprint": {},
-  "Vertical Grip III": {},
-  "Vertical Grip III Blueprint": {},
-  "Very Comfortable Pillow": {},
-  "Vita Shot": {},
-  "Vita Shot Blueprint": {},
-  "Vita Spray": {},
-  "Vita Spray Blueprint": {},
-  "Volcanic Rock": {},
-  "Voltage Converter": {},
-  "Vulcano Blueprint": {},
-  "Vulcano I": {},
-  "Vulcano II": {},
-  "Vulcano III": {},
-  "Vulcano IV": {},
+  "Unusable Weapon": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/unusable-weapon.webp"
+  },
+  "Vase": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vase.webp"
+  },
+  "Venator Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/venator-recipe.webp"
+  },
+  "Venator I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/venator-i.webp"
+  },
+  "Venator II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/venator-ii.webp"
+  },
+  "Venator III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/venator-iii.webp"
+  },
+  "Venator IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/venator-iv.webp"
+  },
+  "Vertical Grip I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vertical-grip-i.webp"
+  },
+  "Vertical Grip II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vertical-grip-ii.webp"
+  },
+  "Vertical Grip II Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vertical-grip-ii-recipe.webp"
+  },
+  "Vertical Grip III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vertical-grip-iii.webp"
+  },
+  "Vertical Grip III Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vertical-grip-iii-recipe.webp"
+  },
+  "Very Comfortable Pillow": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/very-comfortable-pillow.webp"
+  },
+  "Vita Shot": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vita-shot.webp"
+  },
+  "Vita Shot Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vita-shot-recipe.webp"
+  },
+  "Vita Spray": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vita-spray.webp"
+  },
+  "Vita Spray Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vita-spray-recipe.webp"
+  },
+  "Volcanic Rock": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/volcanic-rock.webp"
+  },
+  "Voltage Converter": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/voltage-converter.webp"
+  },
+  "Vulcano Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vulcano-blueprint.webp"
+  },
+  "Vulcano I": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vulcano-i.webp"
+  },
+  "Vulcano II": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vulcano-ii.webp"
+  },
+  "Vulcano III": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vulcano-iii.webp"
+  },
+  "Vulcano IV": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/vulcano-iv.webp"
+  },
   "Wasp Driver": {
     "keep_for_quests": {
       "amount": 2
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/wasp-driver.webp"
   },
   "Water Filter": {
-    "safe_to_recycle": true
+    "safe_to_recycle": true,
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/water-filter.webp"
   },
   "Water Pump": {
     "keep_for_quests": {
       "amount": 1
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/water-pump.webp"
   },
   "Wires": {
     "keep_for_projects": {
       "amount": 30
-    }
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/wires-recipe.webp"
   },
-  "WolfPack": {},
-  "Wolfpack Blueprint": {},
-  "Yellow Light Stick": {},
-  "Zipline": {}
+  "WolfPack": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/wolfpack.webp"
+  },
+  "Wolfpack Blueprint": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/wolfpack-recipe.webp"
+  },
+  "Yellow Light Stick": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/yellow-light-stick.webp"
+  },
+  "Yellow Light Stick Blueprint": {},
+  "Zipline": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/zipline.webp"
+  }
 }

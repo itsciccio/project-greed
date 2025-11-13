@@ -13,7 +13,7 @@ async function fetchAllItems() {
   let page = 1;
   let hasNextPage = true;
 
-  console.log('Fetching all items from MetaForge API...');
+  console.log('Fetching all items from dataset API...');
 
   while (hasNextPage) {
     try {
@@ -52,15 +52,28 @@ async function fetchAllItems() {
 function mergeItems(apiItems, existingItems) {
   const merged = { ...existingItems };
   
-  // Create a map of all API item names (normalized for case-insensitive matching)
-  const apiItemNames = new Map();
+  // Create a map of API items by normalized name for easy lookup
+  const apiItemsMap = new Map();
   apiItems.forEach(item => {
     if (item.name) {
       const normalizedName = item.name.toLowerCase();
-      // Store the original name for display
-      if (!apiItemNames.has(normalizedName)) {
-        apiItemNames.set(normalizedName, item.name);
+      if (!apiItemsMap.has(normalizedName)) {
+        apiItemsMap.set(normalizedName, item);
       }
+    }
+  });
+
+  // Update existing items with image data from API
+  Object.keys(merged).forEach(itemName => {
+    const normalizedName = itemName.toLowerCase();
+    const apiItem = apiItemsMap.get(normalizedName);
+    
+    if (apiItem && apiItem.icon) {
+      // Add or update the image URL
+      merged[itemName] = {
+        ...merged[itemName],
+        image: apiItem.icon
+      };
     }
   });
 
@@ -74,8 +87,11 @@ function mergeItems(apiItems, existingItems) {
       );
       
       if (!existingKey) {
-        // New item - add it with empty structure (no category info yet)
+        // New item - add it with image data if available
         merged[item.name] = {};
+        if (item.icon) {
+          merged[item.name].image = item.icon;
+        }
       }
     }
   });
@@ -101,6 +117,9 @@ async function main() {
     // Merge with existing data
     const mergedItems = mergeItems(apiItems, existingItems);
     
+    // Count items with images
+    const itemsWithImages = Object.values(mergedItems).filter(item => item.image).length;
+    
     // Sort items alphabetically
     const sortedItems = {};
     Object.keys(mergedItems)
@@ -119,6 +138,7 @@ async function main() {
     console.log(`\n✅ Successfully merged ${Object.keys(sortedItems).length} items`);
     console.log(`   - Existing items: ${Object.keys(existingItems).length}`);
     console.log(`   - New items from API: ${Object.keys(sortedItems).length - Object.keys(existingItems).length}`);
+    console.log(`   - Items with images: ${itemsWithImages}`);
     console.log(`\nSaved to: ${itemsPath}`);
   } catch (error) {
     console.error('Error:', error);
