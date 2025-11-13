@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { MdSettings } from 'react-icons/md'
 import itemsData from '../items.json'
 import stationsData from '../stations.json'
 import scrappyLevelsData from '../scrappy.json'
@@ -11,8 +12,15 @@ function App() {
   const [showDropdown, setShowDropdown] = useState(false)
   const [highlightedIndex, setHighlightedIndex] = useState(-1)
   const [isSearching, setIsSearching] = useState(false)
+  const [showSettingsDropdown, setShowSettingsDropdown] = useState(false)
+  const [showTotalSummary, setShowTotalSummary] = useState(() => {
+    // Load from localStorage, default to false
+    const saved = localStorage.getItem('showTotalSummary')
+    return saved ? JSON.parse(saved) : false
+  })
   const searchInputRef = useRef(null)
   const dropdownRef = useRef(null)
+  const settingsRef = useRef(null)
 
   // Get all item names
   const allItems = Object.keys(itemsData)
@@ -237,44 +245,121 @@ function App() {
     }
   }
 
+  // Calculate total amount required (excluding blueprints)
+  const calculateTotalAmount = (results) => {
+    if (!results) return 0
+    
+    let total = 0
+    
+    // Add projects amount
+    if (results.data?.keep_for_projects?.amount) {
+      total += results.data.keep_for_projects.amount
+    }
+    
+    // Add station requirements
+    if (results.stationRequirements) {
+      total += results.stationRequirements.reduce((sum, req) => sum + req.amount, 0)
+    }
+    
+    // Add scrappy level requirements
+    if (results.scrappyLevelRequirements) {
+      total += results.scrappyLevelRequirements.reduce((sum, req) => sum + req.amount, 0)
+    }
+    
+    // Note: Blueprint recipes are excluded from the total
+    
+    return total
+  }
+
+  // Toggle show total summary setting
+  const toggleShowTotalSummary = () => {
+    const newValue = !showTotalSummary
+    setShowTotalSummary(newValue)
+    localStorage.setItem('showTotalSummary', JSON.stringify(newValue))
+  }
+
+  // Close settings dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        settingsRef.current &&
+        !settingsRef.current.contains(event.target)
+      ) {
+        setShowSettingsDropdown(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
   return (
     <div className="app">
       <div className="container">
-        <h1 className="title">Item Search</h1>
-        <p className="subtitle">Search for items to see their status</p>
+        <h1 className="title">Project Greed</h1>
+        <p className="subtitle">Keep track of the items you need to keep in order to progress, and stop hoarding!</p>
         
         <form onSubmit={handleSearch} className="search-form">
           <div className="search-wrapper">
-            <input
-              ref={searchInputRef}
-              type="text"
-              value={searchTerm}
-              onChange={handleInputChange}
-              onKeyDown={handleKeyDown}
-              onFocus={() => {
-                if (!isSearching && filteredItems.length > 0) {
-                  setShowDropdown(true)
-                }
-              }}
-              placeholder="Enter item name (e.g., Accordion, Leaper Pulse Unit)"
-              className="search-input"
-            />
-            {showDropdown && filteredItems.length > 0 && (
-              <div ref={dropdownRef} className="dropdown">
-                {filteredItems.map((item, index) => (
-                  <div
-                    key={item}
-                    className={`dropdown-item ${
-                      index === highlightedIndex ? 'highlighted' : ''
-                    }`}
-                    onClick={() => selectItem(item)}
-                    onMouseEnter={() => setHighlightedIndex(index)}
-                  >
-                    {item}
+            <div className="search-input-wrapper">
+              <input
+                ref={searchInputRef}
+                type="text"
+                value={searchTerm}
+                onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
+                onFocus={() => {
+                  if (!isSearching && filteredItems.length > 0) {
+                    setShowDropdown(true)
+                  }
+                }}
+                placeholder="Enter item name (e.g., Accordion, Leaper Pulse Unit)"
+                className="search-input"
+              />
+              {showDropdown && filteredItems.length > 0 && (
+                <div ref={dropdownRef} className="dropdown">
+                  {filteredItems.map((item, index) => (
+                    <div
+                      key={item}
+                      className={`dropdown-item ${
+                        index === highlightedIndex ? 'highlighted' : ''
+                      }`}
+                      onClick={() => selectItem(item)}
+                      onMouseEnter={() => setHighlightedIndex(index)}
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className="settings-wrapper" ref={settingsRef}>
+              <button
+                className="settings-button"
+                onClick={() => setShowSettingsDropdown(!showSettingsDropdown)}
+                aria-label="Settings"
+                type="button"
+              >
+                <MdSettings />
+              </button>
+              {showSettingsDropdown && (
+                <div className="settings-dropdown">
+                  <div className="settings-item">
+                    <label className="settings-label">
+                      <input
+                        type="checkbox"
+                        checked={showTotalSummary}
+                        onChange={toggleShowTotalSummary}
+                        className="settings-checkbox"
+                      />
+                      <span>Show Total Amount Summary</span>
+                    </label>
                   </div>
-                ))}
-              </div>
-            )}
+                </div>
+              )}
+            </div>
           </div>
           {!results && (
             <button type="submit" className="search-button">
@@ -288,6 +373,26 @@ function App() {
             {results.data !== null ? (
               <>
                 <h2 className="item-name">{results.name}</h2>
+                {showTotalSummary && (() => {
+                  const totalAmount = calculateTotalAmount(results)
+                  if (totalAmount > 0) {
+                    return (
+                      <div className="total-summary-card">
+                        <div className="total-summary-header">
+                          <span className="total-summary-icon">📊</span>
+                          <span className="total-summary-label">Total Amount Required</span>
+                        </div>
+                        <div className="total-summary-amount">
+                          <strong>{totalAmount}</strong>
+                        </div>
+                        <div className="total-summary-note">
+                          Includes: Projects, Station Upgrades, and Scrappy Levels (Blueprints excluded)
+                        </div>
+                      </div>
+                    )
+                  }
+                  return null
+                })()}
                 {(() => {
                   const hasItemProperties = results.data && Object.keys(results.data).length > 0
                   const hasStationRequirements = results.stationRequirements && results.stationRequirements.length > 0
@@ -444,6 +549,26 @@ function App() {
             ) : (
               <div className="no-results">
                 <p>❌ Item "<strong>{results.name}</strong>" not found in database.</p>
+                {showTotalSummary && (() => {
+                  const totalAmount = calculateTotalAmount(results)
+                  if (totalAmount > 0) {
+                    return (
+                      <div className="total-summary-card" style={{ marginTop: '16px' }}>
+                        <div className="total-summary-header">
+                          <span className="total-summary-icon">📊</span>
+                          <span className="total-summary-label">Total Amount Required</span>
+                        </div>
+                        <div className="total-summary-amount">
+                          <strong>{totalAmount}</strong>
+                        </div>
+                        <div className="total-summary-note">
+                          Includes: Projects, Station Upgrades, and Scrappy Levels (Blueprints excluded)
+                        </div>
+                      </div>
+                    )
+                  }
+                  return null
+                })()}
                 {/* Show station requirements even if item not in items.json */}
                 {results.stationRequirements && results.stationRequirements.length > 0 && (
                   <div className="category-card" style={{ borderColor: 'rgba(59, 130, 246, 0.6)', marginTop: '16px' }}>
