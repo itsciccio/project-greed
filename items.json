@@ -411,7 +411,7 @@
   },
   "Metal Parts": {
     "keep_for_projects": {
-      "amount": 200
+      "amount": 150
     }
   },
   "Mod Components": {},
@@ -515,7 +515,7 @@
   },
   "Rubber Parts": {
     "keep_for_projects": {
-      "amount": 150
+      "amount": 200
     }
   },
   "Ruined Accordion": {
