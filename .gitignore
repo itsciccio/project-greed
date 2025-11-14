@@ -12,6 +12,21 @@ dist
 dist-ssr
 *.local
 
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Wrangler local cache and state
+.wrangler/
+
+# Cloudflare Worker configuration (contains sensitive database IDs and endpoints)
+cloudflare-worker/
+
+# Analytics documentation (planning/setup guides)
+ANALYTICS_PLAN.md
+SETUP_GUIDE.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

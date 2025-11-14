@@ -5,6 +5,7 @@ import stationsData from '../stations.json'
 import scrappyLevelsData from '../scrappy.json'
 import blueprintsData from '../blueprints.json'
 import expeditionData from '../expedition.json'
+import { trackPageView } from './utils/analytics'
 import './App.css'
 
 // Expedition Stages Component
@@ -84,6 +85,11 @@ function App() {
   const searchInputRef = useRef(null)
   const dropdownRef = useRef(null)
   const settingsRef = useRef(null)
+
+  // Track page view on component mount
+  useEffect(() => {
+    trackPageView()
+  }, [])
 
   // Get all item names
   const allItems = Object.keys(itemsData)
@@ -888,6 +894,7 @@ function App() {
       <footer className="footer">
         <div className="footer-content">
           <p>© 2025 ItsCiccio. All rights reserved.</p>
+          <p className="privacy-notice">Privacy: This site uses anonymous analytics to track page views. No personal data is collected.</p>
           <div className="support-section">
             <p className="support-text">If this tool helped you, consider supporting it!</p>
             <a 

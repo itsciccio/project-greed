@@ -433,6 +433,13 @@
   letter-spacing: 0.02em;
 }
 
+.privacy-notice {
+  font-size: 0.75rem;
+  color: #888888;
+  font-style: italic;
+  margin-top: 8px;
+}
+
 .support-section {
   display: flex;
   flex-direction: column;
