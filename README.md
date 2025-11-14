@@ -1,4 +1,4 @@
-# Item Search - Project Greed
+# Project Greed
 
 A React-based search interface for finding item information from your game data.
 
