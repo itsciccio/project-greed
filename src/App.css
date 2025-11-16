@@ -152,6 +152,19 @@
   flex-shrink: 0;
 }
 
+.dropdown-item-text {
+  flex: 1;
+}
+
+.dropdown-item-enter-icon {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 69, 0, 0.7);
+  font-size: 1.2rem;
+  margin-left: auto;
+  opacity: 0.8;
+}
+
 .dropdown-item:last-child {
   border-bottom: none;
 }

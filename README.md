@@ -4,7 +4,11 @@ A React-based search interface for finding item information from your game data.
 
 ## Features
 
-- **Search for items by name** - Fast, case-insensitive search with autocomplete suggestions
+- **Search for items by name** - Fast, case-insensitive search with autocomplete suggestions and keyboard navigation:
+  - Auto-highlights the first suggestion in the dropdown
+  - **Enter** key to select the highlighted item (visual indicator shows which item will be selected)
+  - **Arrow Up/Down** keys to navigate through suggestions (dropdown automatically scrolls to keep highlighted item visible)
+  - **Escape** key to close the dropdown
 - **Visual Item Identification** - Items display with their icons/images for easy recognition:
   - Item images in search results and autocomplete dropdown
   - Images in Recyclable Items browser
@@ -50,8 +54,14 @@ npm run build
 ## Usage
 
 1. Enter an item name in the search box (e.g., "Accordion", "Leaper Pulse Unit")
-   - Use the autocomplete dropdown to quickly select items (items show with their icons)
-   - Click "Search" or press Enter to search
+   - **Autocomplete dropdown** appears automatically with matching suggestions (items show with their icons)
+   - **Keyboard Navigation**:
+     - The first item is automatically highlighted
+     - Press **Enter** to select the highlighted item (a keyboard icon (↵) shows which item will be selected)
+     - Use **Arrow Up/Down** keys to navigate through the suggestions (the dropdown automatically scrolls to keep the highlighted item visible)
+     - Press **Escape** to close the dropdown
+   - **Mouse Navigation**: Click any item in the dropdown to select it
+   - Click "Search" button or press Enter (when dropdown is closed) to perform a search
 2. View the item's comprehensive information:
    - **Item Image** - Visual representation of the item (or placeholder if not available)
    - **Safe to Recycle** - Green card indicating the item can be recycled

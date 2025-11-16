@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { MdSettings, MdClose } from 'react-icons/md'
+import { MdSettings, MdClose, MdKeyboardReturn } from 'react-icons/md'
 import itemsData from '../items.json'
 import stationsData from '../stations.json'
 import scrappyLevelsData from '../scrappy.json'
@@ -86,6 +86,8 @@ function App() {
   const searchInputRef = useRef(null)
   const dropdownRef = useRef(null)
   const settingsRef = useRef(null)
+  const dropdownManuallyClosed = useRef(false)
+  const prevSearchTermRef = useRef('')
 
   // Track page view on component mount
   useEffect(() => {
@@ -118,8 +120,11 @@ function App() {
   const handleInputChange = (e) => {
     const value = e.target.value
     setSearchTerm(value)
-    setHighlightedIndex(-1)
     setIsSearching(false) // Reset search flag when user types
+    // Reset manual close flag when user types
+    if (value.trim().length > 0) {
+      dropdownManuallyClosed.current = false
+    }
     // Clear results when user starts typing a new search
     if (results && value.trim() === '') {
       setResults(null)
@@ -257,42 +262,92 @@ function App() {
 
   // Handle keyboard navigation
   const handleKeyDown = (e) => {
-    if (!showDropdown || filteredItems.length === 0) return
-
-    switch (e.key) {
-      case 'ArrowDown':
-        e.preventDefault()
+    // Handle arrow keys when there are filtered items available
+    if (filteredItems.length > 0 && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
+      e.preventDefault()
+      // Reset manual close flag when navigating
+      dropdownManuallyClosed.current = false
+      // Show dropdown if it's not visible
+      if (!showDropdown && !isSearching) {
+        setShowDropdown(true)
+      }
+      
+      if (e.key === 'ArrowDown') {
         setHighlightedIndex(prev =>
           prev < filteredItems.length - 1 ? prev + 1 : prev
         )
-        break
-      case 'ArrowUp':
-        e.preventDefault()
-        setHighlightedIndex(prev => (prev > 0 ? prev - 1 : -1))
-        break
-      case 'Enter':
-        e.preventDefault()
-        if (highlightedIndex >= 0 && highlightedIndex < filteredItems.length) {
-          selectItem(filteredItems[highlightedIndex])
-        } else {
-          handleSearch(e)
+      } else if (e.key === 'ArrowUp') {
+        setHighlightedIndex(prev => (prev > 0 ? prev - 1 : 0))
+      }
+      return
+    }
+    
+    // Handle Enter key
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      if (showDropdown && filteredItems.length > 0) {
+        // If dropdown is visible, select the highlighted item (or first item if none highlighted)
+        const indexToSelect = highlightedIndex >= 0 ? highlightedIndex : 0
+        if (indexToSelect < filteredItems.length) {
+          selectItem(filteredItems[indexToSelect])
         }
-        break
-      case 'Escape':
-        setShowDropdown(false)
-        setHighlightedIndex(-1)
-        break
+      } else {
+        // If dropdown is not visible, perform regular search
+        handleSearch(e)
+      }
+      return
+    }
+    
+    // Handle Escape key
+    if (e.key === 'Escape' && showDropdown) {
+      e.preventDefault()
+      setShowDropdown(false)
+      setHighlightedIndex(-1)
+      dropdownManuallyClosed.current = true
     }
   }
 
   // Update dropdown visibility based on filtered items (only if not searching)
   useEffect(() => {
+    // Don't reopen if user manually closed it
+    if (dropdownManuallyClosed.current) {
+      return
+    }
+    
     if (!isSearching && searchTerm.trim().length > 0 && filteredItems.length > 0) {
+      const wasHidden = !showDropdown
+      const searchTermChanged = prevSearchTermRef.current !== searchTerm
       setShowDropdown(true)
+      // Only auto-highlight first item when:
+      // 1. Dropdown transitions from hidden to visible, OR
+      // 2. Search term changed (user typed new characters)
+      // This prevents resetting the highlight when user navigates with arrow keys
+      if (wasHidden || searchTermChanged) {
+        setHighlightedIndex(0)
+      }
+      prevSearchTermRef.current = searchTerm
     } else if (filteredItems.length === 0 || isSearching) {
       setShowDropdown(false)
+      setHighlightedIndex(-1)
+      prevSearchTermRef.current = searchTerm
     }
-  }, [filteredItems, searchTerm, isSearching])
+  }, [filteredItems, searchTerm, isSearching, showDropdown])
+
+  // Scroll highlighted item into view when navigating with arrow keys
+  useEffect(() => {
+    if (showDropdown && highlightedIndex >= 0 && dropdownRef.current) {
+      const highlightedElement = dropdownRef.current.querySelector(
+        `.dropdown-item:nth-child(${highlightedIndex + 1})`
+      )
+      if (highlightedElement) {
+        highlightedElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'nearest'
+        })
+      }
+    }
+  }, [highlightedIndex, showDropdown])
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -420,7 +475,12 @@ function App() {
                           e.target.src = '/images/item-placeholder.svg';
                         }}
                       />
-                      <span>{item}</span>
+                      <span className="dropdown-item-text">{item}</span>
+                      {index === highlightedIndex && (
+                        <span className="dropdown-item-enter-icon">
+                          <MdKeyboardReturn />
+                        </span>
+                      )}
                     </div>
                   ))}
                 </div>
