@@ -45,7 +45,7 @@ function TotalSummaryCard({ originalTotal, totalAmount, checkedUpgrades, marginT
       </div>
       <div className="total-summary-note">
         Includes: Projects, Station Upgrades, and Scrappy Levels (Blueprints excluded)
-        {Object.keys(checkedUpgrades).length > 0 && (
+        {originalTotal !== totalAmount && originalTotal > 0 && (
           <span className="total-summary-upgrade-note">
             <br />✓ Excludes items from completed upgrades in your checklist
           </span>
