@@ -21,6 +21,7 @@ A React-based search interface for finding item information from your game data.
 - **Recyclable Items Browser** - Quick access modal to view all recyclable items at a glance, with search functionality, item images, and click-to-search integration
 - **Expedition-1 Requirements** - View all stages and requirements for the Expedition-1 Project, including item requirements with images and category-based credit requirements
 - **Settings Menu** - Accessible via the settings icon next to the search box, allows you to toggle extra features and access additional tools
+- **Live Twitch Stream** - Embedded Twitch stream panel that automatically opens when the streamer is live and closes when offline, with live status detection and visual indicators
 - Items can appear in multiple categories simultaneously
 - Modern, responsive UI with Material Design icons
 
@@ -79,6 +80,14 @@ npm run build
    - Stage 5 (Load Stage) shows category-based credit requirements instead of specific items
    - Click any item requirement to search for it and automatically close the modal
    - Click outside the modal or use the close button (X) to dismiss
+6. **Watch Live Twitch Stream** (Optional):
+   - A compact Twitch stream panel appears in the top-right corner when the streamer is live
+   - The panel automatically opens when the stream goes live and closes when offline
+   - When live: The panel shows the live stream with a pulsing "LIVE" indicator and cannot be closed
+   - When offline: The panel is closed by default, but can be opened manually to see the offline message
+   - A toggle button in the top-right shows "LIVE" (pulsing purple) when live or "OFFLINE" (gray) when offline
+   - Click the toggle button to manually open/close the stream panel
+   - Stream status is checked automatically every 60 seconds
 
 ## Examples
 
