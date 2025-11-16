@@ -5,6 +5,7 @@ import stationsData from '../stations.json'
 import scrappyLevelsData from '../scrappy.json'
 import blueprintsData from '../blueprints.json'
 import expeditionData from '../expedition.json'
+import questsData from '../quests.json'
 import { trackPageView } from './utils/analytics'
 import TwitchSidebar from './components/TwitchSidebar'
 import './App.css'
@@ -197,6 +198,56 @@ function App() {
     return requirements
   }
 
+  // Find where an item is required for quests
+  const findQuestRequirements = (itemName) => {
+    const requirements = []
+    
+    // Normalize item name for matching (convert to lowercase, handle spaces/dashes)
+    const normalizedItemName = itemName.toLowerCase().trim()
+    const normalizedItemNameDashed = normalizedItemName.replace(/\s+/g, '-')
+    const normalizedItemNameSpaced = normalizedItemNameDashed.replace(/-/g, ' ')
+    
+    questsData.quests.forEach(quest => {
+      if (quest.required_items && quest.required_items.length > 0) {
+        quest.required_items.forEach(reqItem => {
+          // Try to match by item name from items.json first
+          const questItemName = reqItem.item?.name || ''
+          const questItemId = reqItem.item_id || ''
+          
+          // Normalize quest item identifiers
+          const normalizedQuestItemName = questItemName.toLowerCase().trim()
+          const normalizedQuestItemId = questItemId.toLowerCase().trim()
+          const normalizedQuestItemIdNoRecipe = normalizedQuestItemId.replace('-recipe', '')
+          
+          // Match by item name (exact match)
+          const nameMatch = normalizedQuestItemName === normalizedItemName
+          
+          // Match by item_id (exact match or with -recipe suffix removed)
+          const idMatch = normalizedQuestItemId === normalizedItemNameDashed || 
+                         normalizedQuestItemId === normalizedItemNameSpaced ||
+                         normalizedQuestItemIdNoRecipe === normalizedItemNameDashed ||
+                         normalizedQuestItemIdNoRecipe === normalizedItemNameSpaced
+          
+          // Also check if the item exists in items.json with this name
+          const itemExistsInItems = Object.keys(itemsData).some(key => 
+            key.toLowerCase() === normalizedItemName ||
+            key.toLowerCase().replace(/\s+/g, '-') === normalizedItemNameDashed
+          )
+          
+          if (nameMatch || (idMatch && itemExistsInItems)) {
+            requirements.push({
+              questId: quest.id,
+              questName: quest.name,
+              amount: parseInt(reqItem.quantity) || 0
+            })
+          }
+        })
+      }
+    })
+    
+    return requirements
+  }
+
   // Find blueprints that use an item in their recipe
   const findBlueprintRecipes = (itemName) => {
     const blueprints = []
@@ -248,6 +299,9 @@ function App() {
     // Find expedition stage requirements
     const expeditionStageRequirements = findExpeditionStageRequirements(trimmedTerm)
     
+    // Find quest requirements
+    const questRequirements = findQuestRequirements(trimmedTerm)
+    
     // Find blueprint recipes
     const blueprintRecipes = findBlueprintRecipes(trimmedTerm)
 
@@ -258,6 +312,7 @@ function App() {
         stationRequirements: stationRequirements,
         scrappyLevelRequirements: scrappyLevelRequirements,
         expeditionStageRequirements: expeditionStageRequirements,
+        questRequirements: questRequirements,
         blueprintRecipes: blueprintRecipes
       })
     } else {
@@ -267,6 +322,7 @@ function App() {
         stationRequirements: stationRequirements,
         scrappyLevelRequirements: scrappyLevelRequirements,
         expeditionStageRequirements: expeditionStageRequirements,
+        questRequirements: questRequirements,
         blueprintRecipes: blueprintRecipes
       })
     }
@@ -393,8 +449,6 @@ function App() {
     switch (category) {
       case 'safe_to_recycle':
         return { label: 'Safe to Recycle', color: '#10b981', icon: '♻️' }
-      case 'keep_for_quests':
-        return { label: 'Keep for Quests', color: '#3b82f6', icon: '📋' }
       default:
         return { label: category, color: '#6b7280', icon: '📦' }
     }
@@ -405,11 +459,6 @@ function App() {
     if (!results) return 0
     
     let total = 0
-    
-    // Add keep for quests amount
-    if (results.data?.keep_for_quests?.amount) {
-      total += results.data.keep_for_quests.amount
-    }
     
     // Add all station requirements
     if (results.stationRequirements) {
@@ -426,6 +475,11 @@ function App() {
       total += results.expeditionStageRequirements.reduce((sum, req) => sum + req.amount, 0)
     }
     
+    // Add all quest requirements
+    if (results.questRequirements) {
+      total += results.questRequirements.reduce((sum, req) => sum + req.amount, 0)
+    }
+    
     // Note: Blueprint recipes are excluded from the total
     
     return total
@@ -436,11 +490,6 @@ function App() {
     if (!results) return 0
     
     let total = 0
-    
-    // Add keep for quests amount
-    if (results.data?.keep_for_quests?.amount) {
-      total += results.data.keep_for_quests.amount
-    }
     
     // Add station requirements (excluding checked upgrades)
     if (results.stationRequirements) {
@@ -468,6 +517,16 @@ function App() {
         // Check if this expedition stage is checked off
         const isChecked = checkedUpgrades[`expedition_stage_${req.stage}`]
         // Only add amount if expedition stage is not checked
+        return sum + (isChecked ? 0 : req.amount)
+      }, 0)
+    }
+    
+    // Add quest requirements (excluding checked quests)
+    if (results.questRequirements) {
+      total += results.questRequirements.reduce((sum, req) => {
+        // Check if this quest is checked off
+        const isChecked = checkedUpgrades[`quest_${req.questId}`]
+        // Only add amount if quest is not checked
         return sum + (isChecked ? 0 : req.amount)
       }, 0)
     }
@@ -591,6 +650,22 @@ function App() {
     localStorage.setItem('checkedUpgrades', JSON.stringify(newCheckedUpgrades))
   }
 
+  // Toggle quest checkbox
+  const toggleQuest = (questId) => {
+    const key = `quest_${questId}`
+    const newCheckedUpgrades = { ...checkedUpgrades }
+    const isCurrentlyChecked = newCheckedUpgrades[key]
+    
+    if (isCurrentlyChecked) {
+      delete newCheckedUpgrades[key]
+    } else {
+      newCheckedUpgrades[key] = true
+    }
+    
+    setCheckedUpgrades(newCheckedUpgrades)
+    localStorage.setItem('checkedUpgrades', JSON.stringify(newCheckedUpgrades))
+  }
+
   // Check if an item is needed for any checked upgrade
   const isItemNeededForCheckedUpgrade = (itemName) => {
     for (const key in checkedUpgrades) {
@@ -620,6 +695,41 @@ function App() {
             const requirement = scrappyLevel.requirements.find(
               req => req.name.toLowerCase() === itemName.toLowerCase()
             )
+            if (requirement) {
+              return true
+            }
+          }
+        } else if (key.startsWith('quest_')) {
+          // Check quests
+          const questId = key.replace('quest_', '')
+          const quest = questsData.quests.find(q => q.id === questId)
+          if (quest && quest.required_items) {
+            // Normalize item name for matching
+            const normalizedItemName = itemName.toLowerCase().trim()
+            const normalizedItemNameDashed = normalizedItemName.replace(/\s+/g, '-')
+            const normalizedItemNameSpaced = normalizedItemNameDashed.replace(/-/g, ' ')
+            
+            const requirement = quest.required_items.find(reqItem => {
+              const questItemName = reqItem.item?.name || ''
+              const questItemId = reqItem.item_id || ''
+              
+              const normalizedQuestItemName = questItemName.toLowerCase().trim()
+              const normalizedQuestItemId = questItemId.toLowerCase().trim()
+              const normalizedQuestItemIdNoRecipe = normalizedQuestItemId.replace('-recipe', '')
+              
+              const nameMatch = normalizedQuestItemName === normalizedItemName
+              const idMatch = normalizedQuestItemId === normalizedItemNameDashed || 
+                             normalizedQuestItemId === normalizedItemNameSpaced ||
+                             normalizedQuestItemIdNoRecipe === normalizedItemNameDashed ||
+                             normalizedQuestItemIdNoRecipe === normalizedItemNameSpaced
+              
+              const itemExistsInItems = Object.keys(itemsData).some(key => 
+                key.toLowerCase() === normalizedItemName ||
+                key.toLowerCase().replace(/\s+/g, '-') === normalizedItemNameDashed
+              )
+              
+              return nameMatch || (idMatch && itemExistsInItems)
+            })
             if (requirement) {
               return true
             }
@@ -823,8 +933,9 @@ function App() {
                   const hasStationRequirements = results.stationRequirements && results.stationRequirements.length > 0
                   const hasScrappyRequirements = results.scrappyLevelRequirements && results.scrappyLevelRequirements.length > 0
                   const hasExpeditionRequirements = results.expeditionStageRequirements && results.expeditionStageRequirements.length > 0
+                  const hasQuestRequirements = results.questRequirements && results.questRequirements.length > 0
                   const hasBlueprintRecipes = results.blueprintRecipes && results.blueprintRecipes.length > 0
-                  const hasAnyInfo = hasItemProperties || hasStationRequirements || hasScrappyRequirements || hasExpeditionRequirements || hasBlueprintRecipes
+                  const hasAnyInfo = hasItemProperties || hasStationRequirements || hasScrappyRequirements || hasExpeditionRequirements || hasQuestRequirements || hasBlueprintRecipes
                   
                   if (hasAnyInfo) {
                     return (
@@ -834,18 +945,6 @@ function App() {
                             <div className="category-header">
                               <span className="category-icon">♻️</span>
                               <span className="category-label">Safe to Recycle</span>
-                            </div>
-                          </div>
-                        )}
-                        
-                        {results.data?.keep_for_quests && (
-                          <div className="category-card" style={{ borderColor: 'rgba(255, 69, 0, 0.6)' }}>
-                            <div className="category-header">
-                              <span className="category-icon">📋</span>
-                              <span className="category-label">Keep for Quests</span>
-                            </div>
-                            <div className="category-amount">
-                              Amount needed: <strong>{results.data.keep_for_quests.amount}</strong>
                             </div>
                           </div>
                         )}
@@ -936,6 +1035,49 @@ function App() {
                             </div>
                             <div className="no-station-requirements">
                               Not required for any expedition stages.
+                            </div>
+                          </div>
+                        )}
+                        
+                        {/* Quest Requirements */}
+                        {hasQuestRequirements ? (
+                          <div className="category-card" style={{ borderColor: 'rgba(255, 69, 0, 0.6)' }}>
+                            <div className="category-header">
+                              <span className="category-icon">📋</span>
+                              <span className="category-label">Required for Quests</span>
+                            </div>
+                            <div className="station-requirements">
+                              {[...results.questRequirements]
+                                .sort((a, b) => {
+                                  const aChecked = checkedUpgrades[`quest_${a.questId}`]
+                                  const bChecked = checkedUpgrades[`quest_${b.questId}`]
+                                  // Sort: unchecked first, then checked
+                                  if (aChecked && !bChecked) return 1
+                                  if (!aChecked && bChecked) return -1
+                                  return 0
+                                })
+                                .map((req, index) => {
+                                  const isChecked = checkedUpgrades[`quest_${req.questId}`]
+                                  return (
+                                    <div key={`quest-${req.questId}-${index}`} className={`station-requirement-item ${isChecked ? 'checked-upgrade' : ''}`}>
+                                      <div className="station-name">
+                                        {req.questName}
+                                        {isChecked && <span className="checked-badge">✓ Completed</span>}
+                                      </div>
+                                      <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
+                                    </div>
+                                  )
+                                })}
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="category-card" style={{ borderColor: 'rgba(107, 114, 128, 0.6)' }}>
+                            <div className="category-header">
+                              <span className="category-icon">📋</span>
+                              <span className="category-label">Quest Requirements</span>
+                            </div>
+                            <div className="no-station-requirements">
+                              Not required for any quests.
                             </div>
                           </div>
                         )}
@@ -1118,6 +1260,38 @@ function App() {
                               </div>
                               <div className="station-level">
                                 Stage {req.stage}/6
+                              </div>
+                              <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
+                            </div>
+                          )
+                        })}
+                    </div>
+                  </div>
+                )}
+                {/* Show quest requirements even if item not in items.json */}
+                {results.questRequirements && results.questRequirements.length > 0 && (
+                  <div className="category-card" style={{ borderColor: 'rgba(255, 69, 0, 0.6)', marginTop: '16px' }}>
+                    <div className="category-header">
+                      <span className="category-icon">📋</span>
+                      <span className="category-label">Required for Quests</span>
+                    </div>
+                    <div className="station-requirements">
+                      {[...results.questRequirements]
+                        .sort((a, b) => {
+                          const aChecked = checkedUpgrades[`quest_${a.questId}`]
+                          const bChecked = checkedUpgrades[`quest_${b.questId}`]
+                          // Sort: unchecked first, then checked
+                          if (aChecked && !bChecked) return 1
+                          if (!aChecked && bChecked) return -1
+                          return 0
+                        })
+                        .map((req, index) => {
+                          const isChecked = checkedUpgrades[`quest_${req.questId}`]
+                          return (
+                            <div key={`quest-${req.questId}-${index}`} className={`station-requirement-item ${isChecked ? 'checked-upgrade' : ''}`}>
+                              <div className="station-name">
+                                {req.questName}
+                                {isChecked && <span className="checked-badge">✓ Completed</span>}
                               </div>
                               <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
                             </div>
@@ -1317,6 +1491,13 @@ function App() {
                     🚀 Projects
                   </button>
                   <button
+                    className={`upgrade-checklist-tab ${upgradeChecklistTab === 'quests' ? 'active' : ''}`}
+                    onClick={() => setUpgradeChecklistTab('quests')}
+                    type="button"
+                  >
+                    📋 Quests
+                  </button>
+                  <button
                     className={`upgrade-checklist-tab ${upgradeChecklistTab === 'scrappy' ? 'active' : ''}`}
                     onClick={() => setUpgradeChecklistTab('scrappy')}
                     type="button"
@@ -1417,6 +1598,37 @@ function App() {
                         )
                       })}
                     </>
+                  ) : upgradeChecklistTab === 'quests' ? (
+                    questsData.quests
+                      .filter(quest => quest.required_items && quest.required_items.length > 0)
+                      .map((quest) => {
+                        const key = `quest_${quest.id}`
+                        const isChecked = checkedUpgrades[key] || false
+                        return (
+                          <div key={quest.id} className="upgrade-station-group">
+                            <label className={`upgrade-checkbox-label ${isChecked ? 'checked' : ''}`}>
+                              <input
+                                type="checkbox"
+                                checked={isChecked}
+                                onChange={() => toggleQuest(quest.id)}
+                                className="upgrade-checkbox"
+                              />
+                              <div className="upgrade-checkbox-content">
+                                <span className="upgrade-checkbox-text">
+                                  {quest.name}
+                                </span>
+                                <div className="upgrade-requirements-preview">
+                                  {quest.required_items.map((reqItem, idx) => (
+                                    <span key={idx} className="upgrade-requirement-tag">
+                                      {reqItem.item?.name || reqItem.item_id} ({reqItem.quantity})
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                            </label>
+                          </div>
+                        )
+                      })
                   ) : (
                     scrappyLevelsData.scrappyLevelRequirementsRates.map((scrappyLevel) => {
                       const key = `scrappy_level_${scrappyLevel.level}`

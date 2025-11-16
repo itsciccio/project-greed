@@ -1,0 +1,584 @@
+{
+  "quests": [
+    {
+      "id": "a-bad-feeling",
+      "name": "A Bad Feeling",
+      "required_items": []
+    },
+    {
+      "id": "a-balanced-harvest",
+      "name": "A Balanced Harvest",
+      "required_items": []
+    },
+    {
+      "id": "a-better-use",
+      "name": "A Better Use",
+      "required_items": []
+    },
+    {
+      "id": "a-first-foothold",
+      "name": "A First Foothold",
+      "required_items": []
+    },
+    {
+      "id": "after-rain-comes",
+      "name": "After Rain Comes",
+      "required_items": []
+    },
+    {
+      "id": "a-lay-of-the-land",
+      "name": "A Lay of the Land",
+      "required_items": []
+    },
+    {
+      "id": "a-new-type-of-plant",
+      "name": "A New Type of Plant",
+      "required_items": []
+    },
+    {
+      "id": "esr-analyzer",
+      "name": "A Reveal in Ruins",
+      "required_items": []
+    },
+    {
+      "id": "armored-transports",
+      "name": "Armored Transports",
+      "required_items": []
+    },
+    {
+      "id": "a-symbol-of-unification",
+      "name": "A Symbol of Unification",
+      "required_items": []
+    },
+    {
+      "id": "a-warm-place-to-rest",
+      "name": "A Warm Place to Rest",
+      "required_items": []
+    },
+    {
+      "id": "back-on-top",
+      "name": "Back on Top",
+      "required_items": []
+    },
+    {
+      "id": "bees",
+      "name": "Bees!",
+      "required_items": []
+    },
+    {
+      "id": "broken-monument",
+      "name": "Broken Monument",
+      "required_items": []
+    },
+    {
+      "id": "building-a-library",
+      "name": "Building a Library",
+      "required_items": []
+    },
+    {
+      "id": "celestes-journals",
+      "name": "Celeste's Journals",
+      "required_items": []
+    },
+    {
+      "id": "clearer-skies",
+      "name": "Clearer Skies",
+      "required_items": [
+        {
+          "id": "8037fcea-c0ae-469d-b96a-17a29b72b158",
+          "item": {
+            "id": "arc-alloy",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/arc-alloy.webp",
+            "name": "ARC Alloy",
+            "rarity": "Uncommon",
+            "item_type": "Topside Material"
+          },
+          "item_id": "arc-alloy",
+          "quantity": 3
+        }
+      ]
+    },
+    {
+      "id": "cold-storage",
+      "name": "Cold Storage",
+      "required_items": []
+    },
+    {
+      "id": "communication-hideout",
+      "name": "Communication Hideout",
+      "required_items": []
+    },
+    {
+      "id": "digging-up-dirt",
+      "name": "Digging Up Dirt",
+      "required_items": []
+    },
+    {
+      "id": "doctors-orders",
+      "name": "Doctor's Orders",
+      "required_items": [
+        {
+          "id": "a0e499f5-3ebc-4558-b7fb-d944b4b3ce2b",
+          "item": {
+            "id": "syringe",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/syringe.webp",
+            "name": "Syringe",
+            "rarity": "Rare",
+            "item_type": "Topside Material"
+          },
+          "item_id": "syringe",
+          "quantity": 1
+        },
+        {
+          "id": "009a2205-a69b-4e24-a2c1-774f1f429175",
+          "item": {
+            "id": "antiseptic",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/antiseptic.webp",
+            "name": "Antiseptic",
+            "rarity": "Rare",
+            "item_type": "Refined Material"
+          },
+          "item_id": "antiseptic",
+          "quantity": 2
+        },
+        {
+          "id": "12d78114-b09d-4d8d-9c74-e65c722d81ff",
+          "item": {
+            "id": "durable-cloth",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/durable-cloth.webp",
+            "name": "Durable Cloth",
+            "rarity": "Uncommon",
+            "item_type": "Refined Material"
+          },
+          "item_id": "durable-cloth",
+          "quantity": 1
+        },
+        {
+          "id": "90d663ce-ede5-4b60-8de9-2ab6b2aa0e75",
+          "item": {
+            "id": "great-muullein",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/great-muullein.webp",
+            "name": "Great Mullein",
+            "rarity": "Uncommon",
+            "item_type": "Nature"
+          },
+          "item_id": "great-muullein",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "dormant-barons",
+      "name": "Dormant Barons",
+      "required_items": []
+    },
+    {
+      "id": "down-to-earth",
+      "name": "Down To Earth",
+      "required_items": []
+    },
+    {
+      "id": "echoes-of-victory-ridge",
+      "name": "Echoes of Victory Ridge",
+      "required_items": []
+    },
+    {
+      "id": "espresso",
+      "name": "Espresso",
+      "required_items": []
+    },
+    {
+      "id": "eyes-in-the-sky",
+      "name": "Eyes in the Sky",
+      "required_items": []
+    },
+    {
+      "id": "eyes-on-the-prize",
+      "name": "Eyes on the Prize",
+      "required_items": []
+    },
+    {
+      "id": "flickering-threat",
+      "name": "Flickering Threat",
+      "required_items": [
+        {
+          "id": "2b15031f-4e82-48ec-9c49-edebf91855c6",
+          "item": {
+            "id": "wires-recipe",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/wires-recipe.webp",
+            "name": "Wires",
+            "rarity": "Uncommon",
+            "item_type": "Topside Material"
+          },
+          "item_id": "wires-recipe",
+          "quantity": 4
+        }
+      ]
+    },
+    {
+      "id": "greasing-her-palms",
+      "name": "Greasing Her Palms",
+      "required_items": []
+    },
+    {
+      "id": "hatch-repairs",
+      "name": "Hatch Repairs",
+      "required_items": []
+    },
+    {
+      "id": "industrial-espionage",
+      "name": "Industrial Espionage",
+      "required_items": [
+        {
+          "id": "28540562-5a7a-4c91-b02b-7bac2a0a95a4",
+          "item": {
+            "id": "burletta-i",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/burletta-i.webp",
+            "name": "Burletta I",
+            "rarity": "Uncommon",
+            "item_type": "Weapon"
+          },
+          "item_id": "burletta-i",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "in-my-image",
+      "name": "In My Image",
+      "required_items": []
+    },
+    {
+      "id": "into-the-fray",
+      "name": "Into the Fray",
+      "required_items": [
+        {
+          "id": "560a9deb-a8c7-4960-a300-a5a0022c4e7b",
+          "item": {
+            "id": "leaper-pulse-unit",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/leaper-pulse-unit.webp",
+            "name": "Leaper Pulse Unit",
+            "rarity": "Epic",
+            "item_type": "Throwable"
+          },
+          "item_id": "leaper-pulse-unit",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "keeping-the-memory",
+      "name": "Keeping the Memory",
+      "required_items": []
+    },
+    {
+      "id": "life-of-a-pharmacist",
+      "name": "Life of a Pharmacist",
+      "required_items": []
+    },
+    {
+      "id": "lost-in-transmission",
+      "name": "Lost in Transmission",
+      "required_items": []
+    },
+    {
+      "id": "marked-for-death",
+      "name": "Marked for Death",
+      "required_items": []
+    },
+    {
+      "id": "market-correction",
+      "name": "Market Correction",
+      "required_items": []
+    },
+    {
+      "id": "medical-merchandise",
+      "name": "Medical Merchandise",
+      "required_items": []
+    },
+    {
+      "id": "mixed-signals",
+      "name": "Mixed Signals",
+      "required_items": [
+        {
+          "id": "6fba1cd5-9ed7-469b-ae7f-abd677205d95",
+          "item": {
+            "id": "surveyor-vault",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/surveyor-vault.webp",
+            "name": "Surveyor Vault",
+            "rarity": "Rare",
+            "item_type": "Recyclable"
+          },
+          "item_id": "surveyor-vault",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "off-the-raider",
+      "name": "Off The Radar",
+      "required_items": []
+    },
+    {
+      "id": "our-presence-up-there",
+      "name": "Our Presence Up There",
+      "required_items": []
+    },
+    {
+      "id": "out-of-the-shadows",
+      "name": "Out of the Shadows",
+      "required_items": [
+        {
+          "id": "026b0aee-a0b5-462b-8c7b-afd5f8084f33",
+          "item": {
+            "id": "rocketeer-part",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/rocketeer-part.webp",
+            "name": "Rocketeer Driver",
+            "rarity": "Epic",
+            "item_type": "Recyclable"
+          },
+          "item_id": "rocketeer-part",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "picking-up-the-pieces",
+      "name": "Picking Up The Pieces",
+      "required_items": []
+    },
+    {
+      "id": "power-out",
+      "name": "Power Out",
+      "required_items": []
+    },
+    {
+      "id": "prescriptions-of-the-past",
+      "name": "Prescriptions of the Past",
+      "required_items": []
+    },
+    {
+      "id": "reduced-to-rubble",
+      "name": "Reduced To Rubble",
+      "required_items": []
+    },
+    {
+      "id": "safe-passage",
+      "name": "Safe Passage",
+      "required_items": []
+    },
+    {
+      "id": "snap-and-salvage",
+      "name": "Snap and Salvage",
+      "required_items": []
+    },
+    {
+      "id": "source-of-the-contamination",
+      "name": "Source of the Contamination",
+      "required_items": []
+    },
+    {
+      "id": "sparks-fly",
+      "name": "Sparks Fly",
+      "required_items": []
+    },
+    {
+      "id": "straight-record",
+      "name": "Straight Record",
+      "required_items": []
+    },
+    {
+      "id": "switching-the-supply",
+      "name": "Switching the Supply",
+      "required_items": []
+    },
+    {
+      "id": "the-league",
+      "name": "The League - delete",
+      "required_items": []
+    },
+    {
+      "id": "the-majors-footlocker",
+      "name": "The Majors Footlocker",
+      "required_items": []
+    },
+    {
+      "id": "the-right-tool",
+      "name": "The Right Tool",
+      "required_items": []
+    },
+    {
+      "id": "the-root-of-the-matter",
+      "name": "The Root of the Matter",
+      "required_items": []
+    },
+    {
+      "id": "the-trifecta",
+      "name": "The Trifecta",
+      "required_items": [
+        {
+          "id": "4b2a1ef5-9174-4ba7-86e4-0d1ec51df68c",
+          "item": {
+            "id": "wasp-driver",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/wasp-driver.webp",
+            "name": "Wasp Driver",
+            "rarity": "Rare",
+            "item_type": "Recyclable"
+          },
+          "item_id": "wasp-driver",
+          "quantity": 2
+        },
+        {
+          "id": "f914b7cd-453d-470d-aaf8-0b11b47a8757",
+          "item": {
+            "id": "hornet-driver",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/hornet-driver.webp",
+            "name": "Hornet Driver",
+            "rarity": "Rare",
+            "item_type": "Recyclable"
+          },
+          "item_id": "hornet-driver",
+          "quantity": 2
+        },
+        {
+          "id": "0ed430c2-3e9b-4b3a-b438-4314d92dc53e",
+          "item": {
+            "id": "snitch-scanner",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/snitch-scanner.webp",
+            "name": "Snitch Scanner",
+            "rarity": "Uncommon",
+            "item_type": "Recyclable"
+          },
+          "item_id": "snitch-scanner",
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": "topside",
+      "name": "Topside - delete",
+      "required_items": []
+    },
+    {
+      "id": "trash-into-treasure",
+      "name": "Trash Into Treasure",
+      "required_items": [
+        {
+          "id": "49a22720-13c1-4a96-85ac-2cbd78868fe5",
+          "item": {
+            "id": "wires-recipe",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/wires-recipe.webp",
+            "name": "Wires",
+            "rarity": "Uncommon",
+            "item_type": "Topside Material"
+          },
+          "item_id": "wires-recipe",
+          "quantity": 6
+        },
+        {
+          "id": "f4440756-a3ad-4d5e-8809-87297b63394e",
+          "item": {
+            "id": "battery",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/battery.webp",
+            "name": "Battery",
+            "rarity": "Uncommon",
+            "item_type": "Topside Material"
+          },
+          "item_id": "battery",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "tribute-to-toledo",
+      "name": "Tribute to Toledo",
+      "required_items": [
+        {
+          "id": "ba5ad4c4-683c-40bb-b419-7f0007b62f30",
+          "item": {
+            "id": "power-rod",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/power-rod.webp",
+            "name": "Power Rod",
+            "rarity": "Epic",
+            "item_type": "Advanced Material"
+          },
+          "item_id": "power-rod",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "turnabout",
+      "name": "Turnabout",
+      "required_items": []
+    },
+    {
+      "id": "unexpected-initiative",
+      "name": "Unexpected Initiative",
+      "required_items": [
+        {
+          "id": "447ee45b-39b9-4293-a2bf-e144b437a967",
+          "item": {
+            "id": "water-pump",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/water-pump.webp",
+            "name": "Water Pump",
+            "rarity": "Rare",
+            "item_type": "Recyclable"
+          },
+          "item_id": "water-pump",
+          "quantity": 1
+        },
+        {
+          "id": "8cca517b-9236-49fe-bcb0-eadb94e12bfe",
+          "item": {
+            "id": "fertilizer",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/fertilizer.webp",
+            "name": "Fertilizer",
+            "rarity": "Common",
+            "item_type": "Misc"
+          },
+          "item_id": "fertilizer",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "untended-garden",
+      "name": "Untended Garden",
+      "required_items": []
+    },
+    {
+      "id": "water-troubles",
+      "name": "Water Troubles",
+      "required_items": []
+    },
+    {
+      "id": "what-goes-around",
+      "name": "What Goes Around",
+      "required_items": [
+        {
+          "id": "651f4eed-98be-4f66-82ff-f74347250088",
+          "item": {
+            "id": "fireball-burner",
+            "icon": "https://cdn.metaforge.app/arc-raiders/icons/fireball-burner.webp",
+            "name": "Fireball Burner",
+            "rarity": "Uncommon",
+            "item_type": "Recyclable"
+          },
+          "item_id": "fireball-burner",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "what-we-left-behind",
+      "name": "What We Left Behind",
+      "required_items": []
+    },
+    {
+      "id": "with-a-trace",
+      "name": "With a Trace",
+      "required_items": []
+    }
+  ]
+}

@@ -46,9 +46,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/angled-grip-iii-recipe.webp"
   },
   "Antiseptic": {
-    "keep_for_quests": {
-      "amount": 2
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/antiseptic.webp"
   },
   "Anvil Blueprint": {
@@ -610,9 +607,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/flame-spray.webp"
   },
   "Flow Controller": {
-    "keep_for_quests": {
-      "amount": 1
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/flow-controller.webp"
   },
   "Flute": {
@@ -715,9 +709,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/horizontal-grip-blueprint.webp"
   },
   "Hornet Driver": {
-    "keep_for_quests": {
-      "amount": 2
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/hornet-driver.webp"
   },
   "Household Cleaner": {
@@ -840,9 +831,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/launcher-ammo-blueprint.webp"
   },
   "Leaper Pulse Unit": {
-    "keep_for_quests": {
-      "amount": 1
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/leaper-pulse-unit.webp"
   },
   "Lemon": {
@@ -906,9 +894,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/magnetic-accelerator.webp"
   },
   "Magnetron": {
-    "keep_for_quests": {
-      "amount": 1
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/magnetron.webp"
   },
   "Mastery Medal (Backpack Charm)": {
@@ -1061,9 +1046,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/power-cable.webp"
   },
   "Power Rod": {
-    "keep_for_quests": {
-      "amount": 1
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/power-rod.webp"
   },
   "Power Rod Blueprint": {
@@ -1162,9 +1144,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/rocket-thruster.webp"
   },
   "Rocketeer Driver": {
-    "keep_for_quests": {
-      "amount": 1
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/rocketeer-part.webp"
   },
   "Rollbot Part": {
@@ -1336,9 +1315,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/snap-hook-recipe.webp"
   },
   "Snitch Scanner": {
-    "keep_for_quests": {
-      "amount": 2
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/snitch-scanner.webp"
   },
   "Spaceport Container Storage Key": {
@@ -1431,18 +1407,12 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/surge-shield-recharger.webp"
   },
   "Surveyor Vault": {
-    "keep_for_quests": {
-      "amount": 1
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/surveyor-vault.webp"
   },
   "Synthesized Fuel": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/synthesized-fuel.webp"
   },
   "Syringe": {
-    "keep_for_quests": {
-      "amount": 1
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/syringe.webp"
   },
   "Tactical Mk. 1": {
@@ -1619,9 +1589,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/vulcano-iv.webp"
   },
   "Wasp Driver": {
-    "keep_for_quests": {
-      "amount": 2
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/wasp-driver.webp"
   },
   "Water Filter": {
@@ -1629,9 +1596,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/water-filter.webp"
   },
   "Water Pump": {
-    "keep_for_quests": {
-      "amount": 1
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/water-pump.webp"
   },
   "Wires": {
