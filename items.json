@@ -6,9 +6,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/advanced-arc-powercell.webp"
   },
   "Advanced Electrical Components": {
-    "keep_for_projects": {
-      "amount": 5
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/advanced-electrical-components.webp"
   },
   "Advanced Electrical Components Blueprint": {
@@ -81,9 +78,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/apricot.webp"
   },
   "ARC Alloy": {
-    "keep_for_projects": {
-      "amount": 80
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/arc-alloy.webp"
   },
   "ARC Circuitry": {
@@ -155,9 +149,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/bastion-part.webp"
   },
   "Battery": {
-    "keep_for_projects": {
-      "amount": 30
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/battery.webp"
   },
   "Bettina Blueprint": {
@@ -390,9 +381,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/cooling-coil.webp"
   },
   "Cooling Fan": {
-    "keep_for_projects": {
-      "amount": 5
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/cooling-fan.webp"
   },
   "Cracked Bioscanner": {
@@ -495,15 +483,9 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/duct-tape-recipe.webp"
   },
   "Durable Cloth": {
-    "keep_for_projects": {
-      "amount": 35
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/durable-cloth.webp"
   },
   "Electrical Components": {
-    "keep_for_projects": {
-      "amount": 30
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/electrical-components.webp"
   },
   "Empty Wine Bottle": {
@@ -525,9 +507,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/esr-analyzer.webp"
   },
   "Exodus Modules": {
-    "keep_for_projects": {
-      "amount": 1
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/exodus-modules.webp"
   },
   "Expired Pasta": {
@@ -761,9 +740,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/hullcracker-iv.webp"
   },
   "Humidifier": {
-    "keep_for_projects": {
-      "amount": 5
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/humidifier.webp"
   },
   "Ice Cream Scooper": {
@@ -867,9 +843,6 @@
     "keep_for_quests": {
       "amount": 1
     },
-    "keep_for_projects": {
-      "amount": 3
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/leaper-pulse-unit.webp"
   },
   "Lemon": {
@@ -885,9 +858,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/light-ammo.webp"
   },
   "Light Bulb": {
-    "keep_for_projects": {
-      "amount": 5
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/light-bulb.webp"
   },
   "Light Gun Parts": {
@@ -933,9 +903,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/magnet.webp"
   },
   "Magnetic Accelerator": {
-    "keep_for_projects": {
-      "amount": 3
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/magnetic-accelerator.webp"
   },
   "Magnetron": {
@@ -970,9 +937,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/metal-brackets.webp"
   },
   "Metal Parts": {
-    "keep_for_projects": {
-      "amount": 150
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/metal-parts.webp"
   },
   "Microscope": {
@@ -1226,9 +1190,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/rubber-pad.webp"
   },
   "Rubber Parts": {
-    "keep_for_projects": {
-      "amount": 200
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/rubber-parts-recipe.webp"
   },
   "Ruined Accordion": {
@@ -1282,9 +1243,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/seeker-grenade-blueprint.webp"
   },
   "Sensors": {
-    "keep_for_projects": {
-      "amount": 20
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/sensors-recipe.webp"
   },
   "Sentinel Firing Core": {
@@ -1434,9 +1392,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/statuette.webp"
   },
   "Steel Spring": {
-    "keep_for_projects": {
-      "amount": 15
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/spring.webp"
   },
   "Stella Montis Archives Key": {
@@ -1680,9 +1635,6 @@
     "image": "https://cdn.metaforge.app/arc-raiders/icons/water-pump.webp"
   },
   "Wires": {
-    "keep_for_projects": {
-      "amount": 30
-    },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/wires-recipe.webp"
   },
   "WolfPack": {
