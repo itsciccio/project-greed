@@ -218,6 +218,9 @@
   "Blue Gate Confiscation Room Key": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/blue-gate-confiscation-room-key.webp"
   },
+  "Blue Gate Village Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/blue-gate-village-key.webp"
+  },
   "Blue Light Stick": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/blue-light-stick.webp"
   },
@@ -261,6 +264,9 @@
   "Broken Guidance System": {
     "safe_to_recycle": true,
     "image": "https://cdn.metaforge.app/arc-raiders/icons/broken-guidance-system.webp"
+  },
+  "Broken Handcuffs": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/broken-handcuffs.webp"
   },
   "Broken Handheld Radio": {
     "safe_to_recycle": true,
@@ -624,17 +630,20 @@
   "Flame Spray": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/flame-spray.webp"
   },
-  "Flute": {
-    "safe_to_recycle": true
-  },
   "Flow Controller": {
     "keep_for_quests": {
       "amount": 1
     },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/flow-controller.webp"
   },
+  "Flute": {
+    "safe_to_recycle": true
+  },
   "Free Loadout Augment": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/free-loadout-augment.webp"
+  },
+  "Frequency Modulation Box": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/frequency-modulation-box.webp"
   },
   "Fried Motherboard": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/fried-motherboard.webp"
@@ -661,6 +670,9 @@
   },
   "Gas Mine Blueprint": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/gas-mine-blueprint.webp"
+  },
+  "Geiger Counter": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/geiger-counter.webp"
   },
   "Goggles (Radio Renegade Variant)": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/goggles-radio-renegade-variant.webp"
@@ -788,6 +800,9 @@
     "safe_to_recycle": true,
     "image": "https://cdn.metaforge.app/arc-raiders/icons/industrial-magnet.webp"
   },
+  "Ion Sputter": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/ion-sputter.webp"
+  },
   "Jolt Mine": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/jolt-mine.webp"
   },
@@ -863,7 +878,9 @@
   "Li'l Smoke Grenade": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/lil-smoke-grenade.webp"
   },
-  "Lidar Scanner": {},
+  "Lidar Scanner": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/lidar-scanner.webp"
+  },
   "Light Ammo": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/light-ammo.webp"
   },
@@ -915,20 +932,23 @@
   "Magnet": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/magnet.webp"
   },
-  "Magnetron": {
-    "keep_for_quests": {
-      "amount": 1
-    },
-    "image": "https://cdn.metaforge.app/arc-raiders/icons/magnetron.webp"
-  },
   "Magnetic Accelerator": {
     "keep_for_projects": {
       "amount": 3
     },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/magnetic-accelerator.webp"
   },
+  "Magnetron": {
+    "keep_for_quests": {
+      "amount": 1
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/magnetron.webp"
+  },
   "Mastery Medal (Backpack Charm)": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/mastery-medal-backpack-charm.webp"
+  },
+  "Matriarch Reactor": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/matriarch-reactor.webp"
   },
   "Mechanical Components": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/mechanical-components.webp"
@@ -954,6 +974,12 @@
       "amount": 150
     },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/metal-parts.webp"
+  },
+  "Microscope": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/microscope.webp"
+  },
+  "Mini Centrifuge": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/mini-centrifuge.webp"
   },
   "Mod Components": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/mod-components.webp"
@@ -1102,6 +1128,9 @@
     "safe_to_recycle": true,
     "image": "https://cdn.metaforge.app/arc-raiders/icons/radio.webp"
   },
+  "Radio Relay": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/radio-relay.webp"
+  },
   "Radio Renegade (Outfit)": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/radio-renegade-outfit.webp"
   },
@@ -1186,6 +1215,9 @@
   "Rosary": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/rosary.webp"
   },
+  "Rotary Encoder": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/rotary-encoder.webp"
+  },
   "Rubber Duck": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/rubber-duck.webp"
   },
@@ -1209,7 +1241,7 @@
   },
   "Ruined Handcuffs": {
     "safe_to_recycle": true,
-    "image": "https://cdn.metaforge.app/arc-raiders/icons/broken-handcuffs.webp"
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/ruined-handcuffs.webp"
   },
   "Ruined Parachute": {
     "safe_to_recycle": true,
@@ -1239,6 +1271,9 @@
   "Rusty ARC Steel": {
     "safe_to_recycle": true,
     "image": "https://cdn.metaforge.app/arc-raiders/icons/rusty-arc-steel.webp"
+  },
+  "Sample Cleaner": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/sample-cleaner.webp"
   },
   "Seeker Grenade": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/seeker-grenade.webp"
@@ -1296,6 +1331,12 @@
   },
   "Shrapnel Grenade": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/shrapnel-grenade.webp"
+  },
+  "Shredder Gyro": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/shredder-gyro.webp"
+  },
+  "Signal Amplifier": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/signal-amplifier.webp"
   },
   "Silencer I": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/silencer-i.webp"
@@ -1360,6 +1401,12 @@
   "Speaker Component": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/speaker-component.webp"
   },
+  "Spectrometer": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/spectrometer.webp"
+  },
+  "Spectrum Analyzer": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/spectrum-analyzer.webp"
+  },
   "Spotter Relay": {
     "safe_to_recycle": true,
     "image": "https://cdn.metaforge.app/arc-raiders/icons/spotter-relay.webp"
@@ -1391,6 +1438,18 @@
       "amount": 15
     },
     "image": "https://cdn.metaforge.app/arc-raiders/icons/spring.webp"
+  },
+  "Stella Montis Archives Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/stella-montis-archives-key.webp"
+  },
+  "Stella Montis Assembly Admin Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/stella-montis-assembly-admin-key.webp"
+  },
+  "Stella Montis Medical Storage Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/stella-montis-medical-storage-key.webp"
+  },
+  "Stella Montis Security Checkpoint Key": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/stella-montis-security-checkpoint-key.webp"
   },
   "Sterilized Bandage": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/sterilized-bandage.webp"
@@ -1463,6 +1522,9 @@
     "safe_to_recycle": true,
     "image": "https://cdn.metaforge.app/arc-raiders/icons/tattered-clothes.webp"
   },
+  "Telemetry Transceiver": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/telemetry-transceiver.webp"
+  },
   "Tempest I": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/tempest-i.webp"
   },
@@ -1513,7 +1575,9 @@
   "Torrente IV": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/torrente-iv.webp"
   },
-  "Trailblazer Grenade": {},
+  "Trailblazer Grenade": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/trailblazer-grenade.webp"
+  },
   "Trailblazer Grenade Blueprint": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/trailblazer-grenade-blueprint.webp"
   },
