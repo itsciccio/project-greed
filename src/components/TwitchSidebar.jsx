@@ -48,9 +48,12 @@ function TwitchSidebar() {
     return () => clearInterval(interval)
   }, [])
 
-  // Prevent closing when live (enforce open)
+  // Handle close - allow closing on mobile even when live
   const handleClose = () => {
-    if (!isLive) {
+    const isMobile = window.innerWidth <= 768
+    // On mobile, allow closing even when live
+    // On desktop, only allow closing when offline
+    if (isMobile || !isLive) {
       setIsOpen(false)
     }
   }
@@ -79,15 +82,13 @@ function TwitchSidebar() {
               <span>{isLive ? 'Live Stream' : `${TWITCH_CHANNEL.charAt(0).toUpperCase() + TWITCH_CHANNEL.slice(1)} is Offline`}</span>
               {isLive && <span className="twitch-live-indicator">● LIVE</span>}
             </div>
-            {!isLive && (
-              <button
-                className="twitch-close-button"
-                onClick={handleClose}
-                aria-label="Close stream"
-              >
-                <MdClose />
-              </button>
-            )}
+            <button
+              className="twitch-close-button"
+              onClick={handleClose}
+              aria-label="Close stream"
+            >
+              <MdClose />
+            </button>
           </div>
           <div className="twitch-embed-wrapper">
             {isLive ? (
