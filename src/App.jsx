@@ -1456,7 +1456,7 @@ function App() {
 
         {/* Upgrade Checklist Modal */}
         {showUpgradeChecklistModal && (
-          <div className="modal-overlay" onClick={() => setShowUpgradeChecklistModal(false)}>
+          <div className="modal-overlay upgrade-checklist-modal-overlay" onClick={() => setShowUpgradeChecklistModal(false)}>
             <div className="modal-content upgrade-checklist-modal-content" onClick={(e) => e.stopPropagation()}>
               <div className="modal-header">
                 <h2 className="modal-title">

@@ -1269,8 +1269,15 @@
 }
 
 /* Upgrade Checklist Modal Styles */
+.upgrade-checklist-modal-overlay {
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
 .upgrade-checklist-modal-content {
   max-width: 700px;
+  max-height: calc(100vh - 80px);
+  margin-top: 0;
 }
 
 .upgrade-checklist-modal-body {
