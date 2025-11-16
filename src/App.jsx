@@ -53,7 +53,7 @@ function ExpeditionStages({ onItemClick }) {
                   className="expedition-category-requirement-item"
                 >
                   <span className="expedition-category-cred-value">
-                    {req.credValue.toLocaleString()} Cred
+                    {req.credValue.toLocaleString()} Coins
                   </span>
                   <span className="expedition-category-name">
                     worth of {req.category}
