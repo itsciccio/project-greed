@@ -627,6 +627,12 @@
   "Flute": {
     "safe_to_recycle": true
   },
+  "Flow Controller": {
+    "keep_for_quests": {
+      "amount": 1
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/flow-controller.webp"
+  },
   "Free Loadout Augment": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/free-loadout-augment.webp"
   },
@@ -908,6 +914,12 @@
   },
   "Magnet": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/magnet.webp"
+  },
+  "Magnetron": {
+    "keep_for_quests": {
+      "amount": 1
+    },
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/magnetron.webp"
   },
   "Magnetic Accelerator": {
     "keep_for_projects": {
