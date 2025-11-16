@@ -9,6 +9,52 @@ import { trackPageView } from './utils/analytics'
 import TwitchSidebar from './components/TwitchSidebar'
 import './App.css'
 
+// Total Summary Card Component
+function TotalSummaryCard({ originalTotal, totalAmount, checkedUpgrades, marginTop = false }) {
+  if (originalTotal <= 0) return null
+
+  return (
+    <div className="total-summary-card" style={marginTop ? { marginTop: '16px' } : {}}>
+      <div className="total-summary-header">
+        <span className="total-summary-icon">📊</span>
+        <span className="total-summary-label">Total Amount Required</span>
+      </div>
+      <div className="total-summary-amount">
+        {totalAmount > 0 ? (
+          <>
+            <strong>{totalAmount}</strong>
+            {originalTotal !== totalAmount && originalTotal > 0 && (
+              <span className="total-summary-original">
+                <span className="total-summary-original-label">Original:</span>
+                <span className="total-summary-original-value">{originalTotal}</span>
+              </span>
+            )}
+          </>
+        ) : (
+          <div className="total-summary-complete">
+            <strong>0</strong>
+            <span className="total-summary-complete-message">All items collected!</span>
+            {originalTotal !== totalAmount && originalTotal > 0 && (
+              <span className="total-summary-original">
+                <span className="total-summary-original-label">Original:</span>
+                <span className="total-summary-original-value">{originalTotal}</span>
+              </span>
+            )}
+          </div>
+        )}
+      </div>
+      <div className="total-summary-note">
+        Includes: Projects, Station Upgrades, and Scrappy Levels (Blueprints excluded)
+        {Object.keys(checkedUpgrades).length > 0 && (
+          <span className="total-summary-upgrade-note">
+            <br />✓ Excludes items from completed upgrades in your checklist
+          </span>
+        )}
+      </div>
+    </div>
+  )
+}
+
 // Expedition Stages Component
 function ExpeditionStages({ onItemClick }) {
   return (
@@ -83,6 +129,13 @@ function App() {
   const [showRecyclableModal, setShowRecyclableModal] = useState(false)
   const [recyclableSearchTerm, setRecyclableSearchTerm] = useState('')
   const [showExpeditionModal, setShowExpeditionModal] = useState(false)
+  const [showUpgradeChecklistModal, setShowUpgradeChecklistModal] = useState(false)
+  const [checkedUpgrades, setCheckedUpgrades] = useState(() => {
+    // Load from localStorage, default to empty object
+    const saved = localStorage.getItem('checkedUpgrades')
+    return saved ? JSON.parse(saved) : {}
+  })
+  const [upgradeChecklistTab, setUpgradeChecklistTab] = useState('stations')
   const searchInputRef = useRef(null)
   const dropdownRef = useRef(null)
   const settingsRef = useRef(null)
@@ -382,7 +435,33 @@ function App() {
     }
   }
 
-  // Calculate total amount required (excluding blueprints)
+  // Calculate original total amount required (before subtracting checked upgrades)
+  const calculateOriginalTotalAmount = (results) => {
+    if (!results) return 0
+    
+    let total = 0
+    
+    // Add projects amount
+    if (results.data?.keep_for_projects?.amount) {
+      total += results.data.keep_for_projects.amount
+    }
+    
+    // Add all station requirements
+    if (results.stationRequirements) {
+      total += results.stationRequirements.reduce((sum, req) => sum + req.amount, 0)
+    }
+    
+    // Add all scrappy level requirements
+    if (results.scrappyLevelRequirements) {
+      total += results.scrappyLevelRequirements.reduce((sum, req) => sum + req.amount, 0)
+    }
+    
+    // Note: Blueprint recipes are excluded from the total
+    
+    return total
+  }
+
+  // Calculate total amount required (excluding blueprints and checked upgrades)
   const calculateTotalAmount = (results) => {
     if (!results) return 0
     
@@ -393,14 +472,24 @@ function App() {
       total += results.data.keep_for_projects.amount
     }
     
-    // Add station requirements
+    // Add station requirements (excluding checked upgrades)
     if (results.stationRequirements) {
-      total += results.stationRequirements.reduce((sum, req) => sum + req.amount, 0)
+      total += results.stationRequirements.reduce((sum, req) => {
+        // Check if this upgrade is checked off
+        const isChecked = checkedUpgrades[`${req.station}_${req.level}`]
+        // Only add amount if upgrade is not checked
+        return sum + (isChecked ? 0 : req.amount)
+      }, 0)
     }
     
-    // Add scrappy level requirements
+    // Add scrappy level requirements (excluding checked upgrades)
     if (results.scrappyLevelRequirements) {
-      total += results.scrappyLevelRequirements.reduce((sum, req) => sum + req.amount, 0)
+      total += results.scrappyLevelRequirements.reduce((sum, req) => {
+        // Check if this scrappy level is checked off
+        const isChecked = checkedUpgrades[`scrappy_level_${req.level}`]
+        // Only add amount if scrappy level is not checked
+        return sum + (isChecked ? 0 : req.amount)
+      }, 0)
     }
     
     // Note: Blueprint recipes are excluded from the total
@@ -413,6 +502,127 @@ function App() {
     const newValue = !showTotalSummary
     setShowTotalSummary(newValue)
     localStorage.setItem('showTotalSummary', JSON.stringify(newValue))
+  }
+
+  // Toggle upgrade checkbox
+  const toggleUpgrade = (stationName, level) => {
+    const key = `${stationName}_${level}`
+    const newCheckedUpgrades = { ...checkedUpgrades }
+    const station = stationsData.stations.find(s => s.name === stationName)
+    
+    if (!station) return
+    
+    const isCurrentlyChecked = newCheckedUpgrades[key]
+    
+    if (isCurrentlyChecked) {
+      // Unchecking: uncheck this level and all higher levels
+      delete newCheckedUpgrades[key]
+      station.levels.forEach(l => {
+        if (l.level > level) {
+          const higherKey = `${stationName}_${l.level}`
+          delete newCheckedUpgrades[higherKey]
+        }
+      })
+    } else {
+      // Checking: check this level and all lower levels
+      newCheckedUpgrades[key] = true
+      station.levels.forEach(l => {
+        if (l.level < level) {
+          const lowerKey = `${stationName}_${l.level}`
+          newCheckedUpgrades[lowerKey] = true
+        }
+      })
+    }
+    
+    setCheckedUpgrades(newCheckedUpgrades)
+    localStorage.setItem('checkedUpgrades', JSON.stringify(newCheckedUpgrades))
+  }
+
+  // Get emoji for station
+  const getStationEmoji = (stationName) => {
+    const emojiMap = {
+      'Gunsmith': '🔫',
+      'Gear Bench': '🎒',
+      'Medical Lab': '🏥',
+      'Explosives Station': '💣',
+      'Utility Station': '🔧',
+      'Refiner': '⚗️'
+    }
+    return emojiMap[stationName] || '🏭'
+  }
+
+  // Toggle scrappy level checkbox
+  const toggleScrappyLevel = (level) => {
+    const key = `scrappy_level_${level}`
+    const newCheckedUpgrades = { ...checkedUpgrades }
+    const isCurrentlyChecked = newCheckedUpgrades[key]
+    
+    if (isCurrentlyChecked) {
+      // Unchecking: uncheck this level and all higher levels
+      delete newCheckedUpgrades[key]
+      scrappyLevelsData.scrappyLevelRequirementsRates.forEach(sl => {
+        if (sl.level > level) {
+          const higherKey = `scrappy_level_${sl.level}`
+          delete newCheckedUpgrades[higherKey]
+        }
+      })
+    } else {
+      // Checking: check this level and all lower levels
+      newCheckedUpgrades[key] = true
+      scrappyLevelsData.scrappyLevelRequirementsRates.forEach(sl => {
+        if (sl.level < level) {
+          const lowerKey = `scrappy_level_${sl.level}`
+          newCheckedUpgrades[lowerKey] = true
+        }
+      })
+    }
+    
+    setCheckedUpgrades(newCheckedUpgrades)
+    localStorage.setItem('checkedUpgrades', JSON.stringify(newCheckedUpgrades))
+  }
+
+  // Check if an item is needed for any checked upgrade
+  const isItemNeededForCheckedUpgrade = (itemName) => {
+    for (const key in checkedUpgrades) {
+      if (checkedUpgrades[key]) {
+        // Check station upgrades
+        if (!key.startsWith('scrappy_level_')) {
+          // Parse key: "Station Name_Level" -> ["Station Name", "Level"]
+          const lastUnderscoreIndex = key.lastIndexOf('_')
+          if (lastUnderscoreIndex !== -1) {
+            const stationName = key.substring(0, lastUnderscoreIndex)
+            const level = parseInt(key.substring(lastUnderscoreIndex + 1))
+            const station = stationsData.stations.find(s => s.name === stationName)
+            if (station) {
+              const levelData = station.levels.find(l => l.level === level)
+              if (levelData) {
+                const requirement = levelData.requirements.find(
+                  req => req.name.toLowerCase() === itemName.toLowerCase()
+                )
+                if (requirement) {
+                  return true
+                }
+              }
+            }
+          }
+        } else {
+          // Check scrappy levels
+          const level = parseInt(key.replace('scrappy_level_', ''))
+          const scrappyLevel = scrappyLevelsData.scrappyLevelRequirementsRates.find(
+            sl => sl.level === level
+          )
+          if (scrappyLevel) {
+            const requirement = scrappyLevel.requirements.find(
+              req => req.name.toLowerCase() === itemName.toLowerCase()
+            )
+            if (requirement) {
+              return true
+            }
+          }
+        }
+      }
+    }
+    return false
   }
 
   // Close settings dropdown when clicking outside
@@ -437,6 +647,15 @@ function App() {
       <TwitchSidebar />
       <div className="container">
         <h1 className="title">Project Greed</h1>
+        <div className="upgrade-checklist-button-wrapper">
+          <button
+            className="upgrade-checklist-button"
+            onClick={() => setShowUpgradeChecklistModal(true)}
+            type="button"
+          >
+            NEW! 🔥 try the new upgrade checklist!
+          </button>
+        </div>
         <p className="subtitle">Keep track of the items you need to keep in order to progress, and stop hoarding!</p>
         
         <form onSubmit={handleSearch} className="search-form">
@@ -558,26 +777,13 @@ function App() {
                   />
                   <h2 className="item-name">{results.name}</h2>
                 </div>
-                {showTotalSummary && (() => {
-                  const totalAmount = calculateTotalAmount(results)
-                  if (totalAmount > 0) {
-                    return (
-                      <div className="total-summary-card">
-                        <div className="total-summary-header">
-                          <span className="total-summary-icon">📊</span>
-                          <span className="total-summary-label">Total Amount Required</span>
-                        </div>
-                        <div className="total-summary-amount">
-                          <strong>{totalAmount}</strong>
-                        </div>
-                        <div className="total-summary-note">
-                          Includes: Projects, Station Upgrades, and Scrappy Levels (Blueprints excluded)
-                        </div>
-                      </div>
-                    )
-                  }
-                  return null
-                })()}
+                {showTotalSummary && (
+                  <TotalSummaryCard
+                    originalTotal={calculateOriginalTotalAmount(results)}
+                    totalAmount={calculateTotalAmount(results)}
+                    checkedUpgrades={checkedUpgrades}
+                  />
+                )}
                 {(() => {
                   const hasItemProperties = results.data && Object.keys(results.data).length > 0
                   const hasStationRequirements = results.stationRequirements && results.stationRequirements.length > 0
@@ -629,13 +835,28 @@ function App() {
                               <span className="category-label">Required for Station Upgrades</span>
                             </div>
                             <div className="station-requirements">
-                              {results.stationRequirements.map((req, index) => (
-                                <div key={index} className="station-requirement-item">
-                                  <div className="station-name">{req.station}</div>
-                                  <div className="station-level">Level {req.level}</div>
-                                  <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
-                                </div>
-                              ))}
+                              {[...results.stationRequirements]
+                                .sort((a, b) => {
+                                  const aChecked = checkedUpgrades[`${a.station}_${a.level}`]
+                                  const bChecked = checkedUpgrades[`${b.station}_${b.level}`]
+                                  // Sort: unchecked first, then checked
+                                  if (aChecked && !bChecked) return 1
+                                  if (!aChecked && bChecked) return -1
+                                  return 0
+                                })
+                                .map((req, index) => {
+                                  const isChecked = checkedUpgrades[`${req.station}_${req.level}`]
+                                  return (
+                                    <div key={`${req.station}-${req.level}-${index}`} className={`station-requirement-item ${isChecked ? 'checked-upgrade' : ''}`}>
+                                      <div className="station-name">
+                                        {req.station}
+                                        {isChecked && <span className="checked-badge">✓ Completed</span>}
+                                      </div>
+                                      <div className="station-level">Level {req.level}</div>
+                                      <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
+                                    </div>
+                                  )
+                                })}
                             </div>
                           </div>
                         ) : (
@@ -658,13 +879,28 @@ function App() {
                               <span className="category-label">Required for Scrappy Levels</span>
                             </div>
                             <div className="station-requirements">
-                              {results.scrappyLevelRequirements.map((req, index) => (
-                                <div key={index} className="station-requirement-item">
-                                  <div className="station-name">{req.title}</div>
-                                  <div className="station-level">Level {req.level}</div>
-                                  <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
-                                </div>
-                              ))}
+                              {[...results.scrappyLevelRequirements]
+                                .sort((a, b) => {
+                                  const aChecked = checkedUpgrades[`scrappy_level_${a.level}`]
+                                  const bChecked = checkedUpgrades[`scrappy_level_${b.level}`]
+                                  // Sort: unchecked first, then checked
+                                  if (aChecked && !bChecked) return 1
+                                  if (!aChecked && bChecked) return -1
+                                  return 0
+                                })
+                                .map((req, index) => {
+                                  const isChecked = checkedUpgrades[`scrappy_level_${req.level}`]
+                                  return (
+                                    <div key={`scrappy-${req.level}-${index}`} className={`station-requirement-item ${isChecked ? 'checked-upgrade' : ''}`}>
+                                      <div className="station-name">
+                                        {req.title}
+                                        {isChecked && <span className="checked-badge">✓ Completed</span>}
+                                      </div>
+                                      <div className="station-level">Level {req.level}</div>
+                                      <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
+                                    </div>
+                                  )
+                                })}
                             </div>
                           </div>
                         ) : (
@@ -734,26 +970,14 @@ function App() {
             ) : (
               <div className="no-results">
                 <p>❌ Item "<strong>{results.name}</strong>" not found in database.</p>
-                {showTotalSummary && (() => {
-                  const totalAmount = calculateTotalAmount(results)
-                  if (totalAmount > 0) {
-                    return (
-                      <div className="total-summary-card" style={{ marginTop: '16px' }}>
-                        <div className="total-summary-header">
-                          <span className="total-summary-icon">📊</span>
-                          <span className="total-summary-label">Total Amount Required</span>
-                        </div>
-                        <div className="total-summary-amount">
-                          <strong>{totalAmount}</strong>
-                        </div>
-                        <div className="total-summary-note">
-                          Includes: Projects, Station Upgrades, and Scrappy Levels (Blueprints excluded)
-                        </div>
-                      </div>
-                    )
-                  }
-                  return null
-                })()}
+                {showTotalSummary && (
+                  <TotalSummaryCard
+                    originalTotal={calculateOriginalTotalAmount(results)}
+                    totalAmount={calculateTotalAmount(results)}
+                    checkedUpgrades={checkedUpgrades}
+                    marginTop={true}
+                  />
+                )}
                 {/* Show station requirements even if item not in items.json */}
                 {results.stationRequirements && results.stationRequirements.length > 0 && (
                   <div className="category-card" style={{ borderColor: 'rgba(59, 130, 246, 0.6)', marginTop: '16px' }}>
@@ -762,13 +986,28 @@ function App() {
                       <span className="category-label">Required for Station Upgrades</span>
                     </div>
                     <div className="station-requirements">
-                      {results.stationRequirements.map((req, index) => (
-                        <div key={index} className="station-requirement-item">
-                          <div className="station-name">{req.station}</div>
-                          <div className="station-level">Level {req.level}</div>
-                          <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
-                        </div>
-                      ))}
+                      {[...results.stationRequirements]
+                        .sort((a, b) => {
+                          const aChecked = checkedUpgrades[`${a.station}_${a.level}`]
+                          const bChecked = checkedUpgrades[`${b.station}_${b.level}`]
+                          // Sort: unchecked first, then checked
+                          if (aChecked && !bChecked) return 1
+                          if (!aChecked && bChecked) return -1
+                          return 0
+                        })
+                        .map((req, index) => {
+                          const isChecked = checkedUpgrades[`${req.station}_${req.level}`]
+                          return (
+                            <div key={`${req.station}-${req.level}-${index}`} className={`station-requirement-item ${isChecked ? 'checked-upgrade' : ''}`}>
+                              <div className="station-name">
+                                {req.station}
+                                {isChecked && <span className="checked-badge">✓ Completed</span>}
+                              </div>
+                              <div className="station-level">Level {req.level}</div>
+                              <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
+                            </div>
+                          )
+                        })}
                     </div>
                   </div>
                 )}
@@ -791,13 +1030,28 @@ function App() {
                       <span className="category-label">Required for Scrappy Levels</span>
                     </div>
                     <div className="station-requirements">
-                      {results.scrappyLevelRequirements.map((req, index) => (
-                        <div key={index} className="station-requirement-item">
-                          <div className="station-name">{req.title}</div>
-                          <div className="station-level">Level {req.level}</div>
-                          <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
-                        </div>
-                      ))}
+                      {[...results.scrappyLevelRequirements]
+                        .sort((a, b) => {
+                          const aChecked = checkedUpgrades[`scrappy_level_${a.level}`]
+                          const bChecked = checkedUpgrades[`scrappy_level_${b.level}`]
+                          // Sort: unchecked first, then checked
+                          if (aChecked && !bChecked) return 1
+                          if (!aChecked && bChecked) return -1
+                          return 0
+                        })
+                        .map((req, index) => {
+                          const isChecked = checkedUpgrades[`scrappy_level_${req.level}`]
+                          return (
+                            <div key={`scrappy-${req.level}-${index}`} className={`station-requirement-item ${isChecked ? 'checked-upgrade' : ''}`}>
+                              <div className="station-name">
+                                {req.title}
+                                {isChecked && <span className="checked-badge">✓ Completed</span>}
+                              </div>
+                              <div className="station-level">Level {req.level}</div>
+                              <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
+                            </div>
+                          )
+                        })}
                     </div>
                   </div>
                 )}
@@ -948,6 +1202,117 @@ function App() {
                     performSearch(itemName)
                   }}
                 />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Upgrade Checklist Modal */}
+        {showUpgradeChecklistModal && (
+          <div className="modal-overlay" onClick={() => setShowUpgradeChecklistModal(false)}>
+            <div className="modal-content upgrade-checklist-modal-content" onClick={(e) => e.stopPropagation()}>
+              <div className="modal-header">
+                <h2 className="modal-title">
+                  <span className="modal-icon">✅</span>
+                  Upgrade Checklist
+                </h2>
+                <button
+                  className="modal-close-button"
+                  onClick={() => setShowUpgradeChecklistModal(false)}
+                  aria-label="Close"
+                >
+                  <MdClose />
+                </button>
+              </div>
+              <div className="modal-body upgrade-checklist-modal-body">
+                <p className="upgrade-checklist-description">
+                  Check off upgrades you've completed. Items needed for completed upgrades will be excluded from the search results.
+                </p>
+                <div className="upgrade-checklist-tabs">
+                  <button
+                    className={`upgrade-checklist-tab ${upgradeChecklistTab === 'stations' ? 'active' : ''}`}
+                    onClick={() => setUpgradeChecklistTab('stations')}
+                    type="button"
+                  >
+                    🏭 Stations
+                  </button>
+                  <button
+                    className={`upgrade-checklist-tab ${upgradeChecklistTab === 'scrappy' ? 'active' : ''}`}
+                    onClick={() => setUpgradeChecklistTab('scrappy')}
+                    type="button"
+                  >
+                    🐔 Scrappy
+                  </button>
+                </div>
+                <div className="upgrade-checklist-list">
+                  {upgradeChecklistTab === 'stations' ? (
+                    stationsData.stations.map((station) => (
+                      <div key={station.name} className="upgrade-station-group">
+                        <h3 className="upgrade-station-name">
+                          <span className="upgrade-station-emoji">{getStationEmoji(station.name)}</span>
+                          {station.name}
+                        </h3>
+                        <div className="upgrade-levels">
+                          {station.levels.map((level) => {
+                            const key = `${station.name}_${level.level}`
+                            const isChecked = checkedUpgrades[key] || false
+                            return (
+                              <label key={level.level} className={`upgrade-checkbox-label ${isChecked ? 'checked' : ''}`}>
+                                <input
+                                  type="checkbox"
+                                  checked={isChecked}
+                                  onChange={() => toggleUpgrade(station.name, level.level)}
+                                  className="upgrade-checkbox"
+                                />
+                                <div className="upgrade-checkbox-content">
+                                  <span className="upgrade-checkbox-text">
+                                    Level {level.level}
+                                  </span>
+                                  <div className="upgrade-requirements-preview">
+                                    {level.requirements.map((req, idx) => (
+                                      <span key={idx} className="upgrade-requirement-tag">
+                                        {req.name} ({req.amount})
+                                      </span>
+                                    ))}
+                                  </div>
+                                </div>
+                              </label>
+                            )
+                          })}
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    scrappyLevelsData.scrappyLevelRequirementsRates.map((scrappyLevel) => {
+                      const key = `scrappy_level_${scrappyLevel.level}`
+                      const isChecked = checkedUpgrades[key] || false
+                      return (
+                        <div key={scrappyLevel.level} className="upgrade-station-group">
+                          <label className={`upgrade-checkbox-label ${isChecked ? 'checked' : ''}`}>
+                            <input
+                              type="checkbox"
+                              checked={isChecked}
+                              onChange={() => toggleScrappyLevel(scrappyLevel.level)}
+                              className="upgrade-checkbox"
+                            />
+                            <div className="upgrade-checkbox-content">
+                              <span className="upgrade-checkbox-text">
+                                {scrappyLevel.title} (Level {scrappyLevel.level})
+                              </span>
+                              <div className="upgrade-requirements-preview">
+                                {scrappyLevel.requirements.map((req, idx) => (
+                                  <span key={idx} className="upgrade-requirement-tag">
+                                    {req.name} ({req.amount})
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </label>
+                        </div>
+                      )
+                    })
+                  )}
+                </div>
               </div>
             </div>
           </div>

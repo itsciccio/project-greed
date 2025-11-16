@@ -40,6 +40,50 @@
   letter-spacing: 0.01em;
 }
 
+.upgrade-checklist-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.upgrade-checklist-button {
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff4500 0%, #ff6b35 100%);
+  border: 1px solid rgba(255, 69, 0, 0.5);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 2px 8px rgba(255, 69, 0, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(255, 69, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 16px rgba(255, 69, 0, 0.5);
+  }
+}
+
+.upgrade-checklist-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(255, 69, 0, 0.5);
+  background: linear-gradient(135deg, #ff5500 0%, #ff7b45 100%);
+  border-color: rgba(255, 69, 0, 0.7);
+}
+
+.upgrade-checklist-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 69, 0, 0.3);
+}
+
 .search-form {
   display: flex;
   gap: 12px;
@@ -268,6 +312,23 @@
   backdrop-filter: blur(5px);
 }
 
+.category-card.ghosted {
+  opacity: 0.4;
+  position: relative;
+}
+
+.category-card.ghosted::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(255, 69, 0, 0.6);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
 .category-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
@@ -360,11 +421,30 @@
   border-left-color: rgba(59, 130, 246, 0.9);
 }
 
+.station-requirement-item.checked-upgrade {
+  opacity: 0.5;
+}
+
+.checked-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(34, 197, 94, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.5);
+  border-radius: 4px;
+  color: #86efac;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
 .station-name {
   font-size: 1.1rem;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .station-level {
@@ -650,12 +730,56 @@
   text-align: center;
   padding-top: 8px;
   border-top: 1px solid rgba(255, 69, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .total-summary-amount strong {
   color: #ff4500;
   font-size: 2.5rem;
   text-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+}
+
+.total-summary-original {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.total-summary-original-label {
+  color: #666666;
+  font-size: 0.9rem;
+}
+
+.total-summary-original-value {
+  color: #666666;
+  font-size: 1.5rem;
+  font-weight: 600;
+  opacity: 0.5;
+}
+
+.total-summary-complete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.total-summary-complete strong {
+  color: #22c55e;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+}
+
+.total-summary-complete-message {
+  color: #86efac;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .total-summary-note {
@@ -666,6 +790,14 @@
   color: #b0b0b0;
   text-align: center;
   font-style: italic;
+}
+
+.total-summary-upgrade-note {
+  display: inline-block;
+  margin-top: 4px;
+  color: #86efac;
+  font-weight: 500;
+  font-style: normal;
 }
 
 @media (max-width: 640px) {
@@ -1133,6 +1265,207 @@
 
   .expedition-category-requirements {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Upgrade Checklist Modal Styles */
+.upgrade-checklist-modal-content {
+  max-width: 700px;
+}
+
+.upgrade-checklist-modal-body {
+  padding: 24px;
+}
+
+.upgrade-checklist-description {
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 69, 0, 0.2);
+}
+
+.upgrade-checklist-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 69, 0, 0.2);
+}
+
+.upgrade-checklist-tab {
+  padding: 10px 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  bottom: -1px;
+}
+
+.upgrade-checklist-tab:hover {
+  color: #ff4500;
+  background: rgba(255, 69, 0, 0.05);
+}
+
+.upgrade-checklist-tab.active {
+  color: #ff4500;
+  border-bottom-color: #ff4500;
+}
+
+.upgrade-checklist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.upgrade-station-group {
+  padding: 16px;
+  background: rgba(26, 26, 26, 0.6);
+  border: 1px solid rgba(255, 69, 0, 0.2);
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.upgrade-station-group:hover {
+  background: rgba(30, 30, 30, 0.8);
+  border-color: rgba(255, 69, 0, 0.4);
+}
+
+.upgrade-station-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ff8c42;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.01em;
+}
+
+.upgrade-station-emoji {
+  font-size: 1.5rem;
+}
+
+.upgrade-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.upgrade-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(26, 26, 26, 0.4);
+  border: 1px solid rgba(255, 69, 0, 0.2);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.upgrade-checkbox-label:hover {
+  background: rgba(255, 69, 0, 0.1);
+  border-color: rgba(255, 69, 0, 0.4);
+}
+
+.upgrade-checkbox-label.checked {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.4);
+}
+
+.upgrade-checkbox-label.checked:hover {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.6);
+}
+
+.upgrade-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #ff4500;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.upgrade-checkbox-label.checked .upgrade-checkbox {
+  accent-color: #22c55e;
+}
+
+.upgrade-checkbox-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.upgrade-checkbox-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.upgrade-checkbox-label.checked .upgrade-checkbox-text {
+  color: #86efac;
+}
+
+.upgrade-requirements-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.upgrade-requirement-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(255, 69, 0, 0.15);
+  border: 1px solid rgba(255, 69, 0, 0.3);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #ff8c42;
+  font-weight: 500;
+}
+
+.upgrade-checkbox-label.checked .upgrade-requirement-tag {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #86efac;
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+@media (max-width: 640px) {
+  .upgrade-checklist-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .upgrade-checklist-modal-body {
+    padding: 16px;
+  }
+
+  .upgrade-station-group {
+    padding: 12px;
+  }
+
+  .upgrade-checkbox-label {
+    padding: 10px;
+  }
+
+  .upgrade-requirements-preview {
+    gap: 4px;
+  }
+
+  .upgrade-requirement-tag {
+    font-size: 0.8rem;
+    padding: 3px 8px;
   }
 }
 
