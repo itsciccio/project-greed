@@ -44,7 +44,7 @@ function TotalSummaryCard({ originalTotal, totalAmount, checkedUpgrades, marginT
         )}
       </div>
       <div className="total-summary-note">
-        Includes: Projects, Station Upgrades, Expedition Stages, and Scrappy Levels (Blueprints excluded)
+        Includes: Quests, Projects, Station Upgrades, Expedition Stages, and Scrappy Levels (Blueprints excluded)
         {originalTotal !== totalAmount && originalTotal > 0 && (
           <span className="total-summary-upgrade-note">
             <br />✓ Excludes items from completed upgrades in your checklist
@@ -406,6 +406,11 @@ function App() {
     
     let total = 0
     
+    // Add keep for quests amount
+    if (results.data?.keep_for_quests?.amount) {
+      total += results.data.keep_for_quests.amount
+    }
+    
     // Add all station requirements
     if (results.stationRequirements) {
       total += results.stationRequirements.reduce((sum, req) => sum + req.amount, 0)
@@ -431,6 +436,11 @@ function App() {
     if (!results) return 0
     
     let total = 0
+    
+    // Add keep for quests amount
+    if (results.data?.keep_for_quests?.amount) {
+      total += results.data.keep_for_quests.amount
+    }
     
     // Add station requirements (excluding checked upgrades)
     if (results.stationRequirements) {
