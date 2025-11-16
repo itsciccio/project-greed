@@ -495,7 +495,7 @@
       "level": 3,
       "craftingRecipe": [
         { "name": "Explosive Compound", "amount": 2 },
-        { "name": "Sensors", "amount": 2 }
+        { "name": "ARC Motion Core", "amount": 2 }
       ]
     }
   ]
