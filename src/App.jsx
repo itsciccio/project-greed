@@ -657,6 +657,27 @@ function App() {
     }
   }, [])
 
+  // Close modals on Escape key
+  useEffect(() => {
+    const handleEscapeKey = (event) => {
+      if (event.key === 'Escape') {
+        if (showUpgradeChecklistModal) {
+          setShowUpgradeChecklistModal(false)
+        }
+        if (showRecyclableModal) {
+          setShowRecyclableModal(false)
+        }
+      }
+    }
+
+    if (showUpgradeChecklistModal || showRecyclableModal) {
+      document.addEventListener('keydown', handleEscapeKey)
+      return () => {
+        document.removeEventListener('keydown', handleEscapeKey)
+      }
+    }
+  }, [showUpgradeChecklistModal, showRecyclableModal])
+
   return (
     <div className="app">
       <TwitchSidebar />
@@ -1268,7 +1289,7 @@ function App() {
               </div>
               <div className="modal-body upgrade-checklist-modal-body">
                 <p className="upgrade-checklist-description">
-                  Check off upgrades you've completed. Items needed for completed upgrades will be excluded from the search results.
+                  Check off upgrades you've completed. Items needed for already completed upgrades are then excluded from the search results.
                 </p>
                 <div className="upgrade-checklist-tabs">
                   <button
