@@ -6,6 +6,7 @@ import scrappyLevelsData from '../scrappy.json'
 import blueprintsData from '../blueprints.json'
 import expeditionData from '../expedition.json'
 import { trackPageView } from './utils/analytics'
+import TwitchSidebar from './components/TwitchSidebar'
 import './App.css'
 
 // Expedition Stages Component
@@ -378,6 +379,7 @@ function App() {
 
   return (
     <div className="app">
+      <TwitchSidebar />
       <div className="container">
         <h1 className="title">Project Greed</h1>
         <p className="subtitle">Keep track of the items you need to keep in order to progress, and stop hoarding!</p>
