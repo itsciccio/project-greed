@@ -810,12 +810,13 @@
   }
 
   .search-wrapper {
-    flex-direction: column;
+    flex-direction: row;
     gap: 8px;
+    align-items: center;
   }
 
   .settings-wrapper {
-    align-self: flex-end;
+    align-self: auto;
   }
 
   .search-form {
