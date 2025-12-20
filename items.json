@@ -309,6 +309,9 @@
     "safe_to_recycle": true,
     "image": "https://cdn.metaforge.app/arc-raiders/icons/candle-holder.webp"
   },
+  "Candleberries": {
+    "image": "https://cdn.metaforge.app/arc-raiders/icons/candleberries.webp"
+  },
   "Canister": {
     "image": "https://cdn.metaforge.app/arc-raiders/icons/canister.webp"
   },
