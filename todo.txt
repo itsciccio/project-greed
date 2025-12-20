@@ -1,0 +1,3 @@
+TODO: 
+- add auto update scripts for items.json, stations.json, scrappy.json, blueprints.json, projects.json, quests.json
+- clean up the code

@@ -1326,6 +1326,40 @@
   border-bottom-color: #ff4500;
 }
 
+.upgrade-checklist-sub-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 69, 0, 0.15);
+}
+
+.upgrade-checklist-sub-tab {
+  padding: 8px 16px;
+  background: rgba(26, 26, 26, 0.6);
+  border: 1px solid rgba(255, 69, 0, 0.2);
+  border-radius: 6px;
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+
+.upgrade-checklist-sub-tab:hover {
+  color: #ff4500;
+  background: rgba(255, 69, 0, 0.1);
+  border-color: rgba(255, 69, 0, 0.4);
+}
+
+.upgrade-checklist-sub-tab.active {
+  color: #ff4500;
+  background: rgba(255, 69, 0, 0.15);
+  border-color: rgba(255, 69, 0, 0.5);
+  font-weight: 600;
+}
+
 .upgrade-checklist-list {
   display: flex;
   flex-direction: column;

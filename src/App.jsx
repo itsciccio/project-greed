@@ -4,7 +4,7 @@ import itemsData from '../items.json'
 import stationsData from '../stations.json'
 import scrappyLevelsData from '../scrappy.json'
 import blueprintsData from '../blueprints.json'
-import expeditionData from '../expedition.json'
+import projectsData from '../projects.json'
 import questsData from '../quests.json'
 import { trackPageView } from './utils/analytics'
 import TwitchSidebar from './components/TwitchSidebar'
@@ -45,7 +45,7 @@ function TotalSummaryCard({ originalTotal, totalAmount, checkedUpgrades, marginT
         )}
       </div>
       <div className="total-summary-note">
-        Includes: Quests, Projects, Station Upgrades, Expedition Stages, and Scrappy Levels (Blueprints excluded)
+        Includes: Quests, Projects, Station Upgrades, and Scrappy Levels (Blueprints excluded)
         {originalTotal !== totalAmount && originalTotal > 0 && (
           <span className="total-summary-upgrade-note">
             <br />✓ Excludes items from completed upgrades in your checklist
@@ -77,6 +77,10 @@ function App() {
     return saved ? JSON.parse(saved) : {}
   })
   const [upgradeChecklistTab, setUpgradeChecklistTab] = useState('stations')
+  const [selectedProjectId, setSelectedProjectId] = useState(() => {
+    // Default to first project if available
+    return projectsData.projects.length > 0 ? projectsData.projects[0].id : null
+  })
   const searchInputRef = useRef(null)
   const dropdownRef = useRef(null)
   const settingsRef = useRef(null)
@@ -86,6 +90,13 @@ function App() {
   // Track page view on component mount
   useEffect(() => {
     trackPageView()
+  }, [])
+
+  // Ensure selectedProjectId is set when projects are available
+  useEffect(() => {
+    if (projectsData.projects.length > 0 && !selectedProjectId) {
+      setSelectedProjectId(projectsData.projects[0].id)
+    }
   }, [])
 
   // Get all item names
@@ -176,23 +187,27 @@ function App() {
     return requirements
   }
 
-  // Find where an item is required for expedition stages
-  const findExpeditionStageRequirements = (itemName) => {
+  // Find where an item is required for project stages
+  const findProjectStageRequirements = (itemName) => {
     const requirements = []
     
-    expeditionData.stages.forEach(stage => {
-      if (stage.requirements) {
-        stage.requirements.forEach(req => {
-          // Case-insensitive comparison
-          if (req.name.toLowerCase() === itemName.toLowerCase()) {
-            requirements.push({
-              stage: stage.stage,
-              title: stage.title,
-              amount: req.amount
-            })
-          }
-        })
-      }
+    projectsData.projects.forEach(project => {
+      project.stages.forEach(stage => {
+        if (stage.requirements) {
+          stage.requirements.forEach(req => {
+            // Case-insensitive comparison
+            if (req.name.toLowerCase() === itemName.toLowerCase()) {
+              requirements.push({
+                projectId: project.id,
+                projectName: project.name,
+                stage: stage.stage,
+                title: stage.title,
+                amount: req.amount
+              })
+            }
+          })
+        }
+      })
     })
     
     return requirements
@@ -296,8 +311,8 @@ function App() {
     // Find scrappy level requirements
     const scrappyLevelRequirements = findScrappyLevelRequirements(trimmedTerm)
     
-    // Find expedition stage requirements
-    const expeditionStageRequirements = findExpeditionStageRequirements(trimmedTerm)
+    // Find project stage requirements
+    const projectStageRequirements = findProjectStageRequirements(trimmedTerm)
     
     // Find quest requirements
     const questRequirements = findQuestRequirements(trimmedTerm)
@@ -311,7 +326,7 @@ function App() {
         data: itemsData[itemName],
         stationRequirements: stationRequirements,
         scrappyLevelRequirements: scrappyLevelRequirements,
-        expeditionStageRequirements: expeditionStageRequirements,
+        projectStageRequirements: projectStageRequirements,
         questRequirements: questRequirements,
         blueprintRecipes: blueprintRecipes
       })
@@ -321,7 +336,7 @@ function App() {
         data: null,
         stationRequirements: stationRequirements,
         scrappyLevelRequirements: scrappyLevelRequirements,
-        expeditionStageRequirements: expeditionStageRequirements,
+        projectStageRequirements: projectStageRequirements,
         questRequirements: questRequirements,
         blueprintRecipes: blueprintRecipes
       })
@@ -470,9 +485,9 @@ function App() {
       total += results.scrappyLevelRequirements.reduce((sum, req) => sum + req.amount, 0)
     }
     
-    // Add all expedition stage requirements
-    if (results.expeditionStageRequirements) {
-      total += results.expeditionStageRequirements.reduce((sum, req) => sum + req.amount, 0)
+    // Add all project stage requirements
+    if (results.projectStageRequirements) {
+      total += results.projectStageRequirements.reduce((sum, req) => sum + req.amount, 0)
     }
     
     // Add all quest requirements
@@ -511,12 +526,12 @@ function App() {
       }, 0)
     }
     
-    // Add expedition stage requirements (excluding checked upgrades)
-    if (results.expeditionStageRequirements) {
-      total += results.expeditionStageRequirements.reduce((sum, req) => {
-        // Check if this expedition stage is checked off
-        const isChecked = checkedUpgrades[`expedition_stage_${req.stage}`]
-        // Only add amount if expedition stage is not checked
+    // Add project stage requirements (excluding checked upgrades)
+    if (results.projectStageRequirements) {
+      total += results.projectStageRequirements.reduce((sum, req) => {
+        // Check if this project stage is checked off
+        const isChecked = checkedUpgrades[`project_${req.projectId}_stage_${req.stage}`]
+        // Only add amount if project stage is not checked
         return sum + (isChecked ? 0 : req.amount)
       }, 0)
     }
@@ -620,27 +635,31 @@ function App() {
     localStorage.setItem('checkedUpgrades', JSON.stringify(newCheckedUpgrades))
   }
 
-  // Toggle expedition stage checkbox
-  const toggleExpeditionStage = (stage) => {
-    const key = `expedition_stage_${stage}`
+  // Toggle project stage checkbox
+  const toggleProjectStage = (projectId, stage) => {
+    const key = `project_${projectId}_stage_${stage}`
     const newCheckedUpgrades = { ...checkedUpgrades }
+    const project = projectsData.projects.find(p => p.id === projectId)
+    
+    if (!project) return
+    
     const isCurrentlyChecked = newCheckedUpgrades[key]
     
     if (isCurrentlyChecked) {
       // Unchecking: uncheck this stage and all higher stages
       delete newCheckedUpgrades[key]
-      expeditionData.stages.forEach(s => {
+      project.stages.forEach(s => {
         if (s.stage > stage) {
-          const higherKey = `expedition_stage_${s.stage}`
+          const higherKey = `project_${projectId}_stage_${s.stage}`
           delete newCheckedUpgrades[higherKey]
         }
       })
     } else {
       // Checking: check this stage and all lower stages
       newCheckedUpgrades[key] = true
-      expeditionData.stages.forEach(s => {
+      project.stages.forEach(s => {
         if (s.stage < stage) {
-          const lowerKey = `expedition_stage_${s.stage}`
+          const lowerKey = `project_${projectId}_stage_${s.stage}`
           newCheckedUpgrades[lowerKey] = true
         }
       })
@@ -671,18 +690,23 @@ function App() {
     for (const key in checkedUpgrades) {
       if (checkedUpgrades[key]) {
         // Check station upgrades
-        if (key.startsWith('expedition_stage_')) {
-          // Check expedition stages
-          const stage = parseInt(key.replace('expedition_stage_', ''))
-          const expeditionStage = expeditionData.stages.find(
-            s => s.stage === stage
-          )
-          if (expeditionStage && expeditionStage.requirements) {
-            const requirement = expeditionStage.requirements.find(
-              req => req.name.toLowerCase() === itemName.toLowerCase()
-            )
-            if (requirement) {
-              return true
+        if (key.startsWith('project_')) {
+          // Check project stages
+          const match = key.match(/^project_([^_]+)_stage_(\d+)$/)
+          if (match) {
+            const projectId = match[1]
+            const stage = parseInt(match[2])
+            const project = projectsData.projects.find(p => p.id === projectId)
+            if (project) {
+              const projectStage = project.stages.find(s => s.stage === stage)
+              if (projectStage && projectStage.requirements) {
+                const requirement = projectStage.requirements.find(
+                  req => req.name.toLowerCase() === itemName.toLowerCase()
+                )
+                if (requirement) {
+                  return true
+                }
+              }
             }
           }
         } else if (key.startsWith('scrappy_level_')) {
@@ -932,10 +956,10 @@ function App() {
                   const hasItemProperties = results.data && Object.keys(results.data).length > 0
                   const hasStationRequirements = results.stationRequirements && results.stationRequirements.length > 0
                   const hasScrappyRequirements = results.scrappyLevelRequirements && results.scrappyLevelRequirements.length > 0
-                  const hasExpeditionRequirements = results.expeditionStageRequirements && results.expeditionStageRequirements.length > 0
+                  const hasProjectRequirements = results.projectStageRequirements && results.projectStageRequirements.length > 0
                   const hasQuestRequirements = results.questRequirements && results.questRequirements.length > 0
                   const hasBlueprintRecipes = results.blueprintRecipes && results.blueprintRecipes.length > 0
-                  const hasAnyInfo = hasItemProperties || hasStationRequirements || hasScrappyRequirements || hasExpeditionRequirements || hasQuestRequirements || hasBlueprintRecipes
+                  const hasAnyInfo = hasItemProperties || hasStationRequirements || hasScrappyRequirements || hasProjectRequirements || hasQuestRequirements || hasBlueprintRecipes
                   
                   if (hasAnyInfo) {
                     return (
@@ -993,33 +1017,35 @@ function App() {
                           </div>
                         )}
                         
-                        {/* Expedition Stage Requirements */}
-                        {hasExpeditionRequirements ? (
+                        {/* Project Stage Requirements */}
+                        {hasProjectRequirements ? (
                           <div className="category-card" style={{ borderColor: 'rgba(255, 140, 66, 0.6)' }}>
                             <div className="category-header">
                               <span className="category-icon">🚀</span>
-                              <span className="category-label">Required for Expedition Stages</span>
+                              <span className="category-label">Required for Project Stages</span>
                             </div>
                             <div className="station-requirements">
-                              {[...results.expeditionStageRequirements]
+                              {[...results.projectStageRequirements]
                                 .sort((a, b) => {
-                                  const aChecked = checkedUpgrades[`expedition_stage_${a.stage}`]
-                                  const bChecked = checkedUpgrades[`expedition_stage_${b.stage}`]
+                                  const aChecked = checkedUpgrades[`project_${a.projectId}_stage_${a.stage}`]
+                                  const bChecked = checkedUpgrades[`project_${b.projectId}_stage_${b.stage}`]
                                   // Sort: unchecked first, then checked
                                   if (aChecked && !bChecked) return 1
                                   if (!aChecked && bChecked) return -1
                                   return 0
                                 })
                                 .map((req, index) => {
-                                  const isChecked = checkedUpgrades[`expedition_stage_${req.stage}`]
+                                  const isChecked = checkedUpgrades[`project_${req.projectId}_stage_${req.stage}`]
+                                  const project = projectsData.projects.find(p => p.id === req.projectId)
+                                  const totalStages = project ? project.stages.length : 0
                                   return (
-                                    <div key={`expedition-${req.stage}-${index}`} className={`station-requirement-item ${isChecked ? 'checked-upgrade' : ''}`}>
+                                    <div key={`project-${req.projectId}-${req.stage}-${index}`} className={`station-requirement-item ${isChecked ? 'checked-upgrade' : ''}`}>
                                       <div className="station-name">
-                                        {req.title}
+                                        {req.projectName} - {req.title}
                                         {isChecked && <span className="checked-badge">✓ Completed</span>}
                                       </div>
                                       <div className="station-level">
-                                        Stage {req.stage}/6
+                                        Stage {req.stage}/{totalStages}
                                       </div>
                                       <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
                                     </div>
@@ -1031,10 +1057,10 @@ function App() {
                           <div className="category-card" style={{ borderColor: 'rgba(107, 114, 128, 0.6)' }}>
                             <div className="category-header">
                               <span className="category-icon">🚀</span>
-                              <span className="category-label">Expedition Stage Requirements</span>
+                              <span className="category-label">Project Stage Requirements</span>
                             </div>
                             <div className="no-station-requirements">
-                              Not required for any expedition stages.
+                              Not required for any project stages.
                             </div>
                           </div>
                         )}
@@ -1233,33 +1259,35 @@ function App() {
                     </div>
                   </div>
                 )}
-                {/* Show expedition stage requirements even if item not in items.json */}
-                {results.expeditionStageRequirements && results.expeditionStageRequirements.length > 0 && (
+                {/* Show project stage requirements even if item not in items.json */}
+                {results.projectStageRequirements && results.projectStageRequirements.length > 0 && (
                   <div className="category-card" style={{ borderColor: 'rgba(255, 140, 66, 0.6)', marginTop: '16px' }}>
                     <div className="category-header">
                       <span className="category-icon">🚀</span>
-                      <span className="category-label">Required for Expedition Stages</span>
+                      <span className="category-label">Required for Project Stages</span>
                     </div>
                     <div className="station-requirements">
-                      {[...results.expeditionStageRequirements]
+                      {[...results.projectStageRequirements]
                         .sort((a, b) => {
-                          const aChecked = checkedUpgrades[`expedition_stage_${a.stage}`]
-                          const bChecked = checkedUpgrades[`expedition_stage_${b.stage}`]
+                          const aChecked = checkedUpgrades[`project_${a.projectId}_stage_${a.stage}`]
+                          const bChecked = checkedUpgrades[`project_${b.projectId}_stage_${b.stage}`]
                           // Sort: unchecked first, then checked
                           if (aChecked && !bChecked) return 1
                           if (!aChecked && bChecked) return -1
                           return 0
                         })
                         .map((req, index) => {
-                          const isChecked = checkedUpgrades[`expedition_stage_${req.stage}`]
+                          const isChecked = checkedUpgrades[`project_${req.projectId}_stage_${req.stage}`]
+                          const project = projectsData.projects.find(p => p.id === req.projectId)
+                          const totalStages = project ? project.stages.length : 0
                           return (
-                            <div key={`expedition-${req.stage}-${index}`} className={`station-requirement-item ${isChecked ? 'checked-upgrade' : ''}`}>
+                            <div key={`project-${req.projectId}-${req.stage}-${index}`} className={`station-requirement-item ${isChecked ? 'checked-upgrade' : ''}`}>
                               <div className="station-name">
-                                {req.title}
+                                {req.projectName} - {req.title}
                                 {isChecked && <span className="checked-badge">✓ Completed</span>}
                               </div>
                               <div className="station-level">
-                                Stage {req.stage}/6
+                                Stage {req.stage}/{totalStages}
                               </div>
                               <div className="station-amount">Amount: <strong>{req.amount}</strong></div>
                             </div>
@@ -1485,7 +1513,13 @@ function App() {
                   </button>
                   <button
                     className={`upgrade-checklist-tab ${upgradeChecklistTab === 'projects' ? 'active' : ''}`}
-                    onClick={() => setUpgradeChecklistTab('projects')}
+                    onClick={() => {
+                      setUpgradeChecklistTab('projects')
+                      // Reset to first project when switching to projects tab
+                      if (projectsData.projects.length > 0 && !selectedProjectId) {
+                        setSelectedProjectId(projectsData.projects[0].id)
+                      }
+                    }}
                     type="button"
                   >
                     🚀 Projects
@@ -1545,58 +1579,85 @@ function App() {
                     ))
                   ) : upgradeChecklistTab === 'projects' ? (
                     <>
-                      {expeditionData.stages.map((stage) => {
-                        const key = `expedition_stage_${stage.stage}`
-                        const isChecked = checkedUpgrades[key] || false
+                      {/* Project Sub-tabs */}
+                      <div className="upgrade-checklist-sub-tabs">
+                        {projectsData.projects.map((project) => (
+                          <button
+                            key={project.id}
+                            className={`upgrade-checklist-sub-tab ${selectedProjectId === project.id ? 'active' : ''}`}
+                            onClick={() => setSelectedProjectId(project.id)}
+                            type="button"
+                          >
+                            {project.name}
+                          </button>
+                        ))}
+                      </div>
+                      {/* Selected Project Stages */}
+                      {selectedProjectId && (() => {
+                        const project = projectsData.projects.find(p => p.id === selectedProjectId)
+                        if (!project) return null
                         return (
-                          <div key={stage.stage} className="upgrade-station-group">
-                            <label className={`upgrade-checkbox-label ${isChecked ? 'checked' : ''}`}>
-                              <input
-                                type="checkbox"
-                                checked={isChecked}
-                                onChange={() => toggleExpeditionStage(stage.stage)}
-                                className="upgrade-checkbox"
-                              />
-                              <div className="upgrade-checkbox-content">
-                                <span className="upgrade-checkbox-text">
-                                  {stage.title} (Stage {stage.stage}/6)
-                                </span>
-                                {stage.description && (
-                                  <div className="upgrade-checkbox-description">
-                                    {stage.description}
-                                  </div>
-                                )}
-                                {stage.requirements && stage.requirements.length > 0 && (
-                                  <div className="upgrade-requirements-preview">
-                                    {stage.requirements.map((req, idx) => (
-                                      <span key={idx} className="upgrade-requirement-tag">
-                                        {req.name} ({req.amount})
+                          <div className="upgrade-station-group">
+                            <h3 className="upgrade-station-name">
+                              <span className="upgrade-station-emoji">🚀</span>
+                              {project.name}
+                            </h3>
+                            {project.stages.map((stage) => {
+                              const key = `project_${project.id}_stage_${stage.stage}`
+                              const isChecked = checkedUpgrades[key] || false
+                              const totalStages = project.stages.length
+                              return (
+                                <div key={stage.stage} className="upgrade-station-group">
+                                  <label className={`upgrade-checkbox-label ${isChecked ? 'checked' : ''}`}>
+                                    <input
+                                      type="checkbox"
+                                      checked={isChecked}
+                                      onChange={() => toggleProjectStage(project.id, stage.stage)}
+                                      className="upgrade-checkbox"
+                                    />
+                                    <div className="upgrade-checkbox-content">
+                                      <span className="upgrade-checkbox-text">
+                                        {stage.title} (Stage {stage.stage}/{totalStages})
                                       </span>
-                                    ))}
-                                  </div>
-                                )}
-                                {stage.categoryRequirements && stage.categoryRequirements.length > 0 && (
-                                  <div className="upgrade-requirements-preview">
-                                    {stage.categoryRequirements.map((req, idx) => (
-                                      <span key={idx} className="upgrade-requirement-tag">
-                                        {req.credValue.toLocaleString()} Coins worth of {req.category}
-                                      </span>
-                                    ))}
-                                  </div>
-                                )}
-                                {(!stage.requirements || stage.requirements.length === 0) && 
-                                 (!stage.categoryRequirements || stage.categoryRequirements.length === 0) && (
-                                  <div className="upgrade-requirements-preview">
-                                    <span className="upgrade-requirement-tag" style={{ fontStyle: 'italic', opacity: 0.7 }}>
-                                      No specific item requirements
-                                    </span>
-                                  </div>
-                                )}
-                              </div>
-                            </label>
+                                      {stage.description && (
+                                        <div className="upgrade-checkbox-description">
+                                          {stage.description}
+                                        </div>
+                                      )}
+                                      {stage.requirements && stage.requirements.length > 0 && (
+                                        <div className="upgrade-requirements-preview">
+                                          {stage.requirements.map((req, idx) => (
+                                            <span key={idx} className="upgrade-requirement-tag">
+                                              {req.name} ({req.amount})
+                                            </span>
+                                          ))}
+                                        </div>
+                                      )}
+                                      {stage.categoryRequirements && stage.categoryRequirements.length > 0 && (
+                                        <div className="upgrade-requirements-preview">
+                                          {stage.categoryRequirements.map((req, idx) => (
+                                            <span key={idx} className="upgrade-requirement-tag">
+                                              {req.credValue.toLocaleString()} Coins worth of {req.category}
+                                            </span>
+                                          ))}
+                                        </div>
+                                      )}
+                                      {(!stage.requirements || stage.requirements.length === 0) && 
+                                       (!stage.categoryRequirements || stage.categoryRequirements.length === 0) && (
+                                        <div className="upgrade-requirements-preview">
+                                          <span className="upgrade-requirement-tag" style={{ fontStyle: 'italic', opacity: 0.7 }}>
+                                            No specific item requirements
+                                          </span>
+                                        </div>
+                                      )}
+                                    </div>
+                                  </label>
+                                </div>
+                              )
+                            })}
                           </div>
                         )
-                      })}
+                      })()}
                     </>
                   ) : upgradeChecklistTab === 'quests' ? (
                     questsData.quests

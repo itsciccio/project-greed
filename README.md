@@ -25,12 +25,12 @@ A React-based search interface for finding item information from your game data,
 - **View item status across multiple categories**:
   - **Safe to Recycle** - Items that can be safely recycled
   - **Required for Quests** - Items needed for quests (with quest name and required amount)
-  - **Required for Expedition Stages** - Items needed for Expedition-1 Project stages (with stage name and amount)
+  - **Required for Project Stages** - Items needed for project stages (with project name, stage name, and amount)
   - **Station Upgrades** - Items required for station upgrades (with station name, level, and amount)
   - **Scrappy Levels** - Items required for Scrappy level upgrades (with level and amount)
   - **Blueprint Recipes** - Items used in blueprint crafting recipes (with workshop, level, and other ingredients)
 - **Total Amount Summary** (Toggleable) - Shows a highlighted summary card with the total amount required:
-  - Includes: Quests (from checklist), Projects, Station Upgrades, Expedition Stages, and Scrappy Levels (Blueprints excluded)
+  - Includes: Quests (from checklist), Projects, Station Upgrades, and Scrappy Levels (Blueprints excluded)
   - Shows original total (ghosted) when upgrades are checked off
   - Automatically excludes items from completed upgrades in your checklist
   - Displays completion message when all items are collected
@@ -98,7 +98,7 @@ npm run build
    - **Item Image** - Visual representation of the item (or placeholder if not available)
    - **Safe to Recycle** - Green card indicating the item can be recycled
    - **Required for Quests** - Lists all quests that require this item (with quest name and amount)
-   - **Required for Expedition Stages** - Lists all Expedition stages that require this item (with stage name and amount)
+   - **Required for Project Stages** - Lists all project stages that require this item (with project name, stage name, and amount)
    - **Station Upgrades** - Lists all stations and levels that require this item
      - Completed upgrades are sorted to the bottom and show a "✓ Completed" badge
      - Items needed for completed upgrades are ghosted (dimmed with reduced opacity)
@@ -138,16 +138,16 @@ npm run build
 
 - **Accordion**: Shows as "Safe to Recycle"
 - **ARC Alloy**: 
-  - Shows "Required for Expedition Stages" (e.g., Foundation Stage 1, amount: 80)
+  - Shows "Required for Project Stages" (e.g., Expedition - Foundation Stage 1, amount: 80)
   - Shows "Required for Station Upgrades" (e.g., Medical Lab Level 1, amount: 6)
   - With Total Summary enabled: Shows total including all requirements
-  - If you check off "Foundation" in the Projects tab, the Expedition Stage requirement is ghosted and excluded from the total
+  - If you check off "Foundation" in the Projects tab, the Project Stage requirement is ghosted and excluded from the total
 - **Light Bulb**:
-  - Shows "Required for Expedition Stages" (Framework Stage 3, amount: 5)
+  - Shows "Required for Project Stages" (Expedition - Framework Stage 3, amount: 5)
   - If you check off "Framework" in the Projects tab, the requirement is ghosted and the total decreases by 5
 - **Leaper Pulse Unit**: 
   - Shows "Required for Quests" (e.g., Into the Fray, amount: 1)
-  - Shows "Required for Expedition Stages" (Outfitting Stage 4, amount: 3)
+  - Shows "Required for Project Stages" (Expedition - Outfitting Stage 4, amount: 3)
   - Shows "Required for Station Upgrades" (e.g., Utility Station Level 3, amount: 4)
   - With Total Summary enabled: Shows total of all requirements
   - If you check off completed upgrades in the checklist, those amounts are excluded from the total
@@ -159,18 +159,19 @@ The app uses multiple JSON data files:
   - `safe_to_recycle.json` (items marked as safe to recycle)
   - All items from the [dataset API](https://metaforge.app/api/arc-raiders/items)
   - Item images from the dataset API (stored in the `image` field)
-  - Note: `keep_for_quests` and `keep_for_projects` have been removed - quest and project requirements are now handled through `quests.json` and `expedition.json`
+  - Note: `keep_for_quests` and `keep_for_projects` have been removed - quest and project requirements are now handled through `quests.json` and `projects.json`
 - **`stations.json`** - Station upgrade requirements (used in the Upgrade Checklist)
 - **`scrappy.json`** - Scrappy level requirements (used in the Upgrade Checklist)
 - **`blueprints.json`** - Blueprint crafting recipes
-- **`expedition.json`** - Expedition-1 Project stages and requirements (used in the Upgrade Checklist Projects tab)
-  - Includes all 6 stages, including Stage 5 (Load Stage) with category requirements and Stage 6 (Departure)
+- **`projects.json`** - Project stages and requirements (used in the Upgrade Checklist Projects tab)
+  - Contains multiple projects, each with their own stages
+  - Currently includes the Expedition project with all 6 stages, including Stage 5 (Load Stage) with category requirements and Stage 6 (Departure)
 - **`quests.json`** - Quest requirements fetched from the [MetaForge API](https://metaforge.app/api/arc-raiders/quests) (used in the Upgrade Checklist Quests tab)
   - Contains quest names and required items with quantities
   - Automatically fetched and stored locally
 - **`public/images/item-placeholder.svg`** - Default placeholder image for items without images
 
-Items are indexed by name, and each item can have multiple category flags. Items also include image URLs from the dataset API for visual identification. The app searches across station upgrades, scrappy levels, expedition stages, quests, and blueprint recipes to provide comprehensive item information.
+Items are indexed by name, and each item can have multiple category flags. Items also include image URLs from the dataset API for visual identification. The app searches across station upgrades, scrappy levels, project stages, quests, and blueprint recipes to provide comprehensive item information.
 
 ### Quest Data
 

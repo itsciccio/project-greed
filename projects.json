@@ -1,0 +1,134 @@
+{
+  "projects": [
+    {
+      "id": "expedition",
+      "name": "Expedition",
+      "stages": [
+        {
+          "stage": 1,
+          "title": "Foundation",
+          "description": "Building the base structure and frame of the caravan",
+          "requirements": [
+            { "amount": 150, "name": "Metal Parts" },
+            { "amount": 200, "name": "Rubber Parts" },
+            { "amount": 80, "name": "ARC Alloy" },
+            { "amount": 15, "name": "Steel Spring" }
+          ]
+        },
+        {
+          "stage": 2,
+          "title": "Core Systems",
+          "description": "Connecting wiring, ventilation, and essential power systems",
+          "requirements": [
+            { "amount": 35, "name": "Durable Cloth" },
+            { "amount": 30, "name": "Wires" },
+            { "amount": 30, "name": "Electrical Components" },
+            { "amount": 5, "name": "Cooling Fan" }
+          ]
+        },
+        {
+          "stage": 3,
+          "title": "Framework",
+          "description": "Building walls and roof, installing, core systems, and defining the interior layout",
+          "requirements": [
+            { "amount": 5, "name": "Light Bulb" },
+            { "amount": 30, "name": "Battery" },
+            { "amount": 20, "name": "Sensors" },
+            { "amount": 1, "name": "Exodus Modules" }
+          ]
+        },
+        {
+          "stage": 4,
+          "title": "Outfitting",
+          "description": "Adding storage, workbenches, utilities, and personal touches",
+          "requirements": [
+            { "amount": 5, "name": "Humidifier" },
+            { "amount": 5, "name": "Advanced Electrical Components" },
+            { "amount": 3, "name": "Magnetic Accelerator" },
+            { "amount": 3, "name": "Leaper Pulse Unit" }
+          ]
+        },
+        {
+          "stage": 5,
+          "title": "Load Stage",
+          "description": "Loading the caravan with vital supplies. Combat gear, survival equipment, provisions, and repair materials are needed to fully prepare for the Expedition.",
+          "requirements": [],
+          "categoryRequirements": [
+            { "credValue": 250000, "category": "Combat Items" },
+            { "credValue": 100000, "category": "Survival Items" },
+            { "credValue": 180000, "category": "Provisions" },
+            { "credValue": 300000, "category": "Materials" }
+          ]
+        },
+        {
+          "stage": 6,
+          "title": "Departure",
+          "description": "Your caravan is stocked with necessities and ready to depart on your Expedition. Once the departure window opens, you can choose to send your Raider beyond the borders of the Rust Belt forever. All items remaining in your Raider's stash will be contributed to the Expedition, and your next Raider can earn up to five skill points based on on the total value of those items.",
+          "requirements": []
+        }
+      ]
+    },
+    {
+      "id": "flickering-flames",
+      "name": "Flickering Flames",
+      "stages": [
+        {
+          "stage": 1,
+          "title": "Candlelight",
+          "description": "The namesake use for the candleberry, Speranzans boil the fruit into a thick wax that burns cleanly and fragrantly.",
+          "requirements": [
+            { "amount": 1, "name": "Empty Wine Bottle" },
+            { "amount": 25, "name": "Plastic Parts" },
+            { "amount": 5, "name": "Durable Cloth" },
+            { "amount": 20, "name": "Candleberries" }
+          ]
+        },
+        {
+          "stage": 2,
+          "title": "Decorations",
+          "description": "Many Speranzans have become quite adept at the art of bringing beauty and greenery into the home.",
+          "requirements": [
+            { "amount": 3, "name": "Candle Holder" },
+            { "amount": 3, "name": "Light Bulb" },
+            { "amount": 1, "name": "Industrial Battery" },
+            { "amount": 50, "name": "Candleberries" }
+          ]
+        },
+        {
+          "stage": 3,
+          "title": "Presents",
+          "description": "Crafty Speranzans have turned the candleberries into a wealth of gifts. These include perfumes and soaps, as well as gifts unrelated to the recipients odors.",
+          "requirements": [
+            { "amount": 5, "name": "Snap Blast Grenade" },
+            { "amount": 10, "name": "Duct Tape" },
+            { "amount": 1, "name": "Film Reel" },
+            { "amount": 60, "name": "Candleberries" }
+          ]
+        },
+        {
+          "stage": 4,
+          "title": "Beverages",
+          "description": "Candleberries can be crushed into refreshing juices, while the leaves and roots make for a tea that can drive out the toughest of colds.",
+          "requirements": [
+            { "amount": 2, "name": "Coffee Pot" },
+            { "amount": 10, "name": "Fireball Burner" },
+            { "amount": 2, "name": "Water Filter" },
+            { "amount": 60, "name": "Candleberries" }
+          ]
+        },
+        {
+          "stage": 5,
+          "title": "Meals",
+          "description": "Though the candleberry leaves are bitter, simmering them in stew and soups adds a touch of earthiness that nostalgic Speranzans have grown to love",
+          "requirements": [
+            { "amount": 7, "name": "Mushroom" },
+            { "amount": 2, "name": "Frying Pan" },
+            { "amount": 2, "name": "Music Album" },
+            { "amount": 70, "name": "Candleberries" }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
