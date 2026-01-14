@@ -76,16 +76,33 @@ function App() {
     const saved = localStorage.getItem('checkedUpgrades')
     return saved ? JSON.parse(saved) : {}
   })
-  const [upgradeChecklistTab, setUpgradeChecklistTab] = useState('stations')
+  const [upgradeChecklistTab, setUpgradeChecklistTab] = useState(() => {
+    // Load from localStorage, default to 'stations'
+    const saved = localStorage.getItem('upgradeChecklistTab')
+    return saved || 'stations'
+  })
   const [selectedProjectId, setSelectedProjectId] = useState(() => {
-    // Default to first project if available
-    return projectsData.projects.length > 0 ? projectsData.projects[0].id : null
+    // Load from localStorage, default to first project if available
+    const saved = localStorage.getItem('selectedProjectId')
+    return saved || (projectsData.projects.length > 0 ? projectsData.projects[0].id : null)
   })
   const searchInputRef = useRef(null)
   const dropdownRef = useRef(null)
   const settingsRef = useRef(null)
   const dropdownManuallyClosed = useRef(false)
   const prevSearchTermRef = useRef('')
+
+  // Update upgrade checklist tab and save to localStorage
+  const updateUpgradeChecklistTab = (tab) => {
+    setUpgradeChecklistTab(tab)
+    localStorage.setItem('upgradeChecklistTab', tab)
+  }
+
+  // Update selected project and save to localStorage
+  const updateSelectedProjectId = (projectId) => {
+    setSelectedProjectId(projectId)
+    localStorage.setItem('selectedProjectId', projectId)
+  }
 
   // Track page view on component mount
   useEffect(() => {
@@ -95,7 +112,7 @@ function App() {
   // Ensure selectedProjectId is set when projects are available
   useEffect(() => {
     if (projectsData.projects.length > 0 && !selectedProjectId) {
-      setSelectedProjectId(projectsData.projects[0].id)
+      updateSelectedProjectId(projectsData.projects[0].id)
     }
   }, [])
 
@@ -830,10 +847,14 @@ function App() {
         <div className="upgrade-checklist-button-wrapper">
           <button
             className="upgrade-checklist-button"
-            onClick={() => setShowUpgradeChecklistModal(true)}
+            onClick={() => {
+              updateUpgradeChecklistTab('projects')
+              updateSelectedProjectId('expedition')
+              setShowUpgradeChecklistModal(true)
+            }}
             type="button"
           >
-            NEW FEATURE! 🔥 Try the new upgrade checklist!
+            Support for the new Expedition is here!
           </button>
         </div>
         <p className="subtitle">Keep track of the items you need to keep in order to progress, and stop hoarding!</p>
@@ -917,6 +938,17 @@ function App() {
                       }}
                     >
                       <span>♻️ View Recyclable Items</span>
+                    </button>
+                  </div>
+                  <div className="settings-item">
+                    <button
+                      className="settings-menu-button"
+                      onClick={() => {
+                        setShowUpgradeChecklistModal(true)
+                        setShowSettingsDropdown(false)
+                      }}
+                    >
+                      <span>✅ Checklist</span>
                     </button>
                   </div>
                 </div>
@@ -1506,7 +1538,7 @@ function App() {
                 <div className="upgrade-checklist-tabs">
                   <button
                     className={`upgrade-checklist-tab ${upgradeChecklistTab === 'stations' ? 'active' : ''}`}
-                    onClick={() => setUpgradeChecklistTab('stations')}
+                    onClick={() => updateUpgradeChecklistTab('stations')}
                     type="button"
                   >
                     🏭 Stations
@@ -1514,10 +1546,10 @@ function App() {
                   <button
                     className={`upgrade-checklist-tab ${upgradeChecklistTab === 'projects' ? 'active' : ''}`}
                     onClick={() => {
-                      setUpgradeChecklistTab('projects')
+                      updateUpgradeChecklistTab('projects')
                       // Reset to first project when switching to projects tab
                       if (projectsData.projects.length > 0 && !selectedProjectId) {
-                        setSelectedProjectId(projectsData.projects[0].id)
+                        updateSelectedProjectId(projectsData.projects[0].id)
                       }
                     }}
                     type="button"
@@ -1526,14 +1558,14 @@ function App() {
                   </button>
                   <button
                     className={`upgrade-checklist-tab ${upgradeChecklistTab === 'quests' ? 'active' : ''}`}
-                    onClick={() => setUpgradeChecklistTab('quests')}
+                    onClick={() => updateUpgradeChecklistTab('quests')}
                     type="button"
                   >
                     📋 Quests
                   </button>
                   <button
                     className={`upgrade-checklist-tab ${upgradeChecklistTab === 'scrappy' ? 'active' : ''}`}
-                    onClick={() => setUpgradeChecklistTab('scrappy')}
+                    onClick={() => updateUpgradeChecklistTab('scrappy')}
                     type="button"
                   >
                     🐔 Scrappy
@@ -1585,7 +1617,7 @@ function App() {
                           <button
                             key={project.id}
                             className={`upgrade-checklist-sub-tab ${selectedProjectId === project.id ? 'active' : ''}`}
-                            onClick={() => setSelectedProjectId(project.id)}
+                            onClick={() => updateSelectedProjectId(project.id)}
                             type="button"
                           >
                             {project.name}
