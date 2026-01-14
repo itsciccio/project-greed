@@ -10,7 +10,7 @@
           "description": "Building the base structure and frame of the caravan",
           "requirements": [
             { "amount": 150, "name": "Metal Parts" },
-            { "amount": 200, "name": "Plastic Parts" },
+            { "amount": 200, "name": "Rubber Parts" },
             { "amount": 80, "name": "ARC Alloy" },
             { "amount": 15, "name": "Steel Spring" }
           ]
@@ -21,9 +21,9 @@
           "description": "Connecting wiring, ventilation, and essential power systems",
           "requirements": [
             { "amount": 35, "name": "Durable Cloth" },
-            { "amount": 25, "name": "Wires" },
-            { "amount": 20, "name": "Electrical Components" },
-            { "amount": 4, "name": "Cooling Coil" }
+            { "amount": 30, "name": "Wires" },
+            { "amount": 30, "name": "Electrical Components" },
+            { "amount": 5, "name": "Cooling Fan" }
           ]
         },
         {
@@ -31,9 +31,9 @@
           "title": "Framework",
           "description": "Building walls and roof, installing, core systems, and defining the interior layout",
           "requirements": [
-            { "amount": 4, "name": "Light Bulb" },
+            { "amount": 5, "name": "Light Bulb" },
             { "amount": 30, "name": "Battery" },
-            { "amount": 10, "name": "Shredder Gyro" },
+            { "amount": 20, "name": "Sensors" },
             { "amount": 1, "name": "Exodus Modules" }
           ]
         },
@@ -42,9 +42,9 @@
           "title": "Outfitting",
           "description": "Adding storage, workbenches, utilities, and personal touches",
           "requirements": [
-            { "amount": 5, "name": "Frequency Modulation Box" },
+            { "amount": 5, "name": "Humidifier" },
             { "amount": 5, "name": "Advanced Electrical Components" },
-            { "amount": 3, "name": "Ion Sputter" },
+            { "amount": 3, "name": "Magnetic Accelerator" },
             { "amount": 3, "name": "Leaper Pulse Unit" }
           ]
         },
