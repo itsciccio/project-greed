@@ -854,7 +854,7 @@ function App() {
             }}
             type="button"
           >
-            Support for the new Expedition is here!
+            🔥 Support for the new Expedition is here! 🔥
           </button>
         </div>
         <p className="subtitle">Keep track of the items you need to keep in order to progress, and stop hoarding!</p>
